@@ -140,7 +140,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
           <div className="right">
             <span>{today.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" })}</span>
-            <span>{counts.total ?? 0} SIGNALS TRACKED</span>
+            <span>{counts.total ?? 0} SAVED SIGNALS</span>
           </div>
         </div>
         {children}
