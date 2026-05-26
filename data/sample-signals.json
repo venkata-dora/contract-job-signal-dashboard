@@ -1,0 +1,86 @@
+[
+  {
+    "id": "seed-apple-card-chase",
+    "companyEvent": "Apple Card issuer transition from Goldman Sachs to Chase",
+    "eventType": "Issuer Transition / Card Portfolio Migration",
+    "category": "Banking / Payments / Fintech",
+    "signalStrength": "High"
+  },
+  {
+    "id": "seed-fifth-third-comerica",
+    "companyEvent": "Fifth Third + Comerica bank merger example",
+    "eventType": "Bank Merger / System Integration",
+    "category": "Banking / Payments / Fintech",
+    "signalStrength": "High"
+  },
+  {
+    "id": "seed-corporate-carveout",
+    "companyEvent": "Industrial software unit corporate carve-out",
+    "eventType": "Divestiture / TSA Exit",
+    "category": "M&A / Divestiture / Carve-out",
+    "signalStrength": "High"
+  },
+  {
+    "id": "seed-sap-palantir-accenture",
+    "companyEvent": "SAP + Palantir + Accenture migration partnership",
+    "eventType": "ERP Modernization / Strategic Partnership",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "signalStrength": "High"
+  },
+  {
+    "id": "seed-servicenow-ai-governance",
+    "companyEvent": "ServiceNow AI governance rollout",
+    "eventType": "Enterprise AI Workflow Modernization",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "signalStrength": "High"
+  },
+  {
+    "id": "seed-ransomware",
+    "companyEvent": "Regional manufacturer ransomware breach remediation",
+    "eventType": "Cyber Incident / Remediation",
+    "category": "Cyber / Compliance / Regulatory",
+    "signalStrength": "High"
+  },
+  {
+    "id": "seed-aml-consent-order",
+    "companyEvent": "Consumer bank consent order AML remediation",
+    "eventType": "Regulatory Remediation",
+    "category": "Cyber / Compliance / Regulatory",
+    "signalStrength": "High"
+  },
+  {
+    "id": "seed-guidewire",
+    "companyEvent": "P&C insurer Guidewire modernization",
+    "eventType": "Insurance Claims Platform Modernization",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "signalStrength": "Medium"
+  },
+  {
+    "id": "seed-healthcare-fhir",
+    "companyEvent": "Healthcare provider FHIR modernization",
+    "eventType": "Healthcare Data Interoperability",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "signalStrength": "Medium"
+  },
+  {
+    "id": "seed-retail-loyalty",
+    "companyEvent": "National retailer loyalty and payments modernization",
+    "eventType": "Retail Payments / Loyalty Platform Modernization",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "signalStrength": "Medium"
+  },
+  {
+    "id": "seed-logistics-platform",
+    "companyEvent": "Logistics supply-chain platform modernization",
+    "eventType": "Supply Chain Platform Modernization",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "signalStrength": "Medium"
+  },
+  {
+    "id": "seed-federal-ai-cyber",
+    "companyEvent": "Federal AI and cyber modernization program",
+    "eventType": "Government AI / Cyber Modernization",
+    "category": "Cyber / Compliance / Regulatory",
+    "signalStrength": "High"
+  }
+]
