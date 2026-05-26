@@ -31,6 +31,11 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
       signal.eventType,
       signal.sourceName,
       signal.sector,
+      ...(signal.companiesMentioned ?? []).flatMap((company) => [
+        company.name,
+        company.description,
+        company.sector
+      ]),
       signal.whyThisMayCreateContractSoftwareJobs,
       signal.actionPlan,
       signal.rawNotes ?? ""
@@ -43,7 +48,7 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
       (filters.category === "All" || signal.category === filters.category) &&
       (filters.strength === "All" || signal.signalStrength === filters.strength) &&
       (filters.workMode === "All" || signal.workMode === filters.workMode) &&
-      (!location || signal.likelyJobLocations.some((item) => item.toLowerCase().includes(location))) &&
+      (!location || getUsJobLocations(signal).some((item) => item.toLowerCase().includes(location))) &&
       (!role || signal.likelySoftwareRoles.some((item) => item.toLowerCase().includes(role))) &&
       (!exactDate || signal.eventDate === exactDate) &&
       (exactDate || !rangeStart || signalDate(signal.eventDate).getTime() >= rangeStart.getTime())
@@ -62,6 +67,7 @@ function getRangeStart(range: SignalFilters["dateRange"]) {
   const start = new Date();
   start.setHours(0, 0, 0, 0);
   const daysBack: Record<Exclude<SignalFilters["dateRange"], "Today" | "All">, number> = {
+    "24h": 1,
     "48h": 2,
     "7d": 7,
     "30d": 30,
@@ -79,4 +85,29 @@ function signalDate(value: string) {
 
 export function uniqueValues(values: string[][]) {
   return Array.from(new Set(values.flat())).sort();
+}
+
+const nonUsLocationMarkers = [
+  "abu dhabi",
+  "canada",
+  "china",
+  "johor",
+  "kuala lumpur",
+  "london",
+  "malaysia",
+  "ontario",
+  "ottawa",
+  "singapore",
+  "taipei",
+  "taiwan",
+  "uae",
+  "uk"
+];
+
+export function getUsJobLocations(signal: JobSignal) {
+  const filtered = signal.likelyJobLocations.filter((location) => {
+    const normalized = location.toLowerCase();
+    return !nonUsLocationMarkers.some((marker) => normalized.includes(marker));
+  });
+  return filtered.length > 0 ? filtered : ["Remote / Hybrid USA delivery"];
 }

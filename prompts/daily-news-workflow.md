@@ -12,6 +12,11 @@ Default recency window:
 - If fewer than useful results exist in the past 24 hours, report that clearly instead of filling the dashboard with older news.
 - Use older context only to explain why a fresh item matters, not as a new dashboard signal.
 
+Geography rule:
+- Only add news with a clear U.S. impact.
+- Do not add non-U.S. news unless the event directly affects U.S. companies, U.S. customers, U.S. operations, U.S. regulatory/compliance work, or U.S.-based software job markets.
+- Do not list outside-USA job locations. Convert likely locations to U.S. hubs or U.S. remote/vendor delivery when the software work is plausibly U.S.-addressable.
+
 The dashboard should prioritize:
 - major news
 - news article or filing link
@@ -23,6 +28,7 @@ The dashboard should prioritize:
 - likely roles
 - confidence note
 - action plan
+- companies mentioned, with a plain-English description of what each company does
 
 Search strings are secondary. Do not make search strings the primary UI output.
 
@@ -74,6 +80,8 @@ Search strings are secondary. Do not make search strings the primary UI output.
    - vague AI announcements
    - physical infrastructure with no software angle
    - generic partnerships with no implementation detail
+   - international-only news with no U.S. software job impact
+   - outside-USA job locations
 
 5. For every added signal, include:
    - companyEvent
@@ -92,6 +100,7 @@ Search strings are secondary. Do not make search strings the primary UI output.
    - bestSearchKeywords
    - actionPlan
    - confidenceNote
+   - companiesMentioned: name, sector, and what the company does in plain English
    - rawNotes
 
 6. Update the UI immediately by saving the new signals into the app data source.
@@ -119,5 +128,6 @@ The main table should make these fields visible:
 - Why Jobs May Appear
 - Likely Roles
 - Action Plan / Confidence in expanded details
+- Companies mentioned / what each company does
 
 Search keywords should remain available, but not dominate the dashboard.

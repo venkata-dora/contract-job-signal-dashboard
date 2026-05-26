@@ -78,7 +78,8 @@ export function FilterBar({
         <select value={filters.dateRange} onChange={e => upd("dateRange", e.target.value as DateRange)}>
           {dateRanges.map((range) => (
             <option key={range} value={range}>
-              {range === "Today" ? "Today only" :
+              {range === "24h" ? "Past 24 hours" :
+                range === "Today" ? "Today only" :
                 range === "48h" ? "Last 48 hours" :
                 range === "7d" ? "Last 7 days" :
                 range === "30d" ? "Last 30 days" :

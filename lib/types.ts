@@ -17,6 +17,11 @@ export type JobSignal = {
   id: string;
   rank?: number;
   companyEvent: string;
+  companiesMentioned?: {
+    name: string;
+    description: string;
+    sector: string;
+  }[];
   eventType: string;
   category: SignalCategory;
   secondaryCategories?: SignalCategory[];
@@ -40,7 +45,7 @@ export type JobSignal = {
   updatedAt: string;
 };
 
-export type DateRange = "Today" | "48h" | "7d" | "30d" | "60d" | "90d" | "6mo" | "All";
+export type DateRange = "24h" | "Today" | "48h" | "7d" | "30d" | "60d" | "90d" | "6mo" | "All";
 
 export type SignalFilters = {
   query: string;
@@ -71,4 +76,4 @@ export const workModes: WorkMode[] = [
   "Hybrid / On-site"
 ];
 
-export const dateRanges: DateRange[] = ["Today", "48h", "7d", "30d", "60d", "90d", "6mo", "All"];
+export const dateRanges: DateRange[] = ["24h", "Today", "48h", "7d", "30d", "60d", "90d", "6mo", "All"];

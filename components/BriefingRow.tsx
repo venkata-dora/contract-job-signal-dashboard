@@ -3,6 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { categoryConfig } from "@/lib/categoryStyles";
+import { getCompaniesMentioned } from "@/lib/companyIntel";
+import { getUsJobLocations } from "@/lib/utils";
 import type { JobSignal } from "@/lib/types";
 import { CategoryChip, StrengthBadge, TierBadge } from "./Badges";
 
@@ -75,6 +77,8 @@ export function BriefingRow({
   const [open, setOpen] = useState(defaultOpen);
   const cat = categoryConfig[signal.category];
   const hasSource = signal.resourceLink && signal.resourceLink !== "#";
+  const companies = getCompaniesMentioned(signal);
+  const locations = getUsJobLocations(signal);
 
   return (
     <article className="brief" style={{ borderLeftColor: cat?.accent ?? "#1B2A4E" }}>
@@ -109,6 +113,20 @@ export function BriefingRow({
               <PinIcon /> {signal.workMode}
             </span>
           </div>
+
+          {companies.length > 0 && (
+            <div className="company-strip" aria-label="Companies mentioned">
+              <div className="company-strip-label">Companies</div>
+              <div className="company-pills">
+                {companies.map((company) => (
+                  <span key={`${signal.id}-${company.name}`} className="company-pill">
+                    <strong>{company.name}</strong>
+                    <span>{company.sector}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
 
           {(signal.summary || signal.rawNotes) && (
             <p className="brief-summary">
@@ -162,7 +180,7 @@ export function BriefingRow({
         <section className="b-col">
           <div className="col-label">Where jobs are likely</div>
           <ul className="loc-list">
-            {signal.likelyJobLocations.map((l, i) => (
+            {locations.map((l, i) => (
               <li key={i}>
                 <PinIcon />
                 <span>{l}</span>
@@ -191,6 +209,18 @@ export function BriefingRow({
         <div className="brief-detail">
           <div className="detail-grid">
             <div>
+              <div className="col-label">Companies mentioned</div>
+              <div className="company-detail-list">
+                {companies.map((company) => (
+                  <div key={`${signal.id}-detail-${company.name}`} className="company-detail">
+                    <div className="company-detail-name">{company.name}</div>
+                    <div className="company-detail-sector">{company.sector}</div>
+                    <p>{company.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
               <div className="col-label">Why these locations</div>
               <p className="why-text">{signal.whyTheseLocations}</p>
             </div>
@@ -198,6 +228,8 @@ export function BriefingRow({
               <div className="col-label">Action plan</div>
               <p className="why-text">{signal.actionPlan}</p>
             </div>
+          </div>
+          <div className="detail-grid compact">
             <div>
               <div className="col-label">Confidence note</div>
               <p className="why-text">{signal.confidenceNote}</p>

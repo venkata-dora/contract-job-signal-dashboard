@@ -9,7 +9,7 @@ import { DistributionPanels } from "./DistributionPanels";
 import { FilterBar } from "./FilterBar";
 import { KpiStrip } from "./KpiStrip";
 import { useSignals } from "./useSignals";
-import { filterSignals } from "@/lib/utils";
+import { filterSignals, getUsJobLocations } from "@/lib/utils";
 import { categoryConfig, deriveTier } from "@/lib/categoryStyles";
 import type { JobSignal, SignalCategory, SignalFilters } from "@/lib/types";
 import { exportCsv, exportJson, exportMd } from "@/lib/export";
@@ -21,7 +21,7 @@ const defaultFilters = (category?: SignalCategory, weekly = false): SignalFilter
   workMode: "All",
   location: "",
   role: "",
-  dateRange: category && !weekly ? "48h" : "All",
+  dateRange: weekly ? "All" : "24h",
   exactDate: "",
   sortBy: "Date"
 });
@@ -67,7 +67,7 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
   const visibleCritical = list.filter(s => deriveTier(s.signalStrength, s.eventDate) === "CRITICAL").length;
 
   const locFreq: Record<string, number> = {};
-  list.forEach(s => s.likelyJobLocations.forEach(l => { locFreq[l] = (locFreq[l] ?? 0) + 1; }));
+  list.forEach(s => getUsJobLocations(s).forEach(l => { locFreq[l] = (locFreq[l] ?? 0) + 1; }));
   const topLoc = Object.entries(locFreq).sort((a, b) => b[1] - a[1])[0] ?? ["—", 0];
 
   const roleFreq: Record<string, number> = {};
@@ -79,13 +79,13 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
   // Page meta
   let kicker = "Contract intelligence briefing";
   let title = "Signal intelligence report";
-  let subtitle = `${today} · All fetched and saved important news. Use the date filter for today's view.`;
+  let subtitle = `${today} · Past-24-hour U.S.-impact briefing by default. Use the date filter to review older saved news.`;
 
   if (category) {
     const c = categoryConfig[category];
     kicker = c.short;
     title = category;
-    subtitle = c.blurb;
+    subtitle = `${c.blurb} Showing U.S.-impact signals from the past 24 hours by default.`;
   } else if (weekly) {
     kicker = "Merged priority view";
     title = "Weekly priority — top 10 targets";

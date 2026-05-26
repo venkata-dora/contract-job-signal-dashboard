@@ -10,7 +10,9 @@ This app has no automatic news feed. When you ask Codex to run a daily update, C
 
 By default, daily updates should only include news, filings, disclosures, regulator releases, or company announcements from the past 24 hours. Older stories should be skipped unless you ask for a broader catch-up or there is a new material update.
 
-The main dashboard prioritizes major news, article/source link, category, event type, likely job locations, why contract software jobs may appear, likely roles, action plan, and confidence note. Search strings are available as supporting detail, but they are not the primary dashboard output.
+Daily updates should also be U.S.-impact only. Do not add international-only stories or outside-USA job locations unless the event clearly affects U.S. companies, U.S. customers, U.S. operations, U.S. regulatory/compliance work, or U.S.-based software job markets.
+
+The main dashboard prioritizes major news, article/source link, company names with plain-English company descriptions, category, event type, likely U.S. job locations, why contract software jobs may appear, likely roles, action plan, and confidence note. Search strings are available as supporting detail, but they are not the primary dashboard output.
 
 ## Install
 
