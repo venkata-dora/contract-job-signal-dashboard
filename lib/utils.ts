@@ -21,6 +21,7 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
   const query = filters.query.trim().toLowerCase();
   const location = filters.location.trim().toLowerCase();
   const role = filters.role.trim().toLowerCase();
+  const exactDate = filters.exactDate.trim();
 
   const rangeStart = getRangeStart(filters.dateRange);
 
@@ -44,7 +45,8 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
       (filters.workMode === "All" || signal.workMode === filters.workMode) &&
       (!location || signal.likelyJobLocations.some((item) => item.toLowerCase().includes(location))) &&
       (!role || signal.likelySoftwareRoles.some((item) => item.toLowerCase().includes(role))) &&
-      (!rangeStart || signalDate(signal.eventDate).getTime() >= rangeStart.getTime())
+      (!exactDate || signal.eventDate === exactDate) &&
+      (exactDate || !rangeStart || signalDate(signal.eventDate).getTime() >= rangeStart.getTime())
     );
   });
 

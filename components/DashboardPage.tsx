@@ -22,6 +22,7 @@ const defaultFilters = (category?: SignalCategory, weekly = false): SignalFilter
   location: "",
   role: "",
   dateRange: category && !weekly ? "Today" : "All",
+  exactDate: "",
   sortBy: "Date"
 });
 

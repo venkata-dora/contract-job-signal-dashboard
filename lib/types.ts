@@ -50,6 +50,7 @@ export type SignalFilters = {
   location: string;
   role: string;
   dateRange: DateRange;
+  exactDate: string;
   sortBy: "Rank" | "Date" | "Strength";
 };
 

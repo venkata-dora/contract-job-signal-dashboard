@@ -61,6 +61,24 @@ export function FilterBar({
             </option>
           ))}
         </select>
+        <div className="date-pick-wrap">
+          <span className="date-label">Exact date</span>
+          <input
+            type="date"
+            aria-label="Filter by exact event date"
+            value={filters.exactDate}
+            onChange={e => upd("exactDate", e.target.value)}
+          />
+          {filters.exactDate && (
+            <button
+              type="button"
+              aria-label="Clear exact date filter"
+              onClick={() => upd("exactDate", "")}
+            >
+              Clear
+            </button>
+          )}
+        </div>
         <div className="sort-wrap">
           <span className="sort-label">Sort</span>
           <select value={filters.sortBy} onChange={e => upd("sortBy", e.target.value as SignalFilters["sortBy"])}>
