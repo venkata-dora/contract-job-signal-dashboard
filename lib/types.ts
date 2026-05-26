@@ -45,7 +45,7 @@ export type JobSignal = {
   updatedAt: string;
 };
 
-export type DateRange = "24h" | "Today" | "48h" | "7d" | "30d" | "60d" | "90d" | "6mo" | "All";
+export type DateRange = "24h" | "48h" | "week1" | "week2" | "week3" | "week4" | "All";
 
 export type SignalFilters = {
   query: string;
@@ -76,4 +76,4 @@ export const workModes: WorkMode[] = [
   "Hybrid / On-site"
 ];
 
-export const dateRanges: DateRange[] = ["24h", "Today", "48h", "7d", "30d", "60d", "90d", "6mo", "All"];
+export const dateRanges: DateRange[] = ["24h", "48h", "week1", "week2", "week3", "week4", "All"];

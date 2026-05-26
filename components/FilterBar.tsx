@@ -79,13 +79,11 @@ export function FilterBar({
           {dateRanges.map((range) => (
             <option key={range} value={range}>
               {range === "24h" ? "Past 24 hours" :
-                range === "Today" ? "Today only" :
                 range === "48h" ? "Last 48 hours" :
-                range === "7d" ? "Last 7 days" :
-                range === "30d" ? "Last 30 days" :
-                range === "60d" ? "Last 60 days" :
-                range === "90d" ? "Last 90 days" :
-                range === "6mo" ? "Last 6 months" : "All dates"}
+                range === "week1" ? "Past week" :
+                range === "week2" ? "2nd week back" :
+                range === "week3" ? "3rd week back" :
+                range === "week4" ? "4th week back" : "All dates"}
             </option>
           ))}
         </select>

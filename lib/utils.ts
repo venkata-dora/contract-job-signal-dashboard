@@ -23,7 +23,7 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
   const role = filters.role.trim().toLowerCase();
   const exactDate = filters.exactDate.trim();
 
-  const rangeStart = getRangeStart(filters.dateRange);
+  const rangeBounds = getRangeBounds(filters.dateRange);
 
   const filtered = signals.filter((signal) => {
     const blob = [
@@ -51,7 +51,7 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
       (!location || getUsJobLocations(signal).some((item) => item.toLowerCase().includes(location))) &&
       (!role || signal.likelySoftwareRoles.some((item) => item.toLowerCase().includes(role))) &&
       (!exactDate || signal.eventDate === exactDate) &&
-      (exactDate || !rangeStart || signalDate(signal.eventDate).getTime() >= rangeStart.getTime())
+      (exactDate || !rangeBounds || isWithinRange(signalDate(signal.eventDate), rangeBounds))
     );
   });
 
@@ -62,21 +62,33 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
   });
 }
 
-function getRangeStart(range: SignalFilters["dateRange"]) {
+function getRangeBounds(range: SignalFilters["dateRange"]) {
   if (range === "All") return null;
-  const start = new Date();
-  start.setHours(0, 0, 0, 0);
-  const daysBack: Record<Exclude<SignalFilters["dateRange"], "Today" | "All">, number> = {
-    "24h": 1,
-    "48h": 2,
-    "7d": 7,
-    "30d": 30,
-    "60d": 60,
-    "90d": 90,
-    "6mo": 180
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const tomorrow = new Date(today);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const bounds: Record<Exclude<SignalFilters["dateRange"], "All">, [number, number]> = {
+    "24h": [0, 1],
+    "48h": [0, 2],
+    "week1": [0, 7],
+    "week2": [7, 14],
+    "week3": [14, 21],
+    "week4": [21, 28]
   };
-  if (range !== "Today") start.setDate(start.getDate() - daysBack[range]);
-  return start;
+
+  const [fromDaysAgo, toDaysAgo] = bounds[range];
+  const start = new Date(tomorrow);
+  start.setDate(start.getDate() - toDaysAgo);
+  const end = new Date(tomorrow);
+  end.setDate(end.getDate() - fromDaysAgo);
+  return { start, end };
+}
+
+function isWithinRange(date: Date, range: { start: Date; end: Date }) {
+  const time = date.getTime();
+  return time >= range.start.getTime() && time < range.end.getTime();
 }
 
 function signalDate(value: string) {
