@@ -66,6 +66,20 @@ export const seedSignals: JobSignal[] = [
     resourceLink: "https://www.prnewswire.com/news-releases/moonpay-wins-2026-chainalysis-innovation-award-for-compliance-302781199.html",
     sourceName: "PR Newswire",
     sector: "Crypto payments / Compliance",
+    companiesMentioned: [
+      {
+        name: "MoonPay",
+        sector: "Crypto payments",
+        relationship: "Primary target",
+        description: "crypto payments and stablecoin infrastructure provider; this is the company most likely to create direct job-search targets from this signal"
+      },
+      {
+        name: "Chainalysis",
+        sector: "Crypto compliance",
+        relationship: "Source / award issuer",
+        description: "blockchain analytics and transaction-monitoring compliance company; included because the article is about a Chainalysis award and MoonPay compliance integration, not because it is the primary target"
+      }
+    ],
     summary: "MoonPay highlighted its compliance-first crypto payments network, Chainalysis integration, real-time transaction monitoring, sanctions screening, and stablecoin infrastructure for enterprise partners.",
     likelyJobLocations: ["New York, NY", "Miami, FL", "San Francisco Bay Area, CA", "Austin, TX", "Washington, DC", "Northern Virginia", "Remote fintech delivery"],
     workMode: "Remote / Hybrid",
@@ -73,7 +87,7 @@ export const seedSignals: JobSignal[] = [
     whyThisMayCreateContractSoftwareJobs: "Compliance-first payments infrastructure creates transaction monitoring, sanctions screening, KYT/KYC workflows, stablecoin payment APIs, audit trails, data pipelines, and partner integration work.",
     likelySoftwareRoles: ["Payments Engineer", "Backend Engineer", "Python Developer", "Data Engineer", "API Integration Developer", "AML/KYC Systems Developer", "Fraud/Risk Systems Developer", "AppSec Engineer", "QA Automation/SDET", "Technical Business Analyst"],
     bestSearchKeywords: ["MoonPay compliance engineer contract", "crypto payments API developer contract", "stablecoin infrastructure developer", "Chainalysis integration engineer", "transaction monitoring developer contract", "sanctions screening fintech contractor", "crypto KYT KYC systems developer"],
-    actionPlan: "Track MoonPay, Chainalysis, crypto payments, stablecoin infrastructure, sanctions screening, and transaction monitoring contract roles.",
+    actionPlan: "Prioritize MoonPay roles first. Use Chainalysis only as a supporting keyword for KYT, transaction monitoring, sanctions screening, and compliance-integration searches.",
     confidenceNote: "Medium because the item is an award, but the underlying platform signals compliance and payment-infrastructure buildout with real-time monitoring and enterprise partner needs.",
     watchFor: ["MoonPay enterprise partner launches", "Stablecoin payment rail integrations", "Chainalysis/KYT implementation roles", "Licensing expansion and compliance workflow roles"],
     rawNotes: "Published May 25, 2026. Source says MoonPay supports 500+ enterprise customers and powers crypto payments and stablecoin infrastructure through a single integration.",

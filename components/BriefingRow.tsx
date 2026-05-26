@@ -120,8 +120,15 @@ export function BriefingRow({
               <div className="company-pills">
                 {companies.map((company) => (
                   <span key={`${signal.id}-${company.name}`} className="company-pill">
-                    <strong>{company.name}</strong>
-                    <span>{company.sector}</span>
+                    <span className="company-pill-main">
+                      <strong>{company.name}</strong>
+                      <span>{company.sector}</span>
+                    </span>
+                    {company.relationship && (
+                      <span className={`company-rel ${company.relationship === "Primary target" ? "primary-rel" : ""}`}>
+                        {company.relationship}
+                      </span>
+                    )}
                   </span>
                 ))}
               </div>
@@ -214,7 +221,9 @@ export function BriefingRow({
                 {companies.map((company) => (
                   <div key={`${signal.id}-detail-${company.name}`} className="company-detail">
                     <div className="company-detail-name">{company.name}</div>
-                    <div className="company-detail-sector">{company.sector}</div>
+                    <div className="company-detail-sector">
+                      {company.relationship ? `${company.relationship} · ` : ""}{company.sector}
+                    </div>
                     <p>{company.description}</p>
                   </div>
                 ))}

@@ -49,7 +49,17 @@ export function getCompaniesMentioned(signal: JobSignal): CompanyIntel[] {
     signal.sector
   ].join(" ").toLowerCase();
 
-  const matches = knownCompanies.filter((company) => text.includes(company.name.toLowerCase()));
+  const matches = knownCompanies
+    .filter((company) => text.includes(company.name.toLowerCase()))
+    .sort((a, b) => {
+      const aIndex = text.indexOf(a.name.toLowerCase());
+      const bIndex = text.indexOf(b.name.toLowerCase());
+      return aIndex - bIndex;
+    })
+    .map((company, index) => ({
+      ...company,
+      relationship: index === 0 ? "Primary target" as const : "Partner / vendor" as const
+    }));
   if (matches.length > 0) return matches;
 
   const fallbackName = signal.companyEvent

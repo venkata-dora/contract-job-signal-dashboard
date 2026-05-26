@@ -619,7 +619,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
 .company-pill {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 9px;
   padding: 5px 8px;
   background: #FFFFFF;
   border: 1px solid var(--line);
@@ -628,12 +628,35 @@ button, a, input, select, textarea { touch-action: manipulation; }
   font-size: 11.5px;
   line-height: 1.2;
 }
+.company-pill-main {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 7px;
+}
 .company-pill strong {
   color: var(--ink);
   font-weight: 700;
 }
-.company-pill span {
+.company-pill-main span {
   color: var(--mute);
+}
+.company-rel {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mute);
+  background: var(--card-soft);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 2px 5px;
+  white-space: nowrap;
+}
+.company-rel.primary-rel {
+  color: #174B32;
+  background: #EAF6EF;
+  border-color: #B9DEC7;
 }
 
 .brief-actions {
@@ -1149,6 +1172,11 @@ button, a, input, select, textarea { touch-action: manipulation; }
     justify-content: space-between;
     min-height: 34px;
     font-size: 12px;
+  }
+  .company-pill-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
   .badge,
   .workmode {
