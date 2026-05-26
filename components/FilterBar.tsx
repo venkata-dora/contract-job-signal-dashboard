@@ -8,6 +8,31 @@ const SearchIcon = () => (
   </svg>
 );
 
+const ChevronIcon = ({ direction }: { direction: "left" | "right" }) => (
+  <svg width={13} height={13} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    {direction === "left" ? <path d="M15 18l-6-6 6-6" /> : <path d="M9 6l6 6-6 6" />}
+  </svg>
+);
+
+function todayISO() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function shiftDate(value: string, days: number) {
+  const date = value ? new Date(`${value}T00:00:00`) : new Date();
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+function formatVisibleDate(value: string) {
+  if (!value) return "Choose date";
+  return new Date(`${value}T00:00:00`).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  });
+}
+
 export function FilterBar({
   filters,
   onChange,
@@ -18,6 +43,8 @@ export function FilterBar({
   lockCategory?: boolean;
 }) {
   const upd = <K extends keyof SignalFilters>(k: K, v: SignalFilters[K]) => onChange({ ...filters, [k]: v });
+  const setExactDate = (value: string) => onChange({ ...filters, exactDate: value });
+  const moveExactDate = (days: number) => setExactDate(shiftDate(filters.exactDate || todayISO(), days));
 
   return (
     <div className="filter-bar">
@@ -63,17 +90,37 @@ export function FilterBar({
         </select>
         <div className="date-pick-wrap">
           <span className="date-label">Exact date</span>
-          <input
-            type="date"
-            aria-label="Filter by exact event date"
-            value={filters.exactDate}
-            onChange={e => upd("exactDate", e.target.value)}
-          />
+          <button
+            type="button"
+            className="date-step"
+            aria-label="Previous day"
+            onClick={() => moveExactDate(-1)}
+          >
+            <ChevronIcon direction="left" />
+          </button>
+          <label className="date-input-shell">
+            <span>{formatVisibleDate(filters.exactDate)}</span>
+            <input
+              type="date"
+              aria-label="Filter by exact event date"
+              value={filters.exactDate}
+              onChange={e => setExactDate(e.target.value)}
+            />
+          </label>
+          <button
+            type="button"
+            className="date-step"
+            aria-label="Next day"
+            onClick={() => moveExactDate(1)}
+          >
+            <ChevronIcon direction="right" />
+          </button>
           {filters.exactDate && (
             <button
               type="button"
+              className="date-clear"
               aria-label="Clear exact date filter"
-              onClick={() => upd("exactDate", "")}
+              onClick={() => setExactDate("")}
             >
               Clear
             </button>
