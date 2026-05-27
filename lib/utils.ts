@@ -31,6 +31,9 @@ export function filterSignals(signals: JobSignal[], filters: SignalFilters) {
       signal.eventType,
       signal.sourceName,
       signal.sector,
+      signal.summary ?? "",
+      signal.confidenceNote ?? "",
+      ...(signal.watchFor ?? []),
       ...(signal.companiesMentioned ?? []).flatMap((company) => [
         company.name,
         company.description,

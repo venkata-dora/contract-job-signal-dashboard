@@ -10,7 +10,7 @@ const CAT_HREFS: Record<SignalCategory, string> = {
 };
 
 function fmtDateShort(iso: string) {
-  return new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+  return new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric" });
 }
 
 const ArrowIcon = () => (

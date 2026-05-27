@@ -28,17 +28,24 @@ const knownCompanies: CompanyIntel[] = [
   { name: "JPMorgan", sector: "Banking", description: "large U.S. bank with payments, cards, markets, and enterprise technology teams" },
   { name: "JotPsych", sector: "Healthcare IT", description: "behavioral-health software company for clinical documentation and telehealth workflows" },
   { name: "Kong", sector: "API platform", description: "API gateway, service connectivity, and API governance platform company" },
+  { name: "Maple", sector: "Institutional DeFi credit", description: "San Francisco digital-asset lending and institutional credit platform" },
   { name: "Microsoft", sector: "Cloud / productivity", description: "cloud, AI, productivity, identity, and enterprise platform provider" },
   { name: "MoonPay", sector: "Crypto payments", description: "crypto payments and stablecoin infrastructure provider for consumers and enterprises" },
+  { name: "Mphasis", sector: "IT services / enterprise AI", description: "AI-led technology services and platform engineering company serving enterprise clients" },
   { name: "NVIDIA", sector: "AI computing", description: "GPU, AI infrastructure, and accelerated computing platform company" },
   { name: "Palantir", sector: "Data / AI platform", description: "data integration, analytics, and enterprise AI platform company" },
+  { name: "PipeChain", sector: "Supply-chain software", description: "cloud supply-chain and manufacturing workflow software company" },
   { name: "Persistent Systems", sector: "Digital engineering", description: "technology services firm delivering cloud, data, API, and AI engineering programs" },
   { name: "PROMISE Technology", sector: "Enterprise storage", description: "storage and data infrastructure vendor for AI, surveillance, media, and enterprise workloads" },
+  { name: "Proofpoint", sector: "Cybersecurity", description: "U.S. cybersecurity and compliance platform company focused on email, cloud, data, and AI-agent security" },
+  { name: "Quyntess", sector: "Supply-chain software", description: "supply-chain collaboration software company acquired by PipeChain" },
   { name: "Reallusion", sector: "Creative AI software", description: "3D character, animation, and AI-assisted creative production software company" },
   { name: "SAP", sector: "ERP / enterprise platform", description: "enterprise ERP, data, cloud, and business applications platform provider" },
   { name: "ServiceNow", sector: "Workflow platform", description: "enterprise workflow, ITSM, GRC, security, and AI automation platform" },
   { name: "Streamax", sector: "Fleet AIoT", description: "fleet video telematics, AIoT, safety, and operational-efficiency platform vendor" },
   { name: "TECO", sector: "Industrial technology", description: "industrial and infrastructure technology company expanding AI data-center delivery" },
+  { name: "Theory and Practice", sector: "Decision intelligence", description: "decisioning intelligence platform acquired by Mphasis and referenced in the Tria platform stack" },
+  { name: "TrustLogix", sector: "AI data security", description: "AI data governance and security platform company for agent access controls" },
   { name: "Ubyx", sector: "Digital money infrastructure", description: "digital-money connectivity platform for regulated payments and settlement networks" },
   { name: "VAST Data", sector: "AI data platform", description: "enterprise data storage and AI data-platform company" }
 ];
@@ -54,12 +61,15 @@ export function getCompaniesMentioned(signal: JobSignal): CompanyIntel[] {
     signal.sector
   ].join(" ").toLowerCase();
 
+  const eventLower = signal.companyEvent.toLowerCase();
   const matches = knownCompanies
     .filter((company) => text.includes(company.name.toLowerCase()))
     .sort((a, b) => {
-      const aIndex = text.indexOf(a.name.toLowerCase());
-      const bIndex = text.indexOf(b.name.toLowerCase());
-      return aIndex - bIndex;
+      const aInEvent = eventLower.includes(a.name.toLowerCase());
+      const bInEvent = eventLower.includes(b.name.toLowerCase());
+      if (aInEvent && !bInEvent) return -1;
+      if (!aInEvent && bInEvent) return 1;
+      return text.indexOf(a.name.toLowerCase()) - text.indexOf(b.name.toLowerCase());
     })
     .map((company, index) => ({
       ...company,

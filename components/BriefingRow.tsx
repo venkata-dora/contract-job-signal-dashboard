@@ -9,14 +9,15 @@ import type { JobSignal } from "@/lib/types";
 import { CategoryChip, StrengthBadge, TierBadge } from "./Badges";
 
 function fmtDate(iso: string) {
-  return new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  return new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
 function daysAgo(iso: string) {
-  const days = Math.floor((Date.now() - new Date(iso).getTime()) / 86400000);
+  const days = Math.floor((Date.now() - new Date(`${iso}T00:00:00`).getTime()) / 86400000);
+  if (days < 0) return "Upcoming";
   if (days === 0) return "today";
   if (days === 1) return "1 day ago";
-  if (days < 30) return `${days} days ago`;
+  if (days > 1 && days < 30) return `${days} days ago`;
   if (days < 60) return "1 month ago";
   return `${Math.floor(days / 30)} months ago`;
 }
@@ -115,27 +116,6 @@ export function BriefingRow({
             </span>
           </div>
 
-          {companies.length > 0 && (
-            <div className="company-strip" aria-label="Companies mentioned">
-              <div className="company-strip-label">Companies</div>
-              <div className="company-pills">
-                {companies.map((company) => (
-                  <span key={`${signal.id}-${company.name}`} className="company-pill">
-                    <span className="company-pill-main">
-                      <strong>{company.name}</strong>
-                      <span>{company.sector}</span>
-                    </span>
-                    {company.relationship && (
-                      <span className={`company-rel ${company.relationship === "Primary target" ? "primary-rel" : ""}`}>
-                        {company.relationship}
-                      </span>
-                    )}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )}
-
           {(signal.summary || signal.rawNotes) && (
             <p className="brief-summary">
               {signal.summary ?? signal.rawNotes}
@@ -182,6 +162,27 @@ export function BriefingRow({
           </div>
         </div>
       </div>
+
+      {companies.length > 0 && (
+        <section className="company-strip" aria-label="Companies mentioned">
+          <div className="company-strip-label">Companies in this news</div>
+          <div className="company-pills">
+            {companies.map((company) => (
+              <span key={`${signal.id}-${company.name}`} className="company-pill">
+                <span className="company-pill-main">
+                  <strong>{company.name}</strong>
+                  <span>{company.sector}</span>
+                </span>
+                {company.relationship && (
+                  <span className={`company-rel ${company.relationship === "Primary target" ? "primary-rel" : ""}`}>
+                    {company.relationship}
+                  </span>
+                )}
+              </span>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* THREE COLUMN GRID — Where / Why / Roles */}
       <div className="brief-grid">

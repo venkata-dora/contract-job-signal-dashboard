@@ -10,16 +10,15 @@ export function useSignals() {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    setSignals(rankSignals(loadSignals()));
+    setSignals(loadSignals());
     setIsReady(true);
   }, []);
 
   const rankedSignals = useMemo(() => rankSignals(signals), [signals]);
 
   function commit(nextSignals: JobSignal[]) {
-    const ranked = rankSignals(nextSignals);
-    setSignals(ranked);
-    saveSignals(ranked);
+    setSignals(nextSignals);
+    saveSignals(rankSignals(nextSignals));
   }
 
   return {
@@ -35,7 +34,7 @@ export function useSignals() {
       commit(rankedSignals.filter((item) => item.id !== id));
     },
     reset() {
-      setSignals(rankSignals(resetSignals()));
+      setSignals(resetSignals());
     }
   };
 }

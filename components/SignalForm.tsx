@@ -70,7 +70,7 @@ export function SignalForm({
       eventType: signal.eventType || classified.eventType,
       signalStrength: classified.signalStrength,
       likelyJobLocations: signal.likelyJobLocations.length ? signal.likelyJobLocations : classified.likelyJobLocations,
-      workMode: signal.workMode || classified.workMode,
+      workMode: (signal.workMode && signal.workMode !== "Remote / Hybrid") ? signal.workMode : classified.workMode,
       whyTheseLocations: signal.whyTheseLocations || classified.whyTheseLocations,
       whyThisMayCreateContractSoftwareJobs: signal.whyThisMayCreateContractSoftwareJobs || classified.whyThisMayCreateContractSoftwareJobs,
       likelySoftwareRoles: signal.likelySoftwareRoles.length ? signal.likelySoftwareRoles : classified.likelySoftwareRoles,

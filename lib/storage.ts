@@ -24,6 +24,7 @@ export function loadSignals(): JobSignal[] {
 export function saveSignals(signals: JobSignal[]) {
   if (typeof window === "undefined") return;
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(signals));
+  window.dispatchEvent(new Event("signals-updated"));
 }
 
 export function resetSignals() {

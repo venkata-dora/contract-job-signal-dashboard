@@ -60,10 +60,3 @@ export function exportJson(signals: JobSignal[]) {
   download("contract-signals.json", JSON.stringify(signals, null, 2), "application/json");
 }
 
-export function exportMarkdown(signals: JobSignal[]) {
-  exportMd(signals);
-}
-
-export function downloadText(filename: string, text: string, type: string) {
-  download(filename, text, type);
-}

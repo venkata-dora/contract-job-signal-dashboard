@@ -553,11 +553,11 @@ button, a, input, select, textarea { touch-action: manipulation; }
 }
 .brief-head {
   display: grid;
-  grid-template-columns: 96px 1fr auto;
-  gap: 18px;
+  grid-template-columns: 78px minmax(0, 1fr) 190px;
+  gap: 22px;
   align-items: flex-start;
-  padding: 16px 20px 12px;
-  border-bottom: 1px dashed var(--line-2);
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid var(--line-2);
 }
 .brief-rank { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
 .rank-num {
@@ -572,7 +572,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
 .brief-titleline { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
 .brief-title {
   font-family: var(--serif);
-  font-size: 20px; font-weight: var(--title-weight, 600);
+  font-size: 22px; font-weight: var(--title-weight, 600);
   letter-spacing: var(--title-track, -0.015em);
   margin: 0;
   line-height: 1.25;
@@ -593,7 +593,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
 .brief-subline {
   display: flex; align-items: center; flex-wrap: wrap; gap: 6px;
   font-size: 12.5px; color: var(--ink-3);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 .evt-type { color: var(--ink-2); font-weight: 500; }
 .dot-sep { color: var(--mute-2); }
@@ -611,15 +611,13 @@ button, a, input, select, textarea { touch-action: manipulation; }
 
 .company-strip {
   display: grid;
-  grid-template-columns: 86px 1fr;
-  gap: 10px;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 18px;
   align-items: flex-start;
-  margin-top: 12px;
-  padding: 10px 12px;
-  background: #F7F5EE;
-  border: 1px solid var(--line-2);
-  border-left: 2px solid var(--accent);
-  border-radius: 3px;
+  margin: 0;
+  padding: 14px 24px;
+  background: #FCFAF4;
+  border-bottom: 1px dashed var(--line-2);
 }
 .company-strip-label {
   font-family: var(--mono);
@@ -628,23 +626,23 @@ button, a, input, select, textarea { touch-action: manipulation; }
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--mute);
-  padding-top: 3px;
+  padding-top: 6px;
 }
 .company-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 .company-pill {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 5px 8px;
+  gap: 10px;
+  padding: 7px 10px;
   background: #FFFFFF;
   border: 1px solid var(--line);
   border-radius: 2px;
   color: var(--ink-2);
-  font-size: 11.5px;
+  font-size: 12px;
   line-height: 1.2;
 }
 .company-pill-main {
@@ -681,7 +679,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
 .brief-actions {
   display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
   flex-shrink: 0;
-  min-width: 180px;
+  min-width: 0;
 }
 .src-block {
   display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
@@ -711,13 +709,14 @@ button, a, input, select, textarea { touch-action: manipulation; }
 .src-link.src-placeholder { color: var(--mute); background: var(--card-soft); border-color: var(--line); cursor: default; }
 .brief-summary {
   font-family: var(--serif);
-  font-size: 14.5px; line-height: 1.55;
+  font-size: 15px; line-height: 1.58;
   color: var(--ink-2);
-  margin: 12px 0 0;
-  padding: 0 0 0 12px;
+  margin: 16px 0 0;
+  padding: 0 0 0 14px;
   border-left: 2px solid var(--line);
   font-weight: 400;
   letter-spacing: -0.002em;
+  max-width: 980px;
 }
 .inline-src {
   display: inline-flex; align-items: center; gap: 4px;
@@ -757,10 +756,10 @@ button, a, input, select, textarea { touch-action: manipulation; }
   display: grid;
   grid-template-columns: 1.2fr 1.4fr 1.2fr;
   gap: 24px;
-  padding: 14px 20px 18px;
+  padding: 18px 24px 22px;
 }
 .similar-companies {
-  padding: 16px 20px 18px;
+  padding: 18px 24px 22px;
   border-top: 1px dashed var(--line-2);
   background: #FCFAF4;
 }

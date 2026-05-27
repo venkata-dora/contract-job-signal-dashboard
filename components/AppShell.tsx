@@ -55,13 +55,22 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [counts, setCounts] = useState<Record<string, number>>({});
 
   useEffect(() => {
-    const signals = loadSignals();
-    const c: Record<string, number> = { total: signals.length };
-    CAT_ROUTES.forEach(({ href, cat }) => {
-      if (cat) c[href] = signals.filter(s => s.category === cat).length;
-    });
-    c["/weekly"] = Math.min(10, signals.length);
-    setCounts(c);
+    function refreshCounts() {
+      const signals = loadSignals();
+      const c: Record<string, number> = { total: signals.length };
+      CAT_ROUTES.forEach(({ href, cat }) => {
+        if (cat) c[href] = signals.filter(s => s.category === cat).length;
+      });
+      c["/weekly"] = Math.min(10, signals.length);
+      setCounts(c);
+    }
+    refreshCounts();
+    window.addEventListener("signals-updated", refreshCounts);
+    window.addEventListener("focus", refreshCounts);
+    return () => {
+      window.removeEventListener("signals-updated", refreshCounts);
+      window.removeEventListener("focus", refreshCounts);
+    };
   }, []);
 
   const today = new Date();

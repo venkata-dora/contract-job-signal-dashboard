@@ -22,7 +22,7 @@ const defaultFilters = (category?: SignalCategory, weekly = false): SignalFilter
   role: "",
   dateRange: weekly ? "All" : "24h",
   exactDate: "",
-  sortBy: "Date"
+  sortBy: weekly ? "Rank" : "Date"
 });
 
 const PlusIcon = () => (

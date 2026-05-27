@@ -1,8 +1,273 @@
 import type { JobSignal } from "./types";
 
-const now = "2026-05-25T12:00:00.000Z";
+const now = "2026-05-27T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
+  {
+    id: "news-2026-05-27-proofpoint-active-exploits-protection",
+    rank: 1,
+    companyEvent: "Proofpoint launches Active Exploits Protection for AI-era vulnerability attacks",
+    eventType: "AppSec / Vulnerability Remediation Prioritization",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.globenewswire.com/news-release/2026/05/27/3301678/35374/en/proofpoint-introduces-active-exploits-protection-to-help-organizations-prioritize-vulnerability-patching-for-real-world-attacks-in-the-ai-era.html",
+    sourceName: "GlobeNewswire",
+    sector: "Cybersecurity / Vulnerability management",
+    companiesMentioned: [
+      {
+        name: "Proofpoint",
+        sector: "Cybersecurity and compliance",
+        relationship: "Primary target",
+        description: "U.S.-based cybersecurity and compliance platform company; the direct target for exploit intelligence, vulnerability prioritization, and security automation roles"
+      },
+      {
+        name: "Cognizant",
+        sector: "IT services / managed security",
+        relationship: "Partner / vendor",
+        description: "technology services and managed security provider named as an operationalization partner for client remediation work"
+      }
+    ],
+    summary: "Proofpoint announced Active Exploits Protection, a platform capability that prioritizes vulnerabilities being exploited in the wild and turns exploit intelligence into immediate protection across attack paths.",
+    likelyJobLocations: ["Sunnyvale, CA", "San Francisco Bay Area, CA", "Austin, TX", "Denver, CO", "New York, NY", "Washington, DC", "Northern Virginia", "Remote USA cyber delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Proofpoint engineering and security operations center around California platform teams, U.S. enterprise security hubs, federal cyber markets, and remote managed-security delivery teams.",
+    whyThisMayCreateContractSoftwareJobs: "Exploit-based vulnerability prioritization creates AppSec workflow integration, remediation automation, vulnerability management APIs, SOC tooling, SIEM/SOAR integration, dashboards, data pipelines, and QA automation work.",
+    likelySoftwareRoles: ["AppSec Engineer", "Vulnerability Management Engineer", "Security Automation Engineer", "Python Developer", "Backend Engineer", "Data Engineer", "Cloud Security Engineer", "QA Automation/SDET", "Technical Business Analyst"],
+    bestSearchKeywords: ["Proofpoint Active Exploits Protection contractor", "vulnerability prioritization engineer contract", "AppSec remediation automation engineer", "security automation Python contractor", "SIEM SOAR integration developer", "AI era vulnerability management engineer", "Proofpoint API integration contractor"],
+    actionPlan: "Target Proofpoint, Cognizant managed security, AppSec remediation, vulnerability management, SIEM/SOAR integration, and security automation contract postings today.",
+    confidenceNote: "High because the announcement is a live security product with API access, automation pipelines, SOC integration, and remediation workflow language.",
+    watchFor: ["Proofpoint implementation partner roles", "Cognizant managed security postings", "AppSec remediation automation work", "Vulnerability management integration contracts", "SOC workflow and SIEM/SOAR roles"],
+    rawNotes: "Published May 27, 2026. U.S.-impact source from Sunnyvale, CA; platform is available today and designed for enterprise vulnerability remediation against AI-accelerated threats.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-trustlogix-trustai-agent-governance",
+    rank: 2,
+    companyEvent: "TrustLogix launches TrustAI controls for AI agent data access and kill-switch governance",
+    eventType: "AI Governance / Agent Data Security Platform",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.prweb.com/releases/trustlogix-gives-enterprises-a-kill-switch-for-ai-agents-with-the-governance-platform-to-back-it-up-302782662.html",
+    sourceName: "PRWeb",
+    sector: "AI governance / Data security",
+    companiesMentioned: [
+      {
+        name: "TrustLogix",
+        sector: "AI data governance and security",
+        relationship: "Primary target",
+        description: "Mountain View cybersecurity and data-access governance company focused on controlling how AI agents touch enterprise data"
+      },
+      {
+        name: "Snowflake",
+        sector: "Data platform",
+        relationship: "Partner / vendor",
+        description: "enterprise data cloud platform named as a native integration target for TrustAI governance controls"
+      },
+      {
+        name: "Databricks",
+        sector: "Data / AI platform",
+        relationship: "Partner / vendor",
+        description: "lakehouse and AI data platform named as an integration target for AI-agent access governance"
+      }
+    ],
+    summary: "TrustLogix announced the next generation of TrustAI with intent-based authorization, MCP Data Gateway, Guardian Agent monitoring, audit evidence, and a runtime kill switch for AI agents accessing enterprise data.",
+    likelyJobLocations: ["Mountain View, CA", "San Francisco Bay Area, CA", "Seattle, WA", "Austin, TX", "New York, NY", "Boston, MA", "Washington, DC", "Northern Virginia", "Remote USA security delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "AI governance and data-security work follows Bay Area platform teams, cloud/data platform customers, financial-services and healthcare compliance teams, and federal/security markets.",
+    whyThisMayCreateContractSoftwareJobs: "AI-agent data governance creates MCP gateway integration, IAM propagation, Snowflake/Databricks/AWS/Azure connectors, audit logging, policy engines, DLP workflows, compliance evidence exports, and security QA work.",
+    likelySoftwareRoles: ["AI Governance Engineer", "Data Governance Engineer", "IAM Engineer", "AppSec Engineer", "Backend Engineer", "Python Developer", "Data Engineer", "API Integration Developer", "Cloud Security Engineer", "QA Automation/SDET", "Technical Business Analyst"],
+    bestSearchKeywords: ["TrustLogix TrustAI engineer contract", "AI agent governance developer", "MCP data gateway integration contractor", "AI kill switch security engineer", "Snowflake Databricks governance contractor", "AI audit logging developer contract", "IAM data access governance engineer"],
+    actionPlan: "Search TrustLogix, TrustAI, MCP gateway, AI-agent governance, Snowflake security, Databricks governance, IAM propagation, and AI audit logging roles.",
+    confidenceNote: "High because this is a concrete governance platform release with enterprise integrations, regulatory controls, audit evidence, and data-layer enforcement.",
+    watchFor: ["TrustAI customer implementations", "MCP gateway integration roles", "AI governance policy-engine postings", "Snowflake/Databricks access-control projects", "AI audit and compliance automation contracts"],
+    rawNotes: "Published May 27, 2026. U.S.-impact source from Mountain View, CA; release targets financial services, healthcare, technology, and enterprise AI-agent governance.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-mphasis-tria-enterprise-agency-platform",
+    rank: 3,
+    companyEvent: "Mphasis launches Tria enterprise agency platform for governed AI transformation",
+    eventType: "Enterprise AI Rollout / Agentic Workflow Modernization",
+    category: "AI / Cloud / Enterprise Platforms",
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.prnewswire.co.uk/news-releases/mphasis-launches-mphasis-tria-a-first-of-its-kind-enterprise-agency-platform-governed-front2backaccelerates-mphasis-evolution-into-a-platform-led-ai-enterprise-302782990.html",
+    sourceName: "PR Newswire",
+    sector: "Enterprise AI / IT services",
+    companiesMentioned: [
+      {
+        name: "Mphasis",
+        sector: "AI-led IT services and platform engineering",
+        relationship: "Primary target",
+        description: "global technology services company with U.S. enterprise clients; direct target for AI modernization and implementation roles"
+      },
+      {
+        name: "Theory and Practice",
+        sector: "Decision intelligence",
+        relationship: "Partner / vendor",
+        description: "decisioning intelligence platform acquisition referenced as part of the Tria AI stack"
+      }
+    ],
+    summary: "Mphasis launched Tria, an enterprise agency platform for governed AI execution, transformation, modernization, optimization, knowledge graphs, reasoning, workflow orchestration, and agentic systems.",
+    likelyJobLocations: ["New York, NY", "Chicago, IL", "Dallas, TX", "Atlanta, GA", "Austin, TX", "Boston, MA", "Raleigh-Durham, NC", "Phoenix, AZ", "Remote USA consulting delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Mphasis has U.S. enterprise delivery activity and likely work around financial services, insurance, healthcare, and enterprise transformation hubs.",
+    whyThisMayCreateContractSoftwareJobs: "Governed enterprise AI transformation creates workflow orchestration, knowledge graph integration, application modernization, data pipelines, model governance, cloud migration, API integration, and QA work.",
+    likelySoftwareRoles: ["AI Engineer", "Generative AI Engineer", "Python Developer", "Backend Engineer", "Data Engineer", "MLOps Engineer", "API Integration Developer", "Cloud Software Engineer", "QA Automation/SDET", "Business Systems Analyst", "Technical Business Analyst"],
+    bestSearchKeywords: ["Mphasis Tria AI contractor", "enterprise agency platform developer", "agentic workflow engineer contract", "AI modernization Mphasis developer", "knowledge graph AI integration contractor", "enterprise AI orchestration engineer", "Mphasis Modernize contractor"],
+    actionPlan: "Target Mphasis, Tria, enterprise agency, agentic workflow, AI modernization, knowledge graph, and transformation contract postings in U.S. client hubs.",
+    confidenceNote: "High because the release ties a platform launch to modernization, optimization, enterprise execution, and consulting delivery.",
+    watchFor: ["Mphasis Tria client rollouts", "Mphasis Modernize roles", "Enterprise agency platform job posts", "Knowledge graph and workflow orchestration contracts", "AI transformation delivery roles"],
+    rawNotes: "Published May 27, 2026. U.S.-impact source names New York and describes enterprise transformation offerings for global clients.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-pipechain-quyntess-acquisition",
+    rank: 4,
+    companyEvent: "PipeChain acquires Quyntess to expand cloud supply-chain software and U.S. operations",
+    eventType: "Acquisition / Supply Chain Platform Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.fidelity.com/news/article/mergers-and-acquisitions/202605270300BIZWIRE_USPR_____20260527_BW725043",
+    sourceName: "Business Wire via Fidelity",
+    sector: "Supply-chain software / Multi-enterprise networks",
+    companiesMentioned: [
+      {
+        name: "PipeChain",
+        sector: "Cloud supply-chain software",
+        relationship: "Acquirer",
+        description: "provider of cloud-based collaborative planning, execution, and multi-enterprise network software for automotive, retail, and multinational supply chains"
+      },
+      {
+        name: "Quyntess",
+        sector: "Supply-chain collaboration software",
+        relationship: "Acquired company",
+        description: "supply-chain software company with U.S. operations, acquired to extend PipeChain's digitalization and network capabilities"
+      }
+    ],
+    summary: "PipeChain announced the acquisition of Quyntess, a supply-chain software company with operations including the United States, to strengthen end-to-end digitalization and multi-enterprise network capabilities.",
+    likelyJobLocations: ["Atlanta, GA", "Dallas, TX", "Chicago, IL", "Detroit, MI", "Columbus, OH", "Phoenix, AZ", "New York, NY", "Remote USA supply-chain IT"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "U.S. supply-chain, automotive, retail, and enterprise implementation work is likely around major logistics, manufacturing, retail, and consulting hubs.",
+    whyThisMayCreateContractSoftwareJobs: "A supply-chain software acquisition creates platform integration, customer migration, EDI/API mapping, data migration, workflow consolidation, reporting, identity/access setup, and QA automation work.",
+    likelySoftwareRoles: ["Data Engineer", "API Integration Developer", "Backend Engineer", "ETL Developer", "Supply Chain Systems Analyst", "Cloud Software Engineer", "QA Automation/SDET", "ERP Integration Developer", "Technical Business Analyst"],
+    bestSearchKeywords: ["PipeChain Quyntess integration contractor", "supply chain software acquisition developer", "multi enterprise network API integration", "EDI API migration contractor", "supply chain platform data engineer", "PipeChain implementation consultant", "Quyntess customer migration engineer"],
+    actionPlan: "Search PipeChain, Quyntess, supply-chain network, EDI/API migration, customer migration, and cloud supply-chain implementation roles.",
+    confidenceNote: "High because ownership-change software acquisitions often create integration, customer transition, data migration, and delivery work.",
+    watchFor: ["PipeChain-Quyntess integration postings", "U.S. supply-chain customer migration roles", "EDI/API integration contracts", "Automotive and retail platform implementation work", "Data migration and QA automation roles"],
+    rawNotes: "Published May 27, 2026. U.S.-impact source says Quyntess has operations in the United States and the deal expands cloud supply-chain software capabilities.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-maple-borrower-hub",
+    rank: 5,
+    companyEvent: "Maple launches Borrower Hub for institutional onchain credit operations",
+    eventType: "Institutional Lending Platform / Smart Contract Workflow Modernization",
+    category: "Banking / Payments / Fintech",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.businesswire.com/newsroom?industry=1778622",
+    sourceName: "Business Wire",
+    sector: "Institutional DeFi / Credit operations",
+    companiesMentioned: [
+      {
+        name: "Maple",
+        sector: "Institutional digital-asset lending",
+        relationship: "Primary target",
+        description: "San Francisco institutional asset-management and DeFi credit platform; direct target for borrower workflow, credit operations, and smart-contract integration roles"
+      }
+    ],
+    summary: "Maple launched Borrower Hub, an operating layer that combines smart-contract credit infrastructure with an institutional-grade borrowing experience for organizations accessing capital onchain.",
+    likelyJobLocations: ["San Francisco Bay Area, CA", "New York, NY", "Miami, FL", "Austin, TX", "Chicago, IL", "Remote USA fintech delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Institutional digital-asset lending work follows San Francisco fintech teams, New York capital markets, Miami crypto/fintech, and remote product engineering teams.",
+    whyThisMayCreateContractSoftwareJobs: "Onchain borrower operations create smart-contract integration, borrower portals, KYC/KYB workflows, credit operations dashboards, payment rails, compliance reporting, data pipelines, and QA work.",
+    likelySoftwareRoles: ["Backend Engineer", "Smart Contract Developer", "API Integration Developer", "Data Engineer", "Payments Engineer", "AML/KYC Systems Developer", "Frontend Engineer", "QA Automation/SDET", "Technical Business Analyst"],
+    bestSearchKeywords: ["Maple Borrower Hub developer contract", "institutional DeFi credit engineer", "onchain lending platform contractor", "smart contract credit operations developer", "KYC KYB borrower workflow engineer", "fintech borrower portal developer", "digital asset lending QA contractor"],
+    actionPlan: "Track Maple, Borrower Hub, institutional DeFi credit, smart-contract lending, KYB/KYC workflows, borrower portal, and compliance operations roles.",
+    confidenceNote: "High because the release is a concrete fintech operating layer with workflow, credit operations, and smart-contract software implementation needs.",
+    watchFor: ["Maple borrower onboarding roles", "Onchain credit operations postings", "Smart-contract integration work", "KYB/KYC workflow roles", "Institutional fintech portal development"],
+    rawNotes: "Published May 27, 2026. U.S.-impact Business Wire item from San Francisco; product targets institutional borrowing operations.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-interact-ex-suite",
+    rank: 6,
+    companyEvent: "Interact Software unifies intranet and enterprise search into employee experience suite",
+    eventType: "Enterprise Search / Employee Experience Platform Modernization",
+    category: "AI / Cloud / Enterprise Platforms",
+    signalStrength: "Medium",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.globenewswire.com/news-release/2026/05/27/3302507/0/en/Interact-Software-Unifies-Its-Award-Winning-Intranet-and-Enterprise-Search-Products-Under-a-Single-EX-Suite.html",
+    sourceName: "GlobeNewswire",
+    sector: "Employee experience / Enterprise search",
+    companiesMentioned: [
+      {
+        name: "Interact Software",
+        sector: "Employee experience and intranet software",
+        relationship: "Primary target",
+        description: "enterprise intranet and search platform vendor; likely target for implementation, connector, content migration, and Microsoft 365 integration roles"
+      }
+    ],
+    summary: "Interact Software unified its intranet and enterprise search products under one employee experience suite, creating a platform signal around search, content, permissions, connectors, and workplace workflow modernization.",
+    likelyJobLocations: ["New York, NY", "Boston, MA", "Atlanta, GA", "Chicago, IL", "Dallas, TX", "San Francisco Bay Area, CA", "Seattle, WA", "Remote USA SaaS delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Employee experience and enterprise search implementations follow corporate IT, Microsoft 365, internal communications, HR technology, and SaaS delivery hubs.",
+    whyThisMayCreateContractSoftwareJobs: "Suite consolidation creates intranet migration, enterprise search connectors, identity and permissions integration, Microsoft 365/Teams integration, content governance, analytics, workflow automation, and QA work.",
+    likelySoftwareRoles: ["Enterprise Search Engineer", "Full-stack Developer", "Backend Engineer", "API Integration Developer", "Microsoft 365 Integration Engineer", "Data Engineer", "QA Automation/SDET", "Business Systems Analyst", "Technical Business Analyst"],
+    bestSearchKeywords: ["Interact Software EX Suite contractor", "enterprise search integration developer", "intranet migration engineer contract", "Microsoft 365 intranet integration", "employee experience platform developer", "search connector developer contract", "content governance workflow engineer"],
+    actionPlan: "Search Interact Software, EX Suite, enterprise search, intranet migration, Microsoft 365 integration, search connectors, and employee experience platform roles.",
+    confidenceNote: "Medium because it is a product-suite consolidation, but the work maps to implementation-heavy migration, search, identity, and connector projects.",
+    watchFor: ["EX Suite customer migrations", "Enterprise search connector roles", "Microsoft 365 integration work", "Intranet content migration contracts", "Internal communications platform implementation roles"],
+    rawNotes: "Published May 27, 2026. U.S.-impact item for enterprise SaaS customers and workplace platform implementation teams.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-pipechain-econnect-maintenance-ai",
+    rank: 7,
+    companyEvent: "PipeChain launches eConnect for AI-driven manufacturing maintenance management",
+    eventType: "Manufacturing Maintenance Workflow Modernization",
+    category: "AI / Cloud / Enterprise Platforms",
+    signalStrength: "Medium",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.prnewswire.com/news-releases/pipechain-launches-econnect-to-bring-ai-driven-operator-first-maintenance-management-to-manufacturers-302466607.html",
+    sourceName: "PR Newswire",
+    sector: "Manufacturing software / Maintenance workflows",
+    companiesMentioned: [
+      {
+        name: "PipeChain",
+        sector: "Supply-chain and manufacturing software",
+        relationship: "Primary target",
+        description: "cloud supply-chain and manufacturing workflow software company; target for industrial integration, CMMS/EAM, and plant workflow roles"
+      }
+    ],
+    summary: "PipeChain launched eConnect to bring AI-driven, operator-first maintenance management to manufacturers, signaling plant workflow, maintenance system, and industrial software integration work.",
+    likelyJobLocations: ["Detroit, MI", "Chicago, IL", "Atlanta, GA", "Dallas, TX", "Columbus, OH", "Pittsburgh, PA", "Milwaukee, WI", "Remote USA manufacturing IT"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Manufacturing maintenance modernization follows automotive, industrial, warehouse, plant operations, and systems-integration hubs across the U.S.",
+    whyThisMayCreateContractSoftwareJobs: "AI maintenance management creates CMMS/EAM integration, ERP work orders, mobile workflows, IoT/event data capture, alerting, scheduling, reporting dashboards, plant-system APIs, and QA automation work.",
+    likelySoftwareRoles: ["Backend Engineer", "Full-stack Developer", "API Integration Developer", "Data Engineer", "Manufacturing Systems Analyst", "Python Developer", "QA Automation/SDET", "ERP Integration Developer", "Technical Business Analyst"],
+    bestSearchKeywords: ["PipeChain eConnect developer contract", "AI maintenance management engineer", "CMMS EAM integration contractor", "manufacturing workflow API developer", "plant maintenance software contractor", "industrial data pipeline engineer", "maintenance scheduling QA automation"],
+    actionPlan: "Search PipeChain, eConnect, manufacturing maintenance, CMMS/EAM, ERP work orders, plant workflow, and industrial API integration roles.",
+    confidenceNote: "Medium because it is a product launch, but manufacturing workflow modernization usually creates integration-heavy implementation work.",
+    watchFor: ["Manufacturer customer rollouts", "CMMS/EAM integration postings", "ERP work-order workflow roles", "Industrial data integration contracts", "Plant mobile workflow development"],
+    rawNotes: "Published May 27, 2026. U.S.-impact manufacturing software signal with likely industrial IT delivery work.",
+    createdAt: now,
+    updatedAt: now
+  },
   {
     id: "news-2026-05-25-persistent-kong-ai-control-layer",
     rank: 1,

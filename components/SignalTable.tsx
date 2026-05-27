@@ -4,7 +4,7 @@ import { BriefcaseBusiness, ChevronDown, Copy, ExternalLink, MapPin, Pencil, Tra
 import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import { CategoryBadge, StrengthBadge } from "./Badges";
-import { categoryStyles } from "@/lib/categoryStyles";
+import { categoryConfig } from "@/lib/categoryStyles";
 import { categories, type JobSignal, type SignalCategory } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -73,12 +73,12 @@ function CategorySection({
   onDelete?: (id: string) => void;
   onEdit?: (signal: JobSignal) => void;
 }) {
-  const styles = categoryStyles[category];
+  const accent = categoryConfig[category].accent;
   const highCount = signals.filter((signal) => signal.signalStrength === "High").length;
 
   return (
     <section className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm shadow-slate-200/70">
-      <div className={cn("bg-gradient-to-r px-6 py-5 text-white", styles.header)}>
+      <div className="px-6 py-5 text-white" style={{ background: accent }}>
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div>
@@ -94,21 +94,19 @@ function CategorySection({
         </div>
       </div>
 
-      <div className={cn("space-y-5 p-5", styles.panel)}>
+      <div className="space-y-5 p-5">
         {signals.map((signal) => {
           const open = expanded === signal.id;
           return (
             <article
               key={signal.id}
-              className={cn(
-                "rounded-2xl border border-slate-200 border-l-4 bg-white p-6 shadow-sm shadow-slate-200/60 transition hover:-translate-y-0.5 hover:shadow-md",
-                styles.rail
-              )}
+              className="rounded-2xl border border-slate-200 border-l-4 bg-white p-6 shadow-sm shadow-slate-200/60 transition hover:-translate-y-0.5 hover:shadow-md"
+              style={{ borderLeftColor: accent }}
             >
               <div className="grid gap-7 xl:grid-cols-[minmax(300px,1.1fr)_190px_minmax(270px,0.9fr)_minmax(300px,1fr)_minmax(260px,0.95fr)]">
                 <div>
                   <div className="flex items-start gap-3">
-                    <div className={cn("rounded-lg px-2.5 py-1 text-xs font-bold tabular-nums ring-1", styles.badge)}>#{signal.rank}</div>
+                    <div className="rounded-lg px-2.5 py-1 text-xs font-bold tabular-nums ring-1" style={{ color: accent, borderColor: accent, background: `${accent}18` }}>#{signal.rank}</div>
                     <button onClick={() => setExpanded(open ? null : signal.id)} className="group min-w-0 text-left">
                       <div className="flex items-start gap-2">
                         <ChevronDown className={cn("mt-1 h-4 w-4 shrink-0 text-slate-400 transition", open && "rotate-180")} />
