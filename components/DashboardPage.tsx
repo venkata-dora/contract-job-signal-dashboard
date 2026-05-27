@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { AppShell } from "./AppShell";
 import { BriefingRow } from "./BriefingRow";
-import { CategoryCards } from "./CategoryCards";
 import { DistributionPanels } from "./DistributionPanels";
 import { FilterBar } from "./FilterBar";
 import { KpiStrip } from "./KpiStrip";
@@ -164,8 +163,6 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
             {category && <div className="cat-accent-bar" style={{ background: categoryConfig[category].accent }} />}
 
             <KpiStrip items={weeklyKpis ?? catKpis ?? mainKpis} />
-
-            {!category && !weekly && <CategoryCards signals={scoped} />}
 
             {!category && !weekly && <DistributionPanels signals={scoped} />}
 
