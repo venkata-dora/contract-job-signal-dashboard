@@ -78,7 +78,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <div className="nav-section-label">Briefing</div>
+        <div className="nav-section-label">Saved briefing</div>
         <nav className="nav">
           <Link href="/" className={pathname === "/" ? "active" : ""}>
             <span className="nav-ic">
@@ -101,7 +101,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </nav>
 
         <div className="nav-sep" />
-        <div className="nav-section-label">Signal categories</div>
+        <div className="nav-section-label">Saved categories</div>
         <nav className="nav">
           {CAT_ROUTES.map(({ href, label, icon }) => (
             <Link key={href} href={href} className={pathname === href ? "active" : ""}>
