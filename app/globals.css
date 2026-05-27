@@ -360,9 +360,9 @@ button, a, input, select, textarea { touch-action: manipulation; }
 .section-head {
   display: flex; align-items: flex-end; justify-content: space-between;
   gap: 16px;
-  padding: 16px 0 14px;
+  padding: 24px 0 14px;
   border-top: 1px solid var(--line);
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .section-title {
   font-family: var(--serif); font-size: 24px; font-weight: 500;
@@ -380,7 +380,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
   border: 1px solid var(--line);
   border-radius: 3px;
   padding: 10px 12px;
-  margin-bottom: 12px;
+  margin-bottom: 18px;
 }
 .filter-row {
   display: flex;
@@ -543,7 +543,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
 .filter-row > input::placeholder, .search-wrap input::placeholder { color: var(--mute-2); }
 
 /* ─── Briefing row ─────────────────────────────────────────────── */
-.brief-list { display: flex; flex-direction: column; gap: 10px; }
+.brief-list { display: flex; flex-direction: column; gap: 16px; }
 .brief {
   background: var(--card);
   border: 1px solid var(--line);
@@ -759,6 +759,37 @@ button, a, input, select, textarea { touch-action: manipulation; }
   gap: 24px;
   padding: 14px 20px 18px;
 }
+.similar-companies {
+  padding: 16px 20px 18px;
+  border-top: 1px dashed var(--line-2);
+  background: #FCFAF4;
+}
+.similar-company-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+.similar-company-pill {
+  min-height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  padding: 8px 10px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.similar-company-pill strong {
+  color: var(--ink);
+  font-size: 12.5px;
+  line-height: 1.2;
+}
+.similar-company-pill span {
+  color: var(--mute);
+  font-size: 11px;
+  line-height: 1.25;
+}
 .b-col { min-width: 0; }
 .col-label {
   font-family: var(--mono);
@@ -927,6 +958,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
   .date-pick-wrap { grid-column: span 2; }
   .sort-wrap { grid-column: span 1; }
   .kpi-strip { grid-template-columns: repeat(2, 1fr); }
+  .similar-company-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .kpi-cell:nth-child(2) { border-right: none; }
   .topstripe .left span:nth-child(2),
   .topstripe .right span:nth-child(2) { display: none; }
@@ -1259,6 +1291,12 @@ button, a, input, select, textarea { touch-action: manipulation; }
     gap: 12px;
     padding: 12px 14px 15px;
   }
+  .similar-companies {
+    padding: 14px;
+  }
+  .similar-company-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .b-col {
     padding: 12px;
     background: var(--card-soft);
@@ -1370,9 +1408,13 @@ button, a, input, select, textarea { touch-action: manipulation; }
   }
   .brief-head,
   .brief-grid,
-  .brief-detail {
+  .brief-detail,
+  .similar-companies {
     padding-left: 12px;
     padding-right: 12px;
+  }
+  .similar-company-grid {
+    grid-template-columns: 1fr;
   }
   .brief-actions {
     flex-direction: column;

@@ -2,6 +2,11 @@ import type { JobSignal } from "./types";
 
 type CompanyIntel = NonNullable<JobSignal["companiesMentioned"]>[number];
 
+export type SimilarCompany = {
+  name: string;
+  sector: string;
+};
+
 const knownCompanies: CompanyIntel[] = [
   { name: "Accenture", sector: "IT consulting", description: "global systems integrator for enterprise, cloud, data, and AI delivery" },
   { name: "AIC", sector: "AI infrastructure", description: "server and storage infrastructure provider for AI and data-center workloads" },
@@ -72,4 +77,73 @@ export function getCompaniesMentioned(signal: JobSignal): CompanyIntel[] {
     sector: signal.sector,
     description: `company or event source in ${signal.sector}`
   }];
+}
+
+export function getCompaniesLikeThis(signal: JobSignal): SimilarCompany[] {
+  const text = [
+    signal.category,
+    signal.eventType,
+    signal.sector,
+    signal.companyEvent,
+    signal.summary ?? "",
+    signal.rawNotes ?? ""
+  ].join(" ").toLowerCase();
+
+  if (signal.category === "Banking / Payments / Fintech" || /payment|card|bank|crypto|stablecoin|trading|oms/.test(text)) {
+    return [
+      { name: "JPMorgan Chase", sector: "Banking / cards / payments" },
+      { name: "Capital One", sector: "Cards / consumer banking" },
+      { name: "Visa", sector: "Payment network" },
+      { name: "Mastercard", sector: "Payment network" },
+      { name: "Fiserv", sector: "Banking and payments platform" },
+      { name: "FIS", sector: "Core banking / payments" },
+      { name: "Stripe", sector: "Payments infrastructure" },
+      { name: "PayPal", sector: "Digital payments" },
+      { name: "Coinbase", sector: "Crypto platform" },
+      { name: "Chainalysis", sector: "Crypto compliance" }
+    ];
+  }
+
+  if (signal.category === "M&A / Divestiture / Carve-out" || /acquisition|merger|carve|divest|tsa|spin/.test(text)) {
+    return [
+      { name: "Accenture", sector: "M&A systems integration" },
+      { name: "Deloitte", sector: "Transformation consulting" },
+      { name: "Cognizant", sector: "IT services" },
+      { name: "IBM Consulting", sector: "Enterprise integration" },
+      { name: "Capgemini", sector: "Systems integration" },
+      { name: "TCS", sector: "IT services" },
+      { name: "Infosys", sector: "IT services" },
+      { name: "EPAM", sector: "Digital engineering" },
+      { name: "Kyndryl", sector: "Infrastructure separation" },
+      { name: "Wipro", sector: "IT services" }
+    ];
+  }
+
+  if (signal.category === "Cyber / Compliance / Regulatory" || /breach|cyber|iam|dlp|grc|compliance|ransomware|security/.test(text)) {
+    return [
+      { name: "CrowdStrike", sector: "Endpoint / incident response" },
+      { name: "Palo Alto Networks", sector: "Cloud and network security" },
+      { name: "Okta", sector: "Identity / IAM" },
+      { name: "Microsoft Security", sector: "Identity / cloud security" },
+      { name: "ServiceNow", sector: "GRC / security workflows" },
+      { name: "Splunk", sector: "Security data / SIEM" },
+      { name: "Zscaler", sector: "Zero trust security" },
+      { name: "Mandiant", sector: "Incident response" },
+      { name: "SailPoint", sector: "Identity governance" },
+      { name: "OneTrust", sector: "Privacy / governance" }
+    ];
+  }
+
+  return [
+    { name: "Microsoft", sector: "Cloud / AI platform" },
+    { name: "Amazon Web Services", sector: "Cloud platform" },
+    { name: "Google Cloud", sector: "Cloud / AI platform" },
+    { name: "ServiceNow", sector: "Workflow automation" },
+    { name: "Salesforce", sector: "CRM / enterprise apps" },
+    { name: "SAP", sector: "ERP / enterprise platform" },
+    { name: "Oracle", sector: "ERP / cloud platform" },
+    { name: "Databricks", sector: "Data / AI platform" },
+    { name: "Snowflake", sector: "Data platform" },
+    { name: "Palantir", sector: "Data / AI platform" }
+  ];
 }

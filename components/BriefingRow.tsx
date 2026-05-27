@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { categoryConfig } from "@/lib/categoryStyles";
-import { getCompaniesMentioned } from "@/lib/companyIntel";
+import { getCompaniesLikeThis, getCompaniesMentioned } from "@/lib/companyIntel";
 import { getUsJobLocations } from "@/lib/utils";
 import type { JobSignal } from "@/lib/types";
 import { CategoryChip, StrengthBadge, TierBadge } from "./Badges";
@@ -78,6 +78,7 @@ export function BriefingRow({
   const cat = categoryConfig[signal.category];
   const hasSource = signal.resourceLink && signal.resourceLink !== "#";
   const companies = getCompaniesMentioned(signal);
+  const companiesLikeThis = getCompaniesLikeThis(signal);
   const locations = getUsJobLocations(signal);
 
   return (
@@ -210,6 +211,18 @@ export function BriefingRow({
           </div>
         </section>
       </div>
+
+      <section className="similar-companies">
+        <div className="col-label">Companies like this</div>
+        <div className="similar-company-grid">
+          {companiesLikeThis.map((company) => (
+            <span key={`${signal.id}-like-${company.name}`} className="similar-company-pill">
+              <strong>{company.name}</strong>
+              <span>{company.sector}</span>
+            </span>
+          ))}
+        </div>
+      </section>
 
       {/* EXPANDED DETAIL */}
       {open && (
