@@ -31,7 +31,7 @@ function shiftDate(value: string, days: number) {
 }
 
 function formatVisibleDate(value: string) {
-  if (!value) return "Choose date";
+  if (!value) return "Optional exact date";
   return new Date(`${value}T00:00:00`).toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
@@ -51,6 +51,7 @@ export function FilterBar({
   const upd = <K extends keyof SignalFilters>(k: K, v: SignalFilters[K]) => onChange({ ...filters, [k]: v });
   const today = todayISO();
   const isAtToday = filters.exactDate ? filters.exactDate >= today : true;
+  const exactDateActive = Boolean(filters.exactDate);
   const setExactDate = (value: string) => onChange({ ...filters, exactDate: clampToToday(value) });
   const moveExactDate = (days: number) => setExactDate(shiftDate(filters.exactDate || todayISO(), days));
   const setDateRange = (value: DateRange) => onChange({ ...filters, dateRange: value, exactDate: "" });
@@ -96,8 +97,8 @@ export function FilterBar({
             </option>
           ))}
         </select>
-        <div className="date-pick-wrap">
-          <span className="date-label">Exact date</span>
+        <div className={`date-pick-wrap ${exactDateActive ? "exact-active" : ""}`}>
+          <span className="date-label">{exactDateActive ? "Exact date active" : "Exact date optional"}</span>
           <button
             type="button"
             className="date-step"
@@ -134,7 +135,7 @@ export function FilterBar({
               title="Clear exact date and use the range filter"
               onClick={() => setExactDate("")}
             >
-              Clear
+              Clear exact date
             </button>
           )}
         </div>

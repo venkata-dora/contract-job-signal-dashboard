@@ -55,6 +55,17 @@ function dateRangeLabel(range: SignalFilters["dateRange"]) {
   return labels[range];
 }
 
+function activeDateLabel(filters: SignalFilters) {
+  if (filters.exactDate) {
+    return new Date(`${filters.exactDate}T00:00:00`).toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric"
+    });
+  }
+  return dateRangeLabel(filters.dateRange);
+}
+
 export function DashboardPage({ category, weekly = false }: { category?: SignalCategory; weekly?: boolean }) {
   const { signals, isReady, deleteSignal, updateSignal, reset } = useSignals();
   const [filters, setFilters] = useState(defaultFilters(category, weekly));
@@ -106,21 +117,21 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
   }
 
   const weeklyKpis = weekly ? [
-    { label: "Shown by filter", value: list.length, sub: `${scoped.length} saved weekly targets` },
+    { label: "Shown by filter", value: list.length, sub: `${activeDateLabel(filters)} · ${scoped.length} saved weekly targets` },
     { label: "Immediate targets", value: visibleCritical, sub: "act this week" },
     { label: "Strong targets", value: list.filter(s => deriveTier(s.signalStrength, s.eventDate) === "STRONG").length, sub: "apply this week" },
     { label: "Watchlist", value: list.filter(s => ["WATCH","LOW"].includes(deriveTier(s.signalStrength, s.eventDate))).length, sub: "track for movement" }
   ] : null;
 
   const catKpis = category ? [
-    { label: "Shown by filter", value: list.length, sub: `${scoped.length} saved in this category` },
+    { label: "Shown by filter", value: list.length, sub: `${activeDateLabel(filters)} · ${scoped.length} saved in this category` },
     { label: "High in filter", value: visibleHigh, sub: "current visible set" },
     { label: "Immediate in filter", value: visibleCritical, sub: "current visible set" },
     { label: "Hiring markets shown", value: new Set(list.flatMap(s => getUsJobLocations(s))).size, sub: "current visible set" }
   ] : null;
 
   const mainKpis = [
-    { label: "Shown by filter", value: list.length, sub: `${scoped.length} saved signals total` },
+    { label: "Shown by filter", value: list.length, sub: `${activeDateLabel(filters)} · ${scoped.length} saved signals total` },
     { label: "Immediate targets", value: visibleCritical, sub: "act this week" },
     { label: "Top location", value: topLoc[0] as string, sub: `${topLoc[1]} matching signals` },
     { label: "Top software role", value: topRole[0] as string, sub: `${topRole[1]} matching signals` }
@@ -177,7 +188,7 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
                   <h3>No matching signals</h3>
                   <p>
                     {scoped.length > 0
-                      ? `There are ${scoped.length} saved signal${scoped.length === 1 ? "" : "s"}, but none match the current ${dateRangeLabel(filters.dateRange)} filter. Try All dates or clear filters.`
+                      ? `There are ${scoped.length} saved signal${scoped.length === 1 ? "" : "s"}, but none match ${filters.exactDate ? `the exact date ${activeDateLabel(filters)}` : `the current ${dateRangeLabel(filters.dateRange)} filter`}. Try All dates or clear filters.`
                       : "Adjust filters or add a new signal to begin tracking."}
                   </p>
                   <Link href="/add-signal" className="btn primary"><PlusIcon /> Add signal</Link>

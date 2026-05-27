@@ -434,6 +434,14 @@ button, a, input, select, textarea { touch-action: manipulation; }
   min-width: min(100%, 360px);
   flex: 2 1 420px;
 }
+.date-pick-wrap.exact-active {
+  background: #FFF8E8;
+  border-color: #D9B45F;
+  box-shadow: inset 3px 0 0 #B88312;
+}
+.date-pick-wrap.exact-active .date-label {
+  color: #7A4E05;
+}
 .date-pick-wrap .date-label {
   font-family: var(--mono);
   font-size: 10px;
@@ -515,8 +523,9 @@ button, a, input, select, textarea { touch-action: manipulation; }
 }
 .date-clear {
   color: #8C2A2E;
-  padding: 7px 5px;
+  padding: 7px 8px;
   flex: 0 0 auto;
+  white-space: nowrap;
 }
 .date-clear:hover { text-decoration: underline; }
 .filter-row > select, .filter-row > input {
