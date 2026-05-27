@@ -18,10 +18,16 @@ function todayISO() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function clampToToday(value: string) {
+  const today = todayISO();
+  if (!value) return "";
+  return value > today ? today : value;
+}
+
 function shiftDate(value: string, days: number) {
   const date = value ? new Date(`${value}T00:00:00`) : new Date();
   date.setDate(date.getDate() + days);
-  return date.toISOString().slice(0, 10);
+  return clampToToday(date.toISOString().slice(0, 10));
 }
 
 function formatVisibleDate(value: string) {
@@ -43,8 +49,11 @@ export function FilterBar({
   lockCategory?: boolean;
 }) {
   const upd = <K extends keyof SignalFilters>(k: K, v: SignalFilters[K]) => onChange({ ...filters, [k]: v });
-  const setExactDate = (value: string) => onChange({ ...filters, exactDate: value });
+  const today = todayISO();
+  const isAtToday = filters.exactDate ? filters.exactDate >= today : true;
+  const setExactDate = (value: string) => onChange({ ...filters, exactDate: clampToToday(value) });
   const moveExactDate = (days: number) => setExactDate(shiftDate(filters.exactDate || todayISO(), days));
+  const setDateRange = (value: DateRange) => onChange({ ...filters, dateRange: value, exactDate: "" });
 
   return (
     <div className="filter-bar">
@@ -75,7 +84,7 @@ export function FilterBar({
         </select>
         <input placeholder="Location filter…" value={filters.location} onChange={e => upd("location", e.target.value)} />
         <input placeholder="Role filter…" value={filters.role} onChange={e => upd("role", e.target.value)} />
-        <select value={filters.dateRange} onChange={e => upd("dateRange", e.target.value as DateRange)}>
+        <select value={filters.dateRange} onChange={e => setDateRange(e.target.value as DateRange)}>
           {dateRanges.map((range) => (
             <option key={range} value={range}>
               {range === "24h" ? "Past 24 hours" :
@@ -103,6 +112,7 @@ export function FilterBar({
               type="date"
               aria-label="Filter by exact event date"
               value={filters.exactDate}
+              max={today}
               onChange={e => setExactDate(e.target.value)}
             />
           </label>
@@ -111,6 +121,8 @@ export function FilterBar({
             className="date-step"
             aria-label="Next day"
             onClick={() => moveExactDate(1)}
+            disabled={isAtToday}
+            title={isAtToday ? "Today is the latest available date" : "Next day"}
           >
             <ChevronIcon direction="right" />
           </button>
@@ -119,6 +131,7 @@ export function FilterBar({
               type="button"
               className="date-clear"
               aria-label="Clear exact date filter"
+              title="Clear exact date and use the range filter"
               onClick={() => setExactDate("")}
             >
               Clear

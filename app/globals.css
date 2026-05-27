@@ -503,6 +503,16 @@ button, a, input, select, textarea { touch-action: manipulation; }
   background: #EEF1F8 !important;
   border-color: #C8D4E6 !important;
 }
+.date-step:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+  color: var(--mute);
+  background: var(--card-soft) !important;
+}
+.date-step:disabled:hover {
+  border-color: var(--line) !important;
+  background: var(--card-soft) !important;
+}
 .date-clear {
   color: #8C2A2E;
   padding: 7px 5px;
