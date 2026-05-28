@@ -1,11 +1,86 @@
 import type { JobSignal } from "./types";
 
 const now = "2026-05-27T12:00:00.000Z";
+const now28 = "2026-05-28T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
   {
-    id: "news-2026-05-27-proofpoint-active-exploits-protection",
+    id: "news-2026-05-28-cisa-kev-developer-supply-chain-attacks",
     rank: 1,
+    companyEvent: "CISA KEV May 27: Three developer-toolchain supply chain attacks added (TanStack npm, Nx Console VS Code, DAEMON Tools Lite)",
+    eventType: "Software Supply Chain Attack / CISA KEV Addition",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-05-28",
+    resourceLink: "https://windowsnews.ai/article/cisa-kev-may-27-2026-supply-chain-attacks-via-daemon-tools-tanstack-nx-console.420155",
+    sourceName: "CISA / Windows Forum",
+    sector: "Cybersecurity / Software supply chain",
+    companiesMentioned: [
+      {
+        name: "CISA",
+        sector: "U.S. federal cybersecurity agency",
+        relationship: "Source / award issuer",
+        description: "Cybersecurity and Infrastructure Security Agency — U.S. government body that mandates federal patching via KEV catalog"
+      }
+    ],
+    summary: "CISA added three CVEs to its KEV catalog on May 27 covering coordinated supply chain attacks: TanStack npm packages (84 malicious versions published May 11, GitHub and Grafana Labs downstream victims), Nx Console VS Code extension (compromised May 18, credential stealer), and DAEMON Tools Lite (official installer trojanized April–May 2026). Federal agencies must remediate by June 17.",
+    likelyJobLocations: ["Washington, DC", "Northern Virginia", "New York, NY", "San Francisco Bay Area, CA", "Austin, TX", "Chicago, IL", "Seattle, WA", "Remote USA security delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Developer toolchain supply chain attacks hit every enterprise with active JavaScript/React/Nx build pipelines. Federal agencies (DC/NoVa) face mandatory June 17 deadline. Large enterprise security teams everywhere must audit and remediate.",
+    whyThisMayCreateContractSoftwareJobs: "Three simultaneous developer toolchain compromises create immediate contract demand: software composition analysis (SCA) audits across npm dependency trees, CI/CD pipeline security hardening, developer workstation forensics, credential rotation at scale (GitHub tokens, cloud keys, API secrets), YARA-based threat hunting, and security engineering to harden build/deploy pipelines against future supply chain attacks.",
+    likelySoftwareRoles: ["DevSecOps Engineer", "Software Composition Analysis (SCA) Engineer", "CI/CD Security Engineer", "Incident Response Engineer", "Threat Hunter", "Security Automation Engineer", "Cloud Security Engineer", "AppSec Engineer", "Backend Security Engineer"],
+    bestSearchKeywords: ["supply chain attack remediation contractor", "SCA software composition analysis engineer", "CI/CD pipeline security hardening", "npm dependency audit engineer", "DevSecOps supply chain contractor", "CISA KEV remediation engineer", "developer toolchain security engineer", "credential rotation automation engineer"],
+    actionPlan: "Target enterprise security teams, federal contractors (June 17 FCEB deadline), and large engineering orgs using React/TanStack/Nx. Pitch SCA audit, CI/CD hardening, and developer workstation incident response. Look for CISA compliance roles at federal SIs (Leidos, SAIC, Booz Allen).",
+    confidenceNote: "High — three active CISA KEV additions in 24h, covering mainstream developer tooling (TanStack, Nx Console are used by virtually every React/Angular enterprise shop). Federal mandate creates non-discretionary remediation spend.",
+    watchFor: ["Enterprise SCA audit RFPs", "Federal agency CI/CD hardening contracts", "GitHub/GitLab supply chain security roles", "npm/PyPI dependency security posture work", "Follow-on KEV additions targeting JavaScript ecosystem"],
+    rawNotes: "CISA added CVE-2026-8398 (DAEMON Tools Lite RCE), CVE-2026-45321 (TanStack prototype pollution), CVE-2026-48027 (Nx Console command injection) on May 27 2026. TanStack attack attributed to threat group TeamPCP — first documented malicious npm package with valid SLSA provenance. GitHub and Grafana Labs were downstream breach victims. Federal remediation deadline June 17. U.S. impact: any enterprise or federal agency using React/TanStack/Nx in build pipelines is directly affected.",
+    createdAt: now28,
+    updatedAt: now28
+  },
+  {
+    id: "news-2026-05-28-huntington-cadence-bank-system-conversion",
+    rank: 2,
+    companyEvent: "Huntington Bank / Cadence Bank: June 22 customer account and digital banking system conversion goes live — active integration window open",
+    eventType: "Post-Merger System Conversion / Core Banking Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["Banking / Payments / Fintech"],
+    signalStrength: "High",
+    eventDate: "2026-05-28",
+    resourceLink: "https://www.prnewswire.com/news-releases/huntington-bank-completes-merger-with-cadence-bank-expanding-presence-across-texas-and-the-south-302676243.html",
+    sourceName: "PR Newswire",
+    sector: "Banking / Regional bank merger integration",
+    companiesMentioned: [
+      {
+        name: "Huntington Bancshares",
+        sector: "Regional banking",
+        relationship: "Acquirer",
+        description: "Columbus, OH-based regional bank; now the eighth-largest bank in Texas following Cadence acquisition"
+      },
+      {
+        name: "Cadence Bank",
+        sector: "Regional banking",
+        relationship: "Acquired company",
+        description: "Houston/Tupelo-based $53B regional bank being integrated into Huntington systems as of June 22 2026"
+      }
+    ],
+    summary: "Huntington Bank's acquisition of Cadence Bank ($7.4B deal, closed Feb 2026) enters its active system conversion window: Cadence Business Online preview opened May 26, mortgage loans transition May 30, and all customer accounts and digital banking fully convert to Huntington systems on June 22, 2026. Branch names change to Huntington on June 22.",
+    likelyJobLocations: ["Columbus, OH", "Houston, TX", "Dallas, TX", "Austin, TX", "Birmingham, AL", "Memphis, TN", "Jackson, MS", "Charlotte, NC", "Chicago, IL", "Remote USA bank tech delivery"],
+    workMode: "Hybrid / On-site",
+    whyTheseLocations: "Huntington HQ in Columbus; Cadence's core footprint is Texas, Alabama, Mississippi, Tennessee. System conversion teams typically on-site or near data centers during cutover. Huntington's technology and operations teams are distributed across the Midwest and South.",
+    whyThisMayCreateContractSoftwareJobs: "June 22 full-cutover creates concentrated contract demand: core banking data migration, account number re-mapping, routing number updates, digital banking cutover (online/mobile), debit card issuance automation, direct deposit and ACH migration, bill pay platform transition, wealth management system integration, and post-conversion reconciliation and defect triage.",
+    likelySoftwareRoles: ["Core Banking Integration Engineer", "Data Migration Engineer", "ETL / Data Engineer", "Digital Banking Platform Engineer", "Payments / ACH Developer", "QA / SDET (banking integration)", "Business Systems Analyst", "Project Manager (bank conversion)", "API Integration Engineer"],
+    bestSearchKeywords: ["Huntington bank system conversion contractor", "bank core banking integration engineer", "data migration banking contract", "ACH digital banking cutover engineer", "Huntington Cadence integration job", "bank merger technology integration", "core banking data migration contract", "Columbus OH bank technology contract"],
+    actionPlan: "Target Huntington Bancshares technology, operations, and digital banking teams for June 22 cutover support. Also target Huntington's technology integration vendors (FIS, Fiserv, Jack Henry are common). Post-cutover defect triage work typically runs 60-90 days. Apply immediately — conversion is 3.5 weeks away.",
+    confidenceNote: "High — merger is closed, system cutover date is public (June 22), active transition communications sent to customers. This is confirmed implementation work, not speculative.",
+    watchFor: ["Huntington post-conversion stabilization roles", "Core banking defect triage contract", "Huntington digital banking enhancements post-integration", "Second phase: loan system conversion timeline", "Huntington hiring surge in Columbus and Texas"],
+    rawNotes: "Merger closed Feb 2, 2026. $7.4B deal, Cadence had $53B in assets. Customer account conversion June 22 2026. Business Online preview started May 26. Mortgage loans transition May 30. Online/mobile banking cutover June 22. New account and routing numbers issued. U.S. impact: all conversion work is U.S.-based, covering Texas, Midwest, Southeast footprint.",
+    createdAt: now28,
+    updatedAt: now28
+  },
+  {
+    id: "news-2026-05-27-proofpoint-active-exploits-protection",
+    rank: 3,
     companyEvent: "Proofpoint launches Active Exploits Protection for AI-era vulnerability attacks",
     eventType: "AppSec / Vulnerability Remediation Prioritization",
     category: "Cyber / Compliance / Regulatory",
