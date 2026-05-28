@@ -133,6 +133,7 @@ export function BriefingRow({
   const highlightedCompanyNames = storyCompanies.map((company) => company.name);
   const similarLimit = storyCompanies.length > 1 ? 3 : 5;
   const allSimilarSections = storyCompanies
+    .filter((company) => company.relationship !== "Acquired company")
     .map((company) => ({
       company,
       groups: groupSimilarCompanies(getCompaniesLikeCompany(company, signal).slice(0, similarLimit))

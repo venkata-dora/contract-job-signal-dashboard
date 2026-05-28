@@ -297,8 +297,20 @@ export function getCompaniesLikeCompany(company: CompanyIntel, signal: JobSignal
     ]);
   }
 
+  // ── Regional / community banks ────────────────────────────────
+  if (/regional bank|community bank|savings bank|credit union|bancshares|bancorp|bancorporation/.test(c)) {
+    return exclude([
+      { name: "Truist Financial", sector: "Regional banking" },
+      { name: "Regions Bank", sector: "Regional banking" },
+      { name: "Citizens Financial", sector: "Regional banking" },
+      { name: "Fifth Third Bank", sector: "Regional banking" },
+      { name: "KeyBanc", sector: "Regional banking" },
+      { name: "Synovus", sector: "Regional banking" }
+    ]);
+  }
+
   // ── Banking / cards / payments (traditional) ──────────────────
-  if (/banking|card.*issu|payment.*network|consumer bank|retail bank|issuer|fiserv|card.*portfolio/.test(c)) {
+  if (/card.*issu|payment.*network|consumer bank|retail bank|issuer|fiserv|card.*portfolio/.test(c)) {
     return exclude([
       { name: "JPMorgan Chase", sector: "Banking / cards / payments" },
       { name: "Capital One", sector: "Cards / consumer banking" },
