@@ -317,7 +317,7 @@ export const seedSignals: JobSignal[] = [
   {
     id: "news-2026-05-27-sap-sapphire-autonomous-enterprise",
     rank: 9,
-    companyEvent: "SAP Sapphire 2026: Business AI Platform + Autonomous Enterprise Suite + agent-led ERP migration (35% effort reduction)",
+    companyEvent: "SAP at Sapphire 2026 (annual SAP conference): Business AI Platform + Autonomous Enterprise Suite + agent-led ERP migration (35% effort reduction)",
     eventType: "Enterprise AI Rollout / ERP Modernization",
     category: "AI / Cloud / Enterprise Platforms",
     secondaryCategories: ["M&A / Divestiture / Carve-out"],
@@ -387,7 +387,7 @@ export const seedSignals: JobSignal[] = [
   {
     id: "news-2026-05-27-servicenow-knowledge-2026-ai-control-tower",
     rank: 10,
-    companyEvent: "ServiceNow Knowledge 2026: AI Control Tower + Autonomous Security & Risk with Armis and Veza integrations",
+    companyEvent: "ServiceNow at Knowledge 2026 (annual ServiceNow conference): AI Control Tower + Autonomous Security & Risk with Armis and Veza integrations",
     eventType: "Enterprise AI Rollout / Security Platform Integration",
     category: "AI / Cloud / Enterprise Platforms",
     secondaryCategories: ["Cyber / Compliance / Regulatory"],

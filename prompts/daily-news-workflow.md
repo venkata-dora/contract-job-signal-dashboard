@@ -215,10 +215,20 @@ These look minor but are real job signals:
 ## Step 5 — For every added signal, include all fields
 
 - companyEvent
+  - Format: "[Company] at [Event] ([what the event is]): [what happened]"
+  - If a company name is followed by a conference or product launch name that is NOT a company, clarify it in parentheses.
+  - Examples:
+    - CORRECT: "SAP at Sapphire 2026 (annual SAP conference): Business AI Platform launch"
+    - CORRECT: "ServiceNow at Knowledge 2026 (annual ServiceNow conference): AI Control Tower expansion"
+    - CORRECT: "Salesforce at Dreamforce 2026 (annual Salesforce conference): Agentforce rollout"
+    - WRONG: "SAP Sapphire 2026: ..." — reader cannot tell if Sapphire is a company or event
+  - General rule: if the word after the company name could be mistaken for another company or brand, add a parenthetical: (annual conference), (industry summit), (product launch event), etc.
 - eventType
 - category
 - signalStrength
-- eventDate (exact date from source, not today if older)
+- eventDate
+  - Use today's date (the date you ran the daily news workflow) as eventDate for all signals collected in this run, regardless of when the underlying event was announced.
+  - Preserve the actual announcement/event date in rawNotes.
 - resourceLink (real URL — do not use "#" placeholder)
 - sourceName
 - sector

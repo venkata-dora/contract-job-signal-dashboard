@@ -65,6 +65,15 @@ function reconcileSeedCorrections(stored: JobSignal[]) {
       };
     }
 
+    // Patch companyEvent titles to add conference clarification
+    const titleFixes: Record<string, string> = {
+      "news-2026-05-27-sap-sapphire-autonomous-enterprise": "SAP at Sapphire 2026 (annual SAP conference): Business AI Platform + Autonomous Enterprise Suite + agent-led ERP migration (35% effort reduction)",
+      "news-2026-05-27-servicenow-knowledge-2026-ai-control-tower": "ServiceNow at Knowledge 2026 (annual ServiceNow conference): AI Control Tower + Autonomous Security & Risk with Armis and Veza integrations",
+    };
+    if (signal.id in titleFixes && signal.companyEvent !== titleFixes[signal.id]) {
+      return { ...signal, companyEvent: titleFixes[signal.id] };
+    }
+
     // Patch eventDate for the 5 new May-27 signals that were initially saved with wrong event dates
     const eventDateFixes: Record<string, string> = {
       "news-2026-05-27-sap-sapphire-autonomous-enterprise": "2026-05-27",
