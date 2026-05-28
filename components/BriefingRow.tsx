@@ -1,12 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { categoryConfig } from "@/lib/categoryStyles";
-import { getCompaniesLikeThis, getCompaniesMentioned } from "@/lib/companyIntel";
+import { getCompaniesLikeCompany, getCompaniesMentioned } from "@/lib/companyIntel";
 import { getUsJobLocations } from "@/lib/utils";
 import type { JobSignal } from "@/lib/types";
-import { CategoryChip, StrengthBadge, TierBadge } from "./Badges";
 
 function fmtDate(iso: string) {
   return new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
@@ -20,6 +18,59 @@ function daysAgo(iso: string) {
   if (days > 1 && days < 30) return `${days} days ago`;
   if (days < 60) return "1 month ago";
   return `${Math.floor(days / 30)} months ago`;
+}
+
+function escapeRegex(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function buildHighlightTerms(companyNames: string[]): string[] {
+  const terms = new Set<string>();
+  for (const name of companyNames) {
+    if (!name) continue;
+    terms.add(name);
+    // Also match first word if it's a meaningful standalone name (5+ chars)
+    const firstWord = name.split(/[\s/]/)[0];
+    if (firstWord.length >= 5 && firstWord !== name) {
+      terms.add(firstWord);
+    }
+  }
+  return Array.from(terms);
+}
+
+function highlightCompanies(text: string, companyNames: string[]) {
+  const names = companyNames.filter(Boolean);
+  if (names.length === 0) return text;
+
+  const terms = buildHighlightTerms(names);
+  const pattern = new RegExp(`(${terms.map(escapeRegex).join("|")})`, "gi");
+  return text.split(pattern).map((part, index) => {
+    const isCompany = terms.some((name) => name.toLowerCase() === part.toLowerCase());
+    return isCompany ? <mark key={`${part}-${index}`} className="company-highlight">{part}</mark> : part;
+  });
+}
+
+function companyGroupLabel(sector: string) {
+  const lower = sector.toLowerCase();
+  if (/identity|iam|governance/.test(lower)) return "Identity / governance";
+  if (/incident|endpoint|security|zero trust|siem|grc|privacy/.test(lower)) return "Security platforms";
+  if (/cloud|ai|data|workflow|platform/.test(lower)) return "Cloud / data platforms";
+  if (/bank|card|payment|fintech|crypto/.test(lower)) return "Banking / payments";
+  if (/consulting|services|integration|engineering/.test(lower)) return "Services / integrators";
+  return "Comparable companies";
+}
+
+function groupSimilarCompanies(companies: Array<{ name: string; sector: string }>) {
+  return companies.reduce<Array<{ label: string; companies: Array<{ name: string; sector: string }> }>>((groups, company) => {
+    const label = companyGroupLabel(company.sector);
+    const existing = groups.find((group) => group.label === label);
+    if (existing) {
+      existing.companies.push(company);
+    } else {
+      groups.push({ label, companies: [company] });
+    }
+    return groups;
+  }, []);
 }
 
 const PinIcon = () => (
@@ -56,12 +107,6 @@ const TrashIcon = () => (
   </svg>
 );
 
-const DocIcon = () => (
-  <svg width={11} height={11} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M7 3h8l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"/><path d="M14 3v5h5"/>
-  </svg>
-);
-
 export function BriefingRow({
   signal,
   rank,
@@ -75,174 +120,179 @@ export function BriefingRow({
   onRemove?: (id: string) => void;
   defaultOpen?: boolean;
 }) {
-  const [open, setOpen] = useState(defaultOpen);
+  const [detailOpen, setDetailOpen] = useState(defaultOpen);
+  const [companiesOpen, setCompaniesOpen] = useState(false);
   const cat = categoryConfig[signal.category];
   const hasSource = signal.resourceLink && signal.resourceLink !== "#";
   const companies = getCompaniesMentioned(signal);
-  const companiesLikeThis = getCompaniesLikeThis(signal);
+  const primaryCompanies = companies.filter((company) => company.relationship !== "Partner / vendor");
+  const digestCompanies = primaryCompanies.length > 0 ? primaryCompanies : companies.slice(0, 1);
+  const storyCompanies = companies.length > 0 ? companies : digestCompanies;
+  const visibleStoryCompanies = companiesOpen ? storyCompanies : storyCompanies.slice(0, 2);
+  const hiddenCompanyCount = Math.max(0, storyCompanies.length - visibleStoryCompanies.length);
+  const highlightedCompanyNames = storyCompanies.map((company) => company.name);
+  const similarLimit = storyCompanies.length > 1 ? 3 : 5;
+  const allSimilarSections = storyCompanies
+    .map((company) => ({
+      company,
+      groups: groupSimilarCompanies(getCompaniesLikeCompany(company, signal).slice(0, similarLimit))
+    }))
+    .filter(({ groups }) => groups.length > 0);
   const locations = getUsJobLocations(signal);
 
   return (
-    <article className="brief" style={{ borderLeftColor: cat?.accent ?? "#1B2A4E" }}>
-      {/* HEAD */}
-      <div className="brief-head">
-        <div className="brief-rank">
-          <div className="rank-num">{String(rank).padStart(2, "0")}</div>
-          <div className="rank-meta">
-            <StrengthBadge strength={signal.signalStrength} />
-          </div>
-        </div>
-
-        <div className="brief-body">
-          <div className="brief-titleline">
-            <h3 className="brief-title">{signal.companyEvent}</h3>
-            <button className="brief-toggle" onClick={() => setOpen(!open)} aria-label="Expand">
-              <ChevronIcon open={open} />
-            </button>
-          </div>
-          <div className="brief-subline">
-            <span className="evt-type">{signal.eventType}</span>
-            <span className="dot-sep">·</span>
-            <span>{signal.sector}</span>
-            <span className="dot-sep">·</span>
-            <span>{fmtDate(signal.eventDate)}</span>
-            <span className="agoref">({daysAgo(signal.eventDate)})</span>
-          </div>
-          <div className="brief-chips">
-            <TierBadge strength={signal.signalStrength} eventDate={signal.eventDate} />
-            <CategoryChip category={signal.category} />
-            <span className="workmode">
-              <PinIcon /> {signal.workMode}
-            </span>
-          </div>
-
-          {(signal.summary || signal.rawNotes) && (
-            <p className="brief-summary">
-              {signal.summary ?? signal.rawNotes}
-              {hasSource && (
-                <a href={signal.resourceLink} target="_blank" rel="noopener noreferrer" className="inline-src">
-                  Read full article <ExtIcon />
-                </a>
-              )}
-            </p>
+    <article className="brief" style={{ borderLeftColor: cat?.accent ?? "#1A7F37" }}>
+      <header className="brief-head">
+        <div className="brief-meta">
+          <span>{String(rank).padStart(2, "0")}</span>
+          <span>{fmtDate(signal.eventDate)}</span>
+          <span>{daysAgo(signal.eventDate)}</span>
+          {hasSource ? (
+            <a href={signal.resourceLink} target="_blank" rel="noopener noreferrer">
+              {signal.sourceName || "Source"} <ExtIcon />
+            </a>
+          ) : (
+            <span>{signal.sourceName || "Local source"}</span>
           )}
         </div>
 
-        <div className="brief-actions">
-          <div className="src-block">
-            <div className="src-label">Original source</div>
-            {hasSource ? (
-              <a href={signal.resourceLink} target="_blank" rel="noopener noreferrer" className="src-link">
-                <span className="src-name">{signal.sourceName || "View source"}</span>
-                <ExtIcon />
-              </a>
-            ) : (
-              <span className="src-link src-placeholder">
-                <span className="src-name">{signal.sourceName || "Local source"}</span>
-                <DocIcon />
-              </span>
-            )}
-          </div>
-          <div className="row-icons">
-            {onEdit && (
-              <button title="Edit" onClick={() => onEdit(signal)}>
-                <EditIcon />
-              </button>
-            )}
-            {onRemove && (
-              <button
-                title="Delete"
-                onClick={() => {
-                  if (window.confirm("Remove this signal?")) onRemove(signal.id);
-                }}
-              >
-                <TrashIcon />
-              </button>
-            )}
-          </div>
+        <div className="brief-tools">
+          <button title={detailOpen ? "Collapse details" : "Expand details"} onClick={() => setDetailOpen(!detailOpen)} aria-label={detailOpen ? "Collapse details" : "Expand details"}>
+            <ChevronIcon open={detailOpen} />
+          </button>
+          {onEdit && (
+            <button title="Edit" onClick={() => onEdit(signal)}>
+              <EditIcon />
+            </button>
+          )}
+          {onRemove && (
+            <button
+              title="Delete"
+              onClick={() => {
+                if (window.confirm("Remove this signal?")) onRemove(signal.id);
+              }}
+            >
+              <TrashIcon />
+            </button>
+          )}
         </div>
-      </div>
 
-      {companies.length > 0 && (
-        <section className="company-strip" aria-label="Companies mentioned">
-          <div className="company-strip-label">Companies in this news</div>
-          <div className="company-pills">
-            {companies.map((company) => (
-              <span key={`${signal.id}-${company.name}`} className="company-pill">
-                <span className="company-pill-main">
-                  <strong>{company.name}</strong>
-                  <span>{company.sector}</span>
-                </span>
-                {company.relationship && (
-                  <span className={`company-rel ${company.relationship === "Primary target" ? "primary-rel" : ""}`}>
-                    {company.relationship}
-                  </span>
-                )}
-              </span>
-            ))}
-          </div>
-        </section>
-      )}
+        <h3 className="brief-title">{highlightCompanies(signal.companyEvent, highlightedCompanyNames)}</h3>
 
-      {/* THREE COLUMN GRID — Where / Why / Roles */}
-      <div className="brief-grid">
-        <section className="b-col">
-          <div className="col-label">Where jobs are likely</div>
-          <ul className="loc-list">
-            {locations.map((l, i) => (
-              <li key={i}>
-                <PinIcon />
-                <span>{l}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="b-col">
-          <div className="col-label">Why jobs may appear</div>
-          <p className="why-text">{signal.whyThisMayCreateContractSoftwareJobs}</p>
-        </section>
-
-        <section className="b-col">
-          <div className="col-label">Likely software roles</div>
-          <div className="role-chips">
-            {signal.likelySoftwareRoles.map((r, i) => (
-              <span key={i} className="role-chip">{r}</span>
-            ))}
-          </div>
-        </section>
-      </div>
-
-      <section className="similar-companies">
-        <div className="col-label">Companies like this</div>
-        <div className="similar-company-grid">
-          {companiesLikeThis.map((company) => (
-            <span key={`${signal.id}-like-${company.name}`} className="similar-company-pill">
-              <strong>{company.name}</strong>
-              <span>{company.sector}</span>
-            </span>
-          ))}
+        <div className="brief-subline">
+          <span>{signal.eventType}</span>
+          <span>{signal.sector}</span>
+          <span><PinIcon /> {signal.workMode}</span>
         </div>
-      </section>
 
-      {/* EXPANDED DETAIL */}
-      {open && (
-        <div className="brief-detail">
-          <div className="detail-grid">
-            <div>
-              <div className="col-label">Companies mentioned</div>
-              <div className="company-detail-list">
-                {companies.map((company) => (
-                  <div key={`${signal.id}-detail-${company.name}`} className="company-detail">
-                    <div className="company-detail-name">{company.name}</div>
-                    <div className="company-detail-sector">
-                      {company.relationship ? `${company.relationship} · ` : ""}{company.sector}
-                    </div>
-                    <p>{company.description}</p>
+        {(signal.summary || signal.rawNotes) && (
+          <p className="brief-summary">{highlightCompanies(signal.summary ?? signal.rawNotes ?? "", highlightedCompanyNames)}</p>
+        )}
+
+        <aside className="brief-side" aria-label="Signal details">
+          <div>
+            <span>Signal</span>
+            <strong>{signal.signalStrength}</strong>
+          </div>
+          <div>
+            <span>Type</span>
+            <strong>{cat?.short ?? signal.category}</strong>
+          </div>
+          <div>
+            <span>Companies</span>
+            <strong>{storyCompanies.length}</strong>
+          </div>
+        </aside>
+      </header>
+
+      {(storyCompanies.length > 0 || allSimilarSections.length > 0) && (
+        <aside className="similar-sidebox" aria-label="Company context">
+          {storyCompanies.length > 0 && (
+            <div className="news-companies">
+              <h4>Companies in this news</h4>
+              <div className="news-company-list">
+                {visibleStoryCompanies.map((company) => (
+                  <div key={`${signal.id}-news-company-${company.name}`} className="news-company-item">
+                    <strong>{company.name}</strong>
+                    <span>{company.sector}</span>
+                    <small>{company.relationship}</small>
+                    {company.description && <p>{company.description}</p>}
                   </div>
                 ))}
               </div>
+              {storyCompanies.length > 2 && (
+                <button className="company-expand" type="button" onClick={() => setCompaniesOpen(!companiesOpen)}>
+                  {companiesOpen ? "Show fewer companies" : `Show ${hiddenCompanyCount} more`}
+                </button>
+              )}
             </div>
+          )}
+
+          {allSimilarSections.map(({ company, groups }) => (
+            <div key={`${signal.id}-similar-${company.name}`} className="similar-companies">
+              <h4>Companies like <span>{company.name}</span></h4>
+              {groups.map((group) => (
+                <div key={`${signal.id}-${company.name}-${group.label}`} className="similar-group">
+                  <div className="similar-group-label">{group.label}</div>
+                  <div className="similar-group-list">
+                    {group.companies.map((peer) => (
+                      <span key={`${signal.id}-${company.name}-similar-${peer.name}`}>
+                        <strong>{peer.name}</strong>
+                        <small>{peer.sector}</small>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ))}
+        </aside>
+      )}
+
+      <section className="digest-section digest-body" aria-label="Digest notes">
+        <div className="digest-note">
+          <h4>Why this matters for contract work</h4>
+          <p>{highlightCompanies(signal.whyThisMayCreateContractSoftwareJobs, highlightedCompanyNames)}</p>
+        </div>
+
+        <div className="digest-note-grid">
+          <div className="digest-note">
+            <h4>Likely locations</h4>
+            <div className="location-chips">
+              {locations.map((location, i) => (
+                <span key={`${signal.id}-location-${i}`} className="location-chip">
+                  <PinIcon />
+                  {location}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="digest-note">
+            <h4>Likely roles</h4>
+            <div className="role-chips">
+              {signal.likelySoftwareRoles.map((r, i) => (
+                <span key={i} className="role-chip">{r}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <button
+        className="detail-toggle"
+        type="button"
+        onClick={() => setDetailOpen(!detailOpen)}
+        aria-expanded={detailOpen}
+      >
+        <ChevronIcon open={detailOpen} />
+        {detailOpen ? "Hide details" : "Show details"}
+      </button>
+
+      {/* EXPANDED DETAIL */}
+      {detailOpen && (
+        <div className="brief-detail">
+          <div className="detail-grid">
             <div>
               <div className="col-label">Why these locations</div>
               <p className="why-text">{signal.whyTheseLocations}</p>

@@ -28,6 +28,29 @@ Forced-change signals include events that force:
 - QA/testing
 - AppSec remediation
 - business-systems changes
+- regulatory rule implementation (new rule finalized = implementation starts)
+- consent order / enforcement action with tech remediation
+- SEC 8-K Item 1.05 material cybersecurity incident
+- CISA Known Exploited Vulnerability (KEV) catalog addition
+- healthcare FHIR / 21st Century Cures compliance
+- insurance Guidewire / Duck Creek platform implementation
+- mainframe modernization
+- federal FISMA / FedRAMP / CMMC compliance program
+- BaaS / sponsor-bank transition or exit
+- hospital / health system merger (always has large IT integration work)
+- PE-backed buyout of a software or services company (always has integration work)
+
+## What must never be missed
+
+Every daily run must check for:
+1. SEC EDGAR 8-K filings — cyber (Item 1.05), M&A, and material events
+2. OCC / FDIC / Fed / CFPB / FTC / HHS OCR enforcement actions
+3. CISA KEV catalog updates
+4. Card issuer transition or card program changes
+5. Core banking vendor selection or conversion announcements
+6. Hospital / health system M&A
+7. Insurance company M&A or platform migration
+8. Named enterprise AI implementation with SI partner
 
 ## Hard constraints
 

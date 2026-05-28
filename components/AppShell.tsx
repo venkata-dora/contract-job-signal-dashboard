@@ -57,9 +57,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     function refreshCounts() {
       const signals = loadSignals();
-      const c: Record<string, number> = { total: signals.length };
+      const now = new Date();
+      now.setHours(0, 0, 0, 0);
+      const tomorrow = new Date(now);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const todaySignals = signals.filter(s => {
+        const d = new Date(`${s.eventDate}T00:00:00`).getTime();
+        return d >= now.getTime() && d < tomorrow.getTime();
+      });
+      const c: Record<string, number> = { total: todaySignals.length, allTotal: signals.length };
       CAT_ROUTES.forEach(({ href, cat }) => {
-        if (cat) c[href] = signals.filter(s => s.category === cat).length;
+        if (cat) c[href] = todaySignals.filter(s => s.category === cat).length;
       });
       c["/weekly"] = Math.min(10, signals.length);
       setCounts(c);
@@ -149,7 +157,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
           <div className="right">
             <span>{today.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric" })}</span>
-            <span>{counts.total ?? 0} SAVED SIGNALS</span>
+            <span>{counts.allTotal ?? 0} SAVED SIGNALS</span>
           </div>
         </div>
         {children}

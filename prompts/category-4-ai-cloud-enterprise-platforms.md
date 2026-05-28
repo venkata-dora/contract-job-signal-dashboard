@@ -768,6 +768,12 @@ Expected:
 - Event Type = Retail Loyalty / E-commerce Platform Modernization
 - Signal Strength = Medium-High or High
 
+companiesMentioned rules:
+- Only list companies that are direct actors: the announcing company, the named implementation partner, or the acquired company.
+- Use each company's TRUE sector, not their role in this deal.
+- Do NOT list Snowflake, Databricks, Microsoft Fabric, SAP, Salesforce, ServiceNow, Workday, Oracle, AWS, Azure, GCP as companiesMentioned. These are platform tools/infrastructure that are mentioned in signals but are not the news actors. List them in keywords and roles, not in companiesMentioned.
+- Exception: if the news IS specifically about one of these companies (e.g. "Salesforce announces X"), then include them as primary actor.
+
 Acceptance criteria:
 - npm run dev works.
 - AI Platforms page renders without runtime errors.

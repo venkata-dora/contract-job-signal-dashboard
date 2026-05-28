@@ -406,12 +406,14 @@ Add at least 8 Banking / Payments / Fintech sample signals.
 Required examples:
 1. Apple Card issuer transition from Goldman Sachs to Chase
 2. Fifth Third and Comerica merger
-3. NBH Bank and Vista Bank systems integration
+3. Example regional bank merger with core banking systems integration
 4. Infinant Interlace tokenized deposit platform release
 5. Barclays investment in Ubyx digital money connectivity
-6. Capital One acquiring Brex
-7. JPMorgan acquiring WealthOS
+6. Example fintech exiting BaaS sponsor-bank relationship (hypothetical)
+7. Example large bank acquiring a wealthtech platform (hypothetical)
 8. Example bank consent order AML/KYC remediation
+
+IMPORTANT: Use only real, verifiable events with confirmed public sources. Do not fabricate acquisitions or mergers that have not been publicly announced. For hypothetical examples, mark them clearly as hypothetical seed data and use generic company names like "Regional Bank A" or "Fintech Platform Co."
 
 Each seed signal must include:
 - realistic companyEvent
@@ -564,6 +566,12 @@ Expected:
 - Category = Banking / Payments / Fintech
 - Event Type = Core Banking Conversion
 - Signal Strength = High
+
+companiesMentioned rules:
+- Only list companies that are direct actors in the event (acquirer, acquiree, issuer, card network, regulator).
+- Use each company's TRUE sector. Apple is consumer technology, NOT a bank, even when the signal is about Apple Card.
+- Do NOT list Visa, Mastercard, Fiserv, FIS, Jack Henry, Temenos as companiesMentioned unless one of them IS the primary news actor. These are infrastructure/platforms, not story actors.
+- Do not list the same company twice.
 
 Acceptance criteria:
 - npm run dev works.

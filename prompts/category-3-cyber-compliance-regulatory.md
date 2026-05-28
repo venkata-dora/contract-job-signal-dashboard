@@ -81,6 +81,7 @@ Primary event types to support:
 - Model-Risk / AI Governance Remediation
 - IAM Hardening
 - DLP / Data Protection Remediation
+- AppSec / Vulnerability Remediation Prioritization
 - AppSec Remediation
 - CI/CD Security Hardening
 - GRC Workflow Modernization
@@ -140,6 +141,15 @@ Strong markers:
 - ServiceNow GRC
 - regulatory reporting
 
+Strong markers (additional):
+- vulnerability management
+- vulnerability prioritization
+- exploit intelligence
+- active exploits
+- AppSec / vulnerability remediation prioritization
+- vulnerability scanning
+- patch prioritization
+
 Medium markers:
 - privacy incident
 - audit finding
@@ -154,13 +164,11 @@ Medium markers:
 - suspicious activity
 - vendor risk
 - third-party risk
-- cloud security
-- SOC
-- SIEM
-- SOAR
-- vulnerability remediation
+- cloud security posture
 - incident response
 - forensic investigation
+
+Note: "SOC", "SIEM", "SOAR" alone are medium markers. Treat them as strong ONLY when combined with a specific remediation, breach, or consent-order context.
 
 Conflict rule:
 If multiple categories match, Cyber / Compliance / Regulatory should win when:
@@ -188,7 +196,7 @@ Expected mappings:
 - model risk OR AI governance => Model-Risk / AI Governance Remediation
 - IAM OR identity hardening OR access controls => IAM Hardening
 - DLP OR data protection => DLP / Data Protection Remediation
-- AppSec OR application security OR vulnerability remediation => AppSec Remediation
+- AppSec OR application security OR vulnerability remediation OR vulnerability prioritization OR exploit intelligence => AppSec / Vulnerability Remediation Prioritization OR AppSec Remediation
 - CI/CD OR pipeline security => CI/CD Security Hardening
 - GRC OR ServiceNow GRC => GRC Workflow Modernization
 
@@ -242,6 +250,18 @@ Default Cyber / Compliance / Regulatory roles:
 - Data Engineer
 - QA Automation/SDET
 - Business Systems Analyst
+- Technical Business Analyst
+
+For AppSec / vulnerability management:
+- Vulnerability Management Engineer
+- AppSec Engineer
+- Security Automation Engineer
+- Python Developer
+- Backend Engineer
+- Data Engineer
+- Cloud Security Engineer
+- SIEM/SOAR Integration Developer
+- QA Automation/SDET
 - Technical Business Analyst
 
 For ransomware / breach:
@@ -629,6 +649,13 @@ Expected:
 - Category = Cyber / Compliance / Regulatory
 - Event Type = Unauthorized AI Tool Usage / Data Leakage
 - Signal Strength = High
+
+companiesMentioned rules:
+- Only list companies that are direct actors: the breached company, the regulator, or a named remediation vendor.
+- Use each company's TRUE sector. A cybersecurity vendor is "Cybersecurity", not "Identity" just because IAM is mentioned.
+- Do NOT list CrowdStrike, Palo Alto Networks, Okta, Zscaler, SentinelOne as companiesMentioned unless they ARE the news actor. They are commonly used tools, not story actors.
+- Do NOT list cloud platforms (AWS, Azure, GCP) as companiesMentioned.
+- Differentiate sub-sectors correctly: AppSec/vuln management ≠ identity/IAM ≠ endpoint ≠ network security.
 
 Acceptance criteria:
 - npm run dev works.

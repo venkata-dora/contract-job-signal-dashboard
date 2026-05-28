@@ -4,7 +4,6 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { AppShell } from "./AppShell";
 import { BriefingRow } from "./BriefingRow";
-import { DistributionPanels } from "./DistributionPanels";
 import { FilterBar } from "./FilterBar";
 import { KpiStrip } from "./KpiStrip";
 import { useSignals } from "./useSignals";
@@ -108,7 +107,7 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
     const c = categoryConfig[category];
     kicker = c.short;
     title = category;
-    subtitle = `${c.blurb} Showing U.S.-impact signals from the past 24 hours by default.`;
+    subtitle = `${c.blurb} Past-24-hour signals by default. Use the date filter to see older news.`;
   } else if (weekly) {
     kicker = "Merged priority view";
     title = "Weekly priority — top 10 targets";
@@ -162,9 +161,9 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
           <>
             {category && <div className="cat-accent-bar" style={{ background: categoryConfig[category].accent }} />}
 
-            <KpiStrip items={weeklyKpis ?? catKpis ?? mainKpis} />
+            {(weekly || category) && <KpiStrip items={weeklyKpis ?? catKpis ?? mainKpis} />}
 
-            {!category && !weekly && <DistributionPanels signals={scoped} />}
+            {!category && !weekly && null}
 
             <section className="feed-section">
               {!category && !weekly && (

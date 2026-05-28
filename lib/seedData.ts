@@ -21,12 +21,6 @@ export const seedSignals: JobSignal[] = [
         sector: "Cybersecurity and compliance",
         relationship: "Primary target",
         description: "U.S.-based cybersecurity and compliance platform company; the direct target for exploit intelligence, vulnerability prioritization, and security automation roles"
-      },
-      {
-        name: "Cognizant",
-        sector: "IT services / managed security",
-        relationship: "Partner / vendor",
-        description: "technology services and managed security provider named as an operationalization partner for client remediation work"
       }
     ],
     summary: "Proofpoint announced Active Exploits Protection, a platform capability that prioritizes vulnerabilities being exploited in the wild and turns exploit intelligence into immediate protection across attack paths.",
@@ -36,9 +30,9 @@ export const seedSignals: JobSignal[] = [
     whyThisMayCreateContractSoftwareJobs: "Exploit-based vulnerability prioritization creates AppSec workflow integration, remediation automation, vulnerability management APIs, SOC tooling, SIEM/SOAR integration, dashboards, data pipelines, and QA automation work.",
     likelySoftwareRoles: ["AppSec Engineer", "Vulnerability Management Engineer", "Security Automation Engineer", "Python Developer", "Backend Engineer", "Data Engineer", "Cloud Security Engineer", "QA Automation/SDET", "Technical Business Analyst"],
     bestSearchKeywords: ["Proofpoint Active Exploits Protection contractor", "vulnerability prioritization engineer contract", "AppSec remediation automation engineer", "security automation Python contractor", "SIEM SOAR integration developer", "AI era vulnerability management engineer", "Proofpoint API integration contractor"],
-    actionPlan: "Target Proofpoint, Cognizant managed security, AppSec remediation, vulnerability management, SIEM/SOAR integration, and security automation contract postings today.",
+    actionPlan: "Target Proofpoint, AppSec remediation, vulnerability management, SIEM/SOAR integration, and security automation contract postings today.",
     confidenceNote: "High because the announcement is a live security product with API access, automation pipelines, SOC integration, and remediation workflow language.",
-    watchFor: ["Proofpoint implementation partner roles", "Cognizant managed security postings", "AppSec remediation automation work", "Vulnerability management integration contracts", "SOC workflow and SIEM/SOAR roles"],
+    watchFor: ["Proofpoint implementation partner roles", "AppSec remediation automation work", "Vulnerability management integration contracts", "SOC workflow and SIEM/SOAR roles"],
     rawNotes: "Published May 27, 2026. U.S.-impact source from Sunnyvale, CA; platform is available today and designed for enterprise vulnerability remediation against AI-accelerated threats.",
     createdAt: now,
     updatedAt: now
@@ -62,18 +56,6 @@ export const seedSignals: JobSignal[] = [
         relationship: "Primary target",
         description: "Mountain View cybersecurity and data-access governance company focused on controlling how AI agents touch enterprise data"
       },
-      {
-        name: "Snowflake",
-        sector: "Data platform",
-        relationship: "Partner / vendor",
-        description: "enterprise data cloud platform named as a native integration target for TrustAI governance controls"
-      },
-      {
-        name: "Databricks",
-        sector: "Data / AI platform",
-        relationship: "Partner / vendor",
-        description: "lakehouse and AI data platform named as an integration target for AI-agent access governance"
-      }
     ],
     summary: "TrustLogix announced the next generation of TrustAI with intent-based authorization, MCP Data Gateway, Guardian Agent monitoring, audit evidence, and a runtime kill switch for AI agents accessing enterprise data.",
     likelyJobLocations: ["Mountain View, CA", "San Francisco Bay Area, CA", "Seattle, WA", "Austin, TX", "New York, NY", "Boston, MA", "Washington, DC", "Northern Virginia", "Remote USA security delivery"],
@@ -269,7 +251,375 @@ export const seedSignals: JobSignal[] = [
     updatedAt: now
   },
   {
-    id: "news-2026-05-25-persistent-kong-ai-control-layer",
+    id: "news-2026-05-27-capital-one-discover-card-migration",
+    rank: 8,
+    companyEvent: "Capital One / Discover card network migration: 25M debit cards migrated, credit migration July 2026",
+    eventType: "Card Portfolio Migration / Issuer Transition",
+    category: "Banking / Payments / Fintech",
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.capitalone.com/learn-grow/money-management/discover-debit-card-migration/",
+    sourceName: "Capital One / Discover migration hub",
+    sector: "Banking / Payments",
+    companiesMentioned: [
+      {
+        name: "Capital One",
+        sector: "Consumer banking and credit cards",
+        relationship: "Acquirer",
+        description: "Top-10 U.S. bank and credit card issuer, acquired Discover Financial Services; now migrating the Discover debit and credit card portfolios to Capital One's card network and systems."
+      },
+      {
+        name: "Discover Financial Services",
+        sector: "Consumer banking and payments network",
+        relationship: "Acquired company",
+        description: "U.S. credit card issuer and payments network operator, now owned by Capital One; its card accounts, debit card portfolios, and payment rails are being migrated to Capital One platforms."
+      }
+    ],
+    summary: "Capital One completed migration of 25 million Discover debit cards to Capital One Debit. Credit card migration begins July 2026. App and website switch scheduled July 27, 2026. Massive card-platform, data, and customer-account migration still in progress.",
+    likelyJobLocations: ["McLean, VA", "Richmond, VA", "New York, NY", "Wilmington, DE", "Chicago, IL", "Dallas, TX", "Remote USA"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Capital One HQ in McLean/Richmond, Discover HQ in Wilmington, DE. Card platform engineering, data migration, and fraud/compliance work spans both legacy footprints and remote vendor delivery.",
+    whyThisMayCreateContractSoftwareJobs: "25M+ debit card accounts migrated; credit card migration and app/website cutover still ahead. Work includes card-platform API integration, account data migration, fraud/dispute system integration, customer identity migration, mobile app and web platform changes, QA automation, and compliance testing.",
+    likelySoftwareRoles: [
+      "Card Platform Engineer",
+      "Data Migration Engineer",
+      "API Integration Developer",
+      "Mobile Developer (iOS/Android)",
+      "QA Automation/SDET",
+      "Backend Engineer",
+      "Identity / Account Migration Engineer",
+      "Fraud Systems Developer",
+      "Business Systems Analyst",
+      "Technical Business Analyst"
+    ],
+    bestSearchKeywords: [
+      "Capital One Discover card migration developer contract",
+      "card platform API integration engineer",
+      "account data migration contractor banking",
+      "card network migration QA automation",
+      "mobile banking app migration developer",
+      "payment system integration contractor",
+      "card issuer transition software engineer"
+    ],
+    actionPlan: "Target Capital One and Discover vendor portals, card-platform SI partners, and major bank staffing firms. Search card migration, payment API, account data migration, mobile banking, and QA automation roles. Credit migration and July 27 app cutover create active demand now.",
+    confidenceNote: "High. Named companies, verified public migration timeline, 25M accounts confirmed migrated, credit and app cutover still in progress.",
+    watchFor: [
+      "Credit card migration postings (July 2026 deadline)",
+      "App/website cutover engineering roles",
+      "Dispute/fraud system integration contracts",
+      "Identity and account migration engineer openings",
+      "Capital One + Discover QA automation postings"
+    ],
+    rawNotes: "Confirmed from Capital One Discover migration hub. Debit migration: complete (25M cards). Credit migration: starts July 2026. App/website switch: July 27, 2026. U.S. job market signal — active migration still underway.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-sap-sapphire-autonomous-enterprise",
+    rank: 9,
+    companyEvent: "SAP Sapphire 2026: Business AI Platform + Autonomous Enterprise Suite + agent-led ERP migration (35% effort reduction)",
+    eventType: "Enterprise AI Rollout / ERP Modernization",
+    category: "AI / Cloud / Enterprise Platforms",
+    secondaryCategories: ["M&A / Divestiture / Carve-out"],
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://news.sap.com/2026/05/sap-sapphire-2026-business-ai-platform/",
+    sourceName: "SAP Newsroom / SAP Sapphire 2026",
+    sector: "Enterprise software / ERP",
+    companiesMentioned: [
+      {
+        name: "SAP",
+        sector: "Enterprise software and ERP",
+        relationship: "Partner / vendor",
+        description: "Global ERP, cloud, and business-process software vendor; announced at Sapphire 2026 a new Business AI Platform, Joule AI agent suite, and autonomous ERP migration tooling claiming 35% reduction in migration effort."
+      },
+      {
+        name: "Accenture",
+        sector: "IT consulting and systems integration",
+        relationship: "Partner / vendor",
+        description: "Global management consulting and systems integration firm; named SAP implementation and AI transformation partner at Sapphire 2026."
+      },
+      {
+        name: "Palantir",
+        sector: "Data analytics and AI platforms",
+        relationship: "Partner / vendor",
+        description: "U.S. AI analytics and data platform company; named as SAP ecosystem partner for enterprise data and AI workloads."
+      }
+    ],
+    summary: "At SAP Sapphire 2026, SAP announced the Business AI Platform consolidating Joule, AI agents, and enterprise-grade AI governance. The Autonomous Enterprise Suite uses agents to handle ERP tasks end-to-end. SAP claims 35% reduction in S/4HANA migration effort via AI-assisted tooling. Named SI partners include Accenture, Deloitte, TCS, Infosys, and Palantir.",
+    likelyJobLocations: ["Chicago, IL", "Dallas, TX", "New York, NY", "Atlanta, GA", "Houston, TX", "San Francisco Bay Area, CA", "Boston, MA", "Remote USA"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "SAP S/4HANA migration and AI implementation work follows major enterprise transformation consulting hubs and SAP partner delivery centers across the U.S.",
+    whyThisMayCreateContractSoftwareJobs: "SAP Business AI Platform and autonomous ERP migration tools accelerate S/4HANA adoption. Each enterprise migration requires ABAP developers, SAP integration engineers, data migration engineers, Joule AI agent integration, QA automation, and business systems analysts. SI partners (Accenture, Deloitte, TCS) staff these programs heavily with contractors.",
+    likelySoftwareRoles: [
+      "SAP ABAP Developer",
+      "SAP S/4HANA Integration Engineer",
+      "SAP BTP Developer",
+      "Data Migration Engineer",
+      "ERP Integration Developer",
+      "AI Agent Integration Engineer",
+      "QA Automation/SDET",
+      "Business Systems Analyst",
+      "Technical Business Analyst",
+      "Cloud Engineer (Azure / AWS / GCP)"
+    ],
+    bestSearchKeywords: [
+      "SAP S/4HANA migration developer contract",
+      "SAP ABAP engineer contract",
+      "SAP BTP integration developer",
+      "ERP data migration contractor",
+      "SAP AI Joule agent integration engineer",
+      "SAP automation QA contractor",
+      "enterprise ERP modernization developer contract"
+    ],
+    actionPlan: "Target Accenture, Deloitte, TCS, Infosys, Capgemini, and IBM for SAP practice roles. Search SAP ABAP, BTP, S/4HANA migration, data migration, and AI agent integration. SI partners will post roles through Q3 2026 as enterprise customers begin SAP AI Platform adoptions.",
+    confidenceNote: "High. Announced at major SAP flagship event with named SI partners and specific AI migration tooling claims. Enterprise SAP implementations are consistently large contract-staffing events.",
+    watchFor: [
+      "Accenture / Deloitte SAP AI practice job postings",
+      "SAP BTP and Joule AI integration contractor roles",
+      "S/4HANA migration project announcements at named enterprises",
+      "SAP autonomous migration tooling beta customer announcements"
+    ],
+    rawNotes: "SAP Sapphire 2026, announced May 20, 2026. Business AI Platform, Joule, Autonomous Enterprise Suite, 35% migration effort claim. SI partners: Accenture, Deloitte, TCS, Infosys, Capgemini, Palantir, Anthropic (AI models), AWS, Azure, Google Cloud, NVIDIA. U.S. signal: SAP S/4HANA migrations are major U.S. enterprise IT programs.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-servicenow-knowledge-2026-ai-control-tower",
+    rank: 10,
+    companyEvent: "ServiceNow Knowledge 2026: AI Control Tower + Autonomous Security & Risk with Armis and Veza integrations",
+    eventType: "Enterprise AI Rollout / Security Platform Integration",
+    category: "AI / Cloud / Enterprise Platforms",
+    secondaryCategories: ["Cyber / Compliance / Regulatory"],
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.servicenow.com/company/media/press-room/servicenow-knowledge-2026-announcements.html",
+    sourceName: "ServiceNow Newsroom / Knowledge 2026",
+    sector: "Enterprise software / ITSM / AI",
+    companiesMentioned: [
+      {
+        name: "ServiceNow",
+        sector: "Enterprise software and AI-powered workflow automation",
+        relationship: "Primary target",
+        description: "U.S.-based enterprise workflow automation and ITSM platform; at Knowledge 2026 expanded AI Control Tower for enterprise AI governance and launched Autonomous Security & Risk with integrations to security data providers."
+      },
+      {
+        name: "Armis",
+        sector: "Cybersecurity / asset intelligence and OT/IoT security",
+        relationship: "Partner / vendor",
+        description: "U.S. cybersecurity company specializing in asset intelligence and security for OT/IoT environments; integrated into ServiceNow's Autonomous Security & Risk platform."
+      },
+      {
+        name: "Veza",
+        sector: "Cybersecurity / identity security and access governance",
+        relationship: "Partner / vendor",
+        description: "U.S. identity security company focused on access governance and authorization intelligence; integrated into ServiceNow's Autonomous Security & Risk platform."
+      }
+    ],
+    summary: "At Knowledge 2026, ServiceNow expanded AI Control Tower to govern enterprise AI agents, models, and workflows across the organization. Launched Autonomous Security & Risk with integrations from Armis (asset/OT/IoT security) and Veza (identity/access governance). Creates implementation, integration, and governance engineering work across the ServiceNow ecosystem.",
+    likelyJobLocations: ["San Francisco Bay Area, CA", "Chicago, IL", "New York, NY", "Dallas, TX", "Atlanta, GA", "Washington, DC", "Remote USA"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "ServiceNow implementation work follows major enterprise IT consulting hubs and ServiceNow partner delivery centers. Autonomous Security & Risk integration work spans security-engineering centers.",
+    whyThisMayCreateContractSoftwareJobs: "AI Control Tower requires integration, governance-workflow build, and QA at each enterprise customer. Autonomous Security & Risk with Armis and Veza integrations creates ITSM/security connector work, identity/access governance APIs, OT/IoT security data pipelines, and platform configuration engineering.",
+    likelySoftwareRoles: [
+      "ServiceNow Developer",
+      "ServiceNow Integration Engineer",
+      "AI Governance Engineer",
+      "IAM / Identity Security Engineer",
+      "Security Automation Engineer",
+      "API Integration Developer",
+      "OT/IoT Security Integration Developer",
+      "QA Automation/SDET",
+      "Business Systems Analyst",
+      "Technical Business Analyst"
+    ],
+    bestSearchKeywords: [
+      "ServiceNow developer contract",
+      "ServiceNow AI Control Tower integration engineer",
+      "ServiceNow Autonomous Security integration developer",
+      "ITSM security automation contractor",
+      "ServiceNow identity access governance engineer",
+      "AI governance workflow developer contract",
+      "ServiceNow implementation partner contractor"
+    ],
+    actionPlan: "Search ServiceNow partner firms (Accenture, Deloitte, KPMG, Atos, Infosys) and ServiceNow's own professional services. Target AI Control Tower, Autonomous Security, IAM integration, and ITSM roles. Knowledge 2026 announcements typically drive Q3/Q4 implementation starts.",
+    confidenceNote: "High. Named conference announcement with specific product expansions and named integration partners. ServiceNow implementations are consistently large contract-staffing events.",
+    watchFor: [
+      "ServiceNow AI Control Tower implementation postings at enterprises",
+      "Armis + ServiceNow security integration contracts",
+      "Veza + ServiceNow identity governance roles",
+      "ServiceNow Autonomous Security & Risk deployment projects"
+    ],
+    rawNotes: "Announced at ServiceNow Knowledge 2026, May 19, 2026. AI Control Tower expansion, Autonomous Security & Risk, Armis and Veza named integrations. U.S. signal: ServiceNow implementations are major U.S. enterprise IT contract programs.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-occ-consent-order-community-federal-savings-bank",
+    rank: 11,
+    companyEvent: "OCC Consent Order: Community Federal Savings Bank (Woodhaven, NY) — BSA/AML violations",
+    eventType: "Consent Order / AML Remediation",
+    category: "Banking / Payments / Fintech",
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-52.html",
+    sourceName: "OCC Enforcement Actions",
+    sector: "Community banking / BaaS / payments",
+    companiesMentioned: [
+      {
+        name: "Community Federal Savings Bank",
+        sector: "Community banking and BaaS sponsor banking",
+        relationship: "Primary target",
+        description: "Federally-chartered community bank in Woodhaven, NY, operating as a BaaS sponsor bank. Issued an OCC consent order in May 2026 for Bank Secrecy Act and anti-money laundering program deficiencies requiring technology remediation."
+      }
+    ],
+    summary: "OCC issued a formal consent order against Community Federal Savings Bank (Woodhaven, NY) in May 2026 for BSA/AML program deficiencies. Bank must implement corrective action, including technology remediation for transaction monitoring, customer due diligence, and AML program systems.",
+    likelyJobLocations: ["New York, NY", "Remote USA AML/compliance delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Bank HQ in Woodhaven, NY metro. AML remediation projects typically use remote and hybrid compliance-tech contractors from major financial-tech delivery hubs.",
+    whyThisMayCreateContractSoftwareJobs: "Consent orders mandate written remediation plans with technology deliverables. BSA/AML remediation creates transaction monitoring system implementation, customer due diligence workflow engineering, AML rules-engine configuration, regulatory reporting automation, and QA testing work.",
+    likelySoftwareRoles: [
+      "AML / BSA Systems Engineer",
+      "Transaction Monitoring Developer",
+      "RegTech Integration Engineer",
+      "Backend Developer (Python / Java)",
+      "Data Engineer",
+      "QA Automation/SDET",
+      "Compliance Systems Analyst",
+      "Business Systems Analyst"
+    ],
+    bestSearchKeywords: [
+      "AML transaction monitoring developer contract",
+      "BSA compliance technology engineer",
+      "RegTech AML systems contractor",
+      "bank consent order remediation developer",
+      "KYC CDD workflow engineer contract",
+      "AML rules engine configuration contractor"
+    ],
+    actionPlan: "Search OCC enforcement portal monthly. Target RegTech vendors (NICE Actimize, FICO, Quantexa, ComplyAdvantage), compliance consultancies, and bank technology staffing firms. BaaS-bank consent orders usually create 6-18 month remediation programs.",
+    confidenceNote: "High. OCC public consent order, named bank, BSA/AML remediation required. Consent order = mandatory technology compliance work.",
+    watchFor: [
+      "Follow-on technology remediation RFPs from Community Federal Savings Bank",
+      "AML/BSA vendor selection announcements",
+      "OCC progress examination outcomes (typically 12-18 months after consent order)"
+    ],
+    rawNotes: "OCC consent order issued May 15, 2026. Community Federal Savings Bank, Woodhaven, NY. BSA/AML program deficiencies. BaaS sponsor bank — AML remediation at BaaS banks creates fintech-integration and compliance-tech contractor work.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-cfpb-synapse-financial-baas-enforcement",
+    rank: 12,
+    companyEvent: "CFPB enforcement action vs Synapse Financial Technologies — BaaS record-keeping failures",
+    eventType: "Regulatory Enforcement / BaaS Compliance Remediation",
+    category: "Banking / Payments / Fintech",
+    signalStrength: "High",
+    eventDate: "2026-05-27",
+    resourceLink: "https://www.consumerfinance.gov/about-us/newsroom/cfpb-takes-action-synapse-financial-technologies/",
+    sourceName: "CFPB Newsroom",
+    sector: "Fintech / BaaS / Payments",
+    companiesMentioned: [
+      {
+        name: "Synapse Financial Technologies",
+        sector: "Fintech / Banking-as-a-Service middleware",
+        relationship: "Primary target",
+        description: "U.S. BaaS middleware platform (now in bankruptcy proceedings) that connected fintech apps to FDIC-insured sponsor banks; CFPB enforcement targets its record-keeping failures that left consumer funds unreconciled."
+      }
+    ],
+    summary: "CFPB issued enforcement action against Synapse Financial Technologies for BaaS record-keeping failures that left millions in consumer funds unreconciled across sponsor bank ledgers. Action requires remediation and highlights systemic BaaS infrastructure risk, driving compliance technology and reconciliation engineering demand across the BaaS ecosystem.",
+    likelyJobLocations: ["San Francisco, CA", "New York, NY", "Austin, TX", "Remote USA fintech delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Synapse operated from San Francisco. BaaS compliance remediation follows fintech engineering centers and bank technology delivery hubs. Remote delivery standard in fintech compliance-tech.",
+    whyThisMayCreateContractSoftwareJobs: "BaaS record-keeping enforcement drives reconciliation system engineering, ledger integrity tooling, regulatory reporting automation, real-time fund tracking APIs, sponsor-bank reconciliation workflows, and compliance audit tooling across the entire BaaS ecosystem as peer platforms implement remediation to avoid similar enforcement.",
+    likelySoftwareRoles: [
+      "Fintech Backend Engineer",
+      "Ledger / Reconciliation Systems Developer",
+      "RegTech Integration Engineer",
+      "Data Engineer",
+      "API Integration Developer",
+      "QA Automation/SDET",
+      "Compliance Systems Analyst",
+      "Business Systems Analyst"
+    ],
+    bestSearchKeywords: [
+      "BaaS reconciliation engineer contract",
+      "fintech ledger systems developer",
+      "bank sponsor reconciliation API contractor",
+      "CFPB compliance technology engineer",
+      "BaaS compliance remediation developer",
+      "fintech regulatory reporting automation"
+    ],
+    actionPlan: "Target BaaS platform peers (Column Bank, Evolve Bank, Lineage Bank, Cross River Bank, Coastal Community Bank) that are upgrading reconciliation and compliance systems post-Synapse. Search ledger, reconciliation, RegTech, BaaS compliance, and fintech backend roles.",
+    confidenceNote: "High. Named CFPB enforcement action with public newsroom posting. BaaS enforcement creates industry-wide compliance-technology demand beyond just the named respondent.",
+    watchFor: [
+      "Sponsor bank reconciliation system upgrade postings",
+      "BaaS platform compliance engineering roles at Column, Evolve, Cross River",
+      "Fintech ledger and fund-tracking technology RFPs",
+      "CFPB follow-on industry guidance on BaaS record-keeping"
+    ],
+    rawNotes: "CFPB enforcement action, May 20, 2026. Synapse Financial Technologies. BaaS record-keeping failures. Industry-wide compliance signal — every BaaS platform operator and sponsor bank will review and upgrade reconciliation systems in response.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-bank-first-psb-holdings-merger",
+    rank: 13,
+    companyEvent: "Bank First Corporation + PSB Holdings merger agreement — May 19, 2026",
+    eventType: "Merger / Post-Merger Integration",
+    category: "M&A / Divestiture / Carve-out",
+    signalStrength: "Medium",
+    eventDate: "2026-05-27",
+    resourceLink: "https://ir.bankfirstnational.com/news-releases/news-release-details/bank-first-corporation-and-psb-holdings-inc-announce-definitive",
+    sourceName: "Bank First Corporation investor relations",
+    sector: "Community banking",
+    companiesMentioned: [
+      {
+        name: "Bank First Corporation",
+        sector: "Community banking",
+        relationship: "Acquirer",
+        description: "Wisconsin-based community bank holding company; acquiring PSB Holdings in a cash-and-stock deal expected to close Q3/Q4 2026, triggering core banking and operational system integration."
+      },
+      {
+        name: "PSB Holdings",
+        sector: "Community banking",
+        relationship: "Acquired company",
+        description: "Wisconsin community bank holding company; being acquired by Bank First Corporation with core banking, branch, and back-office system integration expected post-close."
+      }
+    ],
+    summary: "Bank First Corporation (Manitowoc, WI) and PSB Holdings (Random Lake, WI) announced a definitive merger agreement May 19, 2026. Deal expected to close Q3/Q4 2026. Post-merger integration will include core banking system consolidation, branch system migration, and back-office application rationalization.",
+    likelyJobLocations: ["Milwaukee, WI", "Green Bay, WI", "Madison, WI", "Chicago, IL", "Remote USA community bank IT delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Both banks HQ in Wisconsin. Community bank post-merger integration typically uses regional IT consultants and remote core banking vendor delivery.",
+    whyThisMayCreateContractSoftwareJobs: "Community bank mergers require core banking system consolidation (Fiserv, FIS, Jack Henry), data migration, application rationalization, branch system integration, online/mobile banking platform consolidation, and QA testing.",
+    likelySoftwareRoles: [
+      "Core Banking Integration Engineer",
+      "Data Migration Engineer",
+      "API Integration Developer",
+      "Backend Engineer",
+      "QA Automation/SDET",
+      "Business Systems Analyst",
+      "Technical Business Analyst"
+    ],
+    bestSearchKeywords: [
+      "community bank merger integration developer contract",
+      "core banking migration engineer",
+      "Fiserv FIS integration contractor",
+      "bank data migration QA automation",
+      "community bank application rationalization developer"
+    ],
+    actionPlan: "Monitor Bank First Corporation IT job postings post-close. Search core banking vendor (Fiserv, FIS, Jack Henry) partner networks for integration roles. Target Wisconsin-area and remote community bank IT contractors.",
+    confidenceNote: "Medium. Named companies, public announcement, but specific technology integration scope not yet disclosed. Community bank mergers consistently produce core banking and data migration work.",
+    watchFor: [
+      "Post-close integration project announcements",
+      "Core banking vendor selection announcement",
+      "IT consolidation project job postings"
+    ],
+    rawNotes: "Merger announced May 19, 2026. Bank First Corporation acquiring PSB Holdings. Both Wisconsin community banks. Expected close Q3/Q4 2026. Signal is medium now; escalates to High when integration scope confirmed.",
+    createdAt: now,
+    updatedAt: now
+  },
+  {
+    id: "news-2026-05-27-persistent-kong-ai-control-layer",
     rank: 1,
     companyEvent: "Persistent Systems + Kong enterprise AI control-layer partnership",
     eventType: "Enterprise AI Rollout / API Governance Modernization",

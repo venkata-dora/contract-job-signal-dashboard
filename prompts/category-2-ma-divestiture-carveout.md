@@ -565,6 +565,13 @@ Expected:
 - Event Type = Corporate Carve-out / TSA Exit
 - Signal Strength = High
 
+companiesMentioned rules:
+- List acquirer, target, and divested unit as direct actors.
+- Use each company's TRUE sector (what the company IS, not their role in the deal). A tech company being acquired is still a tech company.
+- Do NOT list ERP/platform vendors (SAP, Oracle, Workday, Salesforce, Microsoft) as companiesMentioned unless they are party to the M&A transaction itself.
+- Do NOT fabricate acquisitions or mergers. Only use real, publicly announced transactions with verifiable sources.
+- For hypothetical seed examples, use generic placeholder names (e.g. "Industrial Co A", "HealthTech NewCo").
+
 Acceptance criteria:
 - npm run dev works.
 - M&A page renders without runtime errors.
