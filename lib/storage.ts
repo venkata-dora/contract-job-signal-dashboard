@@ -70,6 +70,7 @@ function reconcileSeedCorrections(stored: JobSignal[]) {
       "news-2026-05-27-sap-sapphire-autonomous-enterprise": "SAP at Sapphire 2026 (annual SAP conference): Business AI Platform + Autonomous Enterprise Suite + agent-led ERP migration (35% effort reduction)",
       "news-2026-05-27-servicenow-knowledge-2026-ai-control-tower": "ServiceNow at Knowledge 2026 (annual ServiceNow conference): AI Control Tower + Autonomous Security & Risk with Armis and Veza integrations",
       "news-2026-05-28-huntington-cadence-bank-system-conversion": "Huntington Bank acquires Cadence Bank: June 22 full system cutover approaching — core banking, digital banking, and ACH migration underway now",
+      "news-2026-05-28-cisa-kev-developer-supply-chain-attacks": "Supply chain attacks hit TanStack npm (84 packages), Nx Console VS Code extension, and DAEMON Tools Lite installer — GitHub and Grafana Labs confirmed breach victims",
     };
     if (signal.id in titleFixes && signal.companyEvent !== titleFixes[signal.id]) {
       return { ...signal, companyEvent: titleFixes[signal.id] };

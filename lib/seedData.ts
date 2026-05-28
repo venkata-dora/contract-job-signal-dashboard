@@ -7,8 +7,8 @@ export const seedSignals: JobSignal[] = [
   {
     id: "news-2026-05-28-cisa-kev-developer-supply-chain-attacks",
     rank: 1,
-    companyEvent: "CISA KEV May 27: Three developer-toolchain supply chain attacks added (TanStack npm, Nx Console VS Code, DAEMON Tools Lite)",
-    eventType: "Software Supply Chain Attack / CISA KEV Addition",
+    companyEvent: "Supply chain attacks hit TanStack npm (84 packages), Nx Console VS Code extension, and DAEMON Tools Lite installer — GitHub and Grafana Labs confirmed breach victims",
+    eventType: "Software Supply Chain Attack",
     category: "Cyber / Compliance / Regulatory",
     secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
     signalStrength: "High",
