@@ -41,7 +41,7 @@ export const seedSignals: JobSignal[] = [
   {
     id: "news-2026-05-28-huntington-cadence-bank-system-conversion",
     rank: 2,
-    companyEvent: "Huntington Bank / Cadence Bank: June 22 customer account and digital banking system conversion goes live — active integration window open",
+    companyEvent: "Huntington Bank acquires Cadence Bank: June 22 full system cutover approaching — core banking, digital banking, and ACH migration underway now",
     eventType: "Post-Merger System Conversion / Core Banking Integration",
     category: "M&A / Divestiture / Carve-out",
     secondaryCategories: ["Banking / Payments / Fintech"],
@@ -64,7 +64,7 @@ export const seedSignals: JobSignal[] = [
         description: "Houston/Tupelo-based $53B regional bank being integrated into Huntington systems as of June 22 2026"
       }
     ],
-    summary: "Huntington Bank's acquisition of Cadence Bank ($7.4B deal, closed Feb 2026) enters its active system conversion window: Cadence Business Online preview opened May 26, mortgage loans transition May 30, and all customer accounts and digital banking fully convert to Huntington systems on June 22, 2026. Branch names change to Huntington on June 22.",
+    summary: "Huntington Bank acquired Cadence Bank ($7.4B, closed Feb 2026). The system cutover is now in progress — Business Online preview launched May 26. Mortgage accounts migrate May 30. Full customer account and digital banking conversion to Huntington systems is scheduled for June 22, 2026. Contract IT work is needed now, ahead of cutover.",
     likelyJobLocations: ["Columbus, OH", "Houston, TX", "Dallas, TX", "Austin, TX", "Birmingham, AL", "Memphis, TN", "Jackson, MS", "Charlotte, NC", "Chicago, IL", "Remote USA bank tech delivery"],
     workMode: "Hybrid / On-site",
     whyTheseLocations: "Huntington HQ in Columbus; Cadence's core footprint is Texas, Alabama, Mississippi, Tennessee. System conversion teams typically on-site or near data centers during cutover. Huntington's technology and operations teams are distributed across the Midwest and South.",
