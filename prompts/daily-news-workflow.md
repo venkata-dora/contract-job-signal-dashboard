@@ -249,6 +249,15 @@ These look minor but are real job signals:
   - Exception: if the news IS specifically about one of those platforms (e.g. "Salesforce acquires X"), include it as the primary actor.
   - Do not assign the wrong sub-sector. AppSec company ≠ Identity company ≠ Endpoint company. Use the correct specific sector.
 - rawNotes (brief plain-English note with publish date, source, and U.S. impact justification)
+- summary
+  - **Tense rules — strictly follow these:**
+    - Events that already happened → past tense: "acquired", "closed", "launched", "filed"
+    - Events happening right now or in progress → present tense: "is migrating", "is underway", "is in progress"
+    - Events scheduled in the future → future tense: "will convert on June 22", "is scheduled for", "is expected to"
+    - Do NOT mix tenses in the same sentence. Split into separate sentences if needed.
+    - WRONG: "The acquisition enters its active window: preview opened May 26, loans transition May 30, accounts convert June 22"
+    - CORRECT: "Huntington acquired Cadence Bank in February 2026. The system cutover is now in progress — Business Online preview launched May 26. Mortgage accounts migrate May 30. Full conversion to Huntington systems is scheduled for June 22."
+  - Never use vague phrases like "enters its active window" or "is now in motion." State the specific action and date.
 
 ---
 
