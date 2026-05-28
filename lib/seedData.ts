@@ -258,8 +258,8 @@ export const seedSignals: JobSignal[] = [
     category: "Banking / Payments / Fintech",
     signalStrength: "High",
     eventDate: "2026-05-27",
-    resourceLink: "https://www.capitalone.com/learn-grow/money-management/discover-debit-card-migration/",
-    sourceName: "Capital One / Discover migration hub",
+    resourceLink: "https://www.doctorofcredit.com/discover-cards-will-transition-to-capital-one-website-app-on-july-27-2026/",
+    sourceName: "Doctor of Credit",
     sector: "Banking / Payments",
     companiesMentioned: [
       {
@@ -323,8 +323,8 @@ export const seedSignals: JobSignal[] = [
     secondaryCategories: ["M&A / Divestiture / Carve-out"],
     signalStrength: "High",
     eventDate: "2026-05-27",
-    resourceLink: "https://news.sap.com/2026/05/sap-sapphire-2026-business-ai-platform/",
-    sourceName: "SAP Newsroom / SAP Sapphire 2026",
+    resourceLink: "https://news.sap.com/2026/05/sap-sapphire-keynote-business-ai-platform-power-autonomous-enterprise/",
+    sourceName: "SAP News Center",
     sector: "Enterprise software / ERP",
     companiesMentioned: [
       {
@@ -393,8 +393,8 @@ export const seedSignals: JobSignal[] = [
     secondaryCategories: ["Cyber / Compliance / Regulatory"],
     signalStrength: "High",
     eventDate: "2026-05-27",
-    resourceLink: "https://www.servicenow.com/company/media/press-room/servicenow-knowledge-2026-announcements.html",
-    sourceName: "ServiceNow Newsroom / Knowledge 2026",
+    resourceLink: "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx",
+    sourceName: "ServiceNow Newsroom",
     sector: "Enterprise software / ITSM / AI",
     companiesMentioned: [
       {
@@ -462,8 +462,8 @@ export const seedSignals: JobSignal[] = [
     category: "Banking / Payments / Fintech",
     signalStrength: "High",
     eventDate: "2026-05-27",
-    resourceLink: "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-52.html",
-    sourceName: "OCC Enforcement Actions",
+    resourceLink: "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-40.html",
+    sourceName: "OCC May 2026 Enforcement Actions",
     sector: "Community banking / BaaS / payments",
     companiesMentioned: [
       {
@@ -515,8 +515,8 @@ export const seedSignals: JobSignal[] = [
     category: "Banking / Payments / Fintech",
     signalStrength: "High",
     eventDate: "2026-05-27",
-    resourceLink: "https://www.consumerfinance.gov/about-us/newsroom/cfpb-takes-action-synapse-financial-technologies/",
-    sourceName: "CFPB Newsroom",
+    resourceLink: "https://www.consumerfinance.gov/enforcement/actions/synapse-financial-technologies-inc/",
+    sourceName: "CFPB Enforcement Actions",
     sector: "Fintech / BaaS / Payments",
     companiesMentioned: [
       {
@@ -569,8 +569,8 @@ export const seedSignals: JobSignal[] = [
     category: "M&A / Divestiture / Carve-out",
     signalStrength: "Medium",
     eventDate: "2026-05-27",
-    resourceLink: "https://ir.bankfirstnational.com/news-releases/news-release-details/bank-first-corporation-and-psb-holdings-inc-announce-definitive",
-    sourceName: "Bank First Corporation investor relations",
+    resourceLink: "https://www.prnewswire.com/news-releases/bank-first-corporation-signs-agreement-to-acquire-psb-holdings-inc-302776812.html",
+    sourceName: "PR Newswire",
     sector: "Community banking",
     companiesMentioned: [
       {

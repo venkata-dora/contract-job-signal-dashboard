@@ -207,6 +207,7 @@ These look minor but are real job signals:
 - Physical infrastructure announcement with no software angle (building a data center ≠ software jobs unless named cloud/platform work)
 - Generic "we are investing in AI" with no named vendor, product, or implementation
 - Press release with no verifiable source link
+- Any signal where you cannot provide a real, working URL — do NOT guess or construct URLs from patterns. Open the actual article in the browser, copy the exact URL from the address bar, and use only that. A guessed URL that returns 404 is worse than no link.
 - International-only events with no U.S. software job market impact
 - Repeat of a signal already in the dashboard (check for duplicates before adding)
 

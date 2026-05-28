@@ -74,6 +74,22 @@ function reconcileSeedCorrections(stored: JobSignal[]) {
       return { ...signal, companyEvent: titleFixes[signal.id] };
     }
 
+    // Patch resourceLinks that were guessed and turned out to be 404
+    const linkFixes: Record<string, { resourceLink: string; sourceName: string }> = {
+      "news-2026-05-27-capital-one-discover-card-migration": { resourceLink: "https://www.doctorofcredit.com/discover-cards-will-transition-to-capital-one-website-app-on-july-27-2026/", sourceName: "Doctor of Credit" },
+      "news-2026-05-27-sap-sapphire-autonomous-enterprise": { resourceLink: "https://news.sap.com/2026/05/sap-sapphire-keynote-business-ai-platform-power-autonomous-enterprise/", sourceName: "SAP News Center" },
+      "news-2026-05-27-servicenow-knowledge-2026-ai-control-tower": { resourceLink: "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-expands-AI-Control-Tower-to-discover-observe-govern-secure-and-measure-AI-deployed-across-any-system-in-the-enterprise/default.aspx", sourceName: "ServiceNow Newsroom" },
+      "news-2026-05-27-occ-consent-order-community-federal-savings-bank": { resourceLink: "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-40.html", sourceName: "OCC May 2026 Enforcement Actions" },
+      "news-2026-05-27-cfpb-synapse-financial-baas-enforcement": { resourceLink: "https://www.consumerfinance.gov/enforcement/actions/synapse-financial-technologies-inc/", sourceName: "CFPB Enforcement Actions" },
+      "news-2026-05-27-bank-first-psb-holdings-merger": { resourceLink: "https://www.prnewswire.com/news-releases/bank-first-corporation-signs-agreement-to-acquire-psb-holdings-inc-302776812.html", sourceName: "PR Newswire" },
+    };
+    if (signal.id in linkFixes) {
+      const fix = linkFixes[signal.id];
+      if (signal.resourceLink !== fix.resourceLink) {
+        return { ...signal, resourceLink: fix.resourceLink, sourceName: fix.sourceName };
+      }
+    }
+
     // Patch eventDate for the 5 new May-27 signals that were initially saved with wrong event dates
     const eventDateFixes: Record<string, string> = {
       "news-2026-05-27-sap-sapphire-autonomous-enterprise": "2026-05-27",
