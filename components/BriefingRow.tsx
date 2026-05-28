@@ -43,7 +43,7 @@ function highlightCompanies(text: string, companyNames: string[]) {
   if (names.length === 0) return text;
 
   const terms = buildHighlightTerms(names);
-  const pattern = new RegExp(`(${terms.map(escapeRegex).join("|")})`, "gi");
+  const pattern = new RegExp(`(${terms.map(t => `\\b${escapeRegex(t)}\\b`).join("|")})`, "gi");
   return text.split(pattern).map((part, index) => {
     const isCompany = terms.some((name) => name.toLowerCase() === part.toLowerCase());
     return isCompany ? <mark key={`${part}-${index}`} className="company-highlight">{part}</mark> : part;
