@@ -73,8 +73,8 @@ function getRangeBounds(range: SignalFilters["dateRange"]) {
   tomorrow.setDate(tomorrow.getDate() + 1);
 
   const bounds: Record<Exclude<SignalFilters["dateRange"], "All">, [number, number]> = {
-    "24h": [0, 1],
-    "48h": [0, 2],
+    "24h": [0, 2],
+    "48h": [0, 3],
     "week1": [0, 7],
     "week2": [7, 14],
     "week3": [14, 21],

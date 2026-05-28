@@ -61,9 +61,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       now.setHours(0, 0, 0, 0);
       const tomorrow = new Date(now);
       tomorrow.setDate(tomorrow.getDate() + 1);
+      const yesterday = new Date(now);
+      yesterday.setDate(yesterday.getDate() - 1);
       const todaySignals = signals.filter(s => {
         const d = new Date(`${s.eventDate}T00:00:00`).getTime();
-        return d >= now.getTime() && d < tomorrow.getTime();
+        return d >= yesterday.getTime() && d < tomorrow.getTime();
       });
       const c: Record<string, number> = { total: todaySignals.length, allTotal: signals.length };
       CAT_ROUTES.forEach(({ href, cat }) => {

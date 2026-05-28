@@ -19,7 +19,7 @@ const defaultFilters = (category?: SignalCategory, weekly = false): SignalFilter
   workMode: "All",
   location: "",
   role: "",
-  dateRange: weekly ? "All" : "24h",
+  dateRange: weekly ? "All" : "48h",
   exactDate: "",
   sortBy: weekly ? "Rank" : "Date"
 });
@@ -101,13 +101,13 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
   // Page meta
   let kicker = "Contract intelligence briefing";
   let title = "Signal intelligence report";
-  let subtitle = `${today} · Past-24-hour U.S.-impact briefing by default. Use the date filter to review older saved news.`;
+  let subtitle = `${today} · Past-48-hour U.S.-impact briefing by default. Use the date filter to review older saved news.`;
 
   if (category) {
     const c = categoryConfig[category];
     kicker = c.short;
     title = category;
-    subtitle = `${c.blurb} Past-24-hour signals by default. Use the date filter to see older news.`;
+    subtitle = `${c.blurb} Past-48-hour signals by default. Use the date filter to see older news.`;
   } else if (weekly) {
     kicker = "Merged priority view";
     title = "Weekly priority — top 10 targets";

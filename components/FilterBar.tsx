@@ -52,7 +52,7 @@ export function FilterBar({
   const today = todayISO();
   const isAtToday = filters.exactDate ? filters.exactDate >= today : true;
   const exactDateActive = Boolean(filters.exactDate);
-  const setExactDate = (value: string) => onChange({ ...filters, exactDate: clampToToday(value) });
+  const setExactDate = (value: string) => onChange({ ...filters, exactDate: clampToToday(value), dateRange: "All" });
   const moveExactDate = (days: number) => setExactDate(shiftDate(filters.exactDate || todayISO(), days));
   const setDateRange = (value: DateRange) => onChange({ ...filters, dateRange: value, exactDate: "" });
 
