@@ -146,12 +146,6 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
           </div>
           <div className="page-actions">
             <Link href="/add-signal" className="btn primary"><PlusIcon /> Add signal</Link>
-            <div className="btn-group">
-              <button className="btn ghost" onClick={() => exportCsv(list)}><DownloadIcon /> CSV</button>
-              <button className="btn ghost" onClick={() => exportMd(list)}><DownloadIcon /> Markdown</button>
-              <button className="btn ghost" onClick={() => exportJson(list)}><DownloadIcon /> JSON</button>
-              <button className="btn ghost danger" onClick={() => { if (window.confirm("Reset to seed data? Local edits will be lost.")) reset(); }}><ResetIcon /> Reset</button>
-            </div>
           </div>
         </div>
 
