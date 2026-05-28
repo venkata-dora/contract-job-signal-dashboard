@@ -1,28 +1,12 @@
-"use client";
-
-import Link from "next/link";
 import { categoryConfig, strengthConfig } from "@/lib/categoryStyles";
 import type { JobSignal, SignalCategory, SignalStrength } from "@/lib/types";
-import { CategoryChip, StrengthBadge } from "./Badges";
-
-function fmtDateShort(iso: string) {
-  return new Date(`${iso}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric" });
-}
-
-const ArrowIcon = () => (
-  <svg width={11} height={11} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 12h14M13 6l6 6-6 6"/>
-  </svg>
-);
+import { StrengthBadge } from "./Badges";
 
 export function DistributionPanels({
-  signals,
-  onEdit
+  signals
 }: {
   signals: JobSignal[];
-  onEdit?: (s: JobSignal) => void;
 }) {
-  const top3 = signals.slice(0, 3);
   const categories = Object.keys(categoryConfig) as SignalCategory[];
   const catMax = Math.max(...categories.map(c => signals.filter(s => s.category === c).length), 1);
 
@@ -31,30 +15,6 @@ export function DistributionPanels({
 
   return (
     <section className="split-row">
-      {/* Top 3 */}
-      <div className="panel">
-        <div className="panel-head">
-          <h3>Top 3 strongest signals</h3>
-          <Link href="/weekly" className="link-btn">Open weekly priority <ArrowIcon /></Link>
-        </div>
-        <ol className="top-list">
-          {top3.map((s, i) => (
-            <li key={s.id} onClick={() => onEdit?.(s)}>
-              <div className="top-rank">{String(i + 1).padStart(2, "0")}</div>
-              <div>
-                <div className="top-title">{s.companyEvent}</div>
-                <div className="top-meta">
-                  <CategoryChip category={s.category} />
-                  <StrengthBadge strength={s.signalStrength} />
-                  <span className="muted">{s.eventType}</span>
-                </div>
-              </div>
-              <div className="top-date">{fmtDateShort(s.eventDate)}</div>
-            </li>
-          ))}
-        </ol>
-      </div>
-
       {/* Category distribution */}
       <div className="panel">
         <div className="panel-head"><h3>Category distribution</h3></div>

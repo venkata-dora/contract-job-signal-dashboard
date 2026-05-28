@@ -18,23 +18,7 @@ export function ExecutiveSummary({ signals }: { signals: JobSignal[] }) {
 
 export function DistributionStrip({ signals }: { signals: JobSignal[] }) {
   return (
-    <section className="grid gap-4 lg:grid-cols-[1.35fr_1fr_1fr]">
-      <div className="surface p-5">
-        <h2 className="text-sm font-bold text-slate-950">Top 3 strongest signals</h2>
-        <ol className="mt-3 divide-y divide-border">
-          {signals.slice(0, 3).map((signal) => (
-            <li key={signal.id} className="py-3 text-sm first:pt-0 last:pb-0">
-              <div className="flex gap-3">
-                <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-blue-600" />
-                <div>
-                  <div className="font-semibold leading-5 text-slate-950">{signal.companyEvent}</div>
-                  <div className="mt-1 text-xs text-slate-500">{signal.eventType}</div>
-                </div>
-              </div>
-            </li>
-          ))}
-        </ol>
-      </div>
+    <section className="grid gap-4 lg:grid-cols-2">
       <MetricList title="Category distribution" rows={topValues(signals.map((signal) => signal.category))} />
       <MetricList title="Signal strength distribution" rows={topValues(signals.map((signal) => signal.signalStrength))} />
     </section>
