@@ -84,7 +84,7 @@ export function FilterBar({
   onChange: (f: SignalFilters) => void;
   lockCategory?: boolean;
 }) {
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const upd = <K extends keyof SignalFilters>(k: K, v: SignalFilters[K]) => onChange({ ...filters, [k]: v });
   const today = todayISO();
   const isAtToday = filters.exactDate ? filters.exactDate >= today : true;
@@ -94,35 +94,32 @@ export function FilterBar({
   const setDateRange = (value: DateRange) => onChange({ ...filters, dateRange: value, exactDate: "" });
   const activeCount = countActiveFilters(filters);
 
+  const clearAll = () => onChange({ ...filters, query: "", category: "All", strength: "All", workMode: "All", location: "", role: "", dateRange: "48h", exactDate: "" });
+
   return (
     <div className="filter-bar">
-      {/* Collapsed toggle row */}
-      <div className="filter-toggle-row">
-        <button className="filter-toggle-btn" type="button" onClick={() => setOpen(!open)}>
+      {/* Mobile-only toggle row */}
+      <div className="filter-toggle-row mobile-only">
+        <button className="filter-toggle-btn" type="button" onClick={() => setMobileOpen(!mobileOpen)}>
           <FilterIcon />
           Filters
           {activeCount > 0 && <span className="filter-active-badge">{activeCount}</span>}
-          <ExpandChevron open={open} />
+          <ExpandChevron open={mobileOpen} />
         </button>
-        {!open && (
+        {!mobileOpen && (
           <div className="filter-summary">
             <span className="filter-summary-chip">{dateRangeLabel(filters.dateRange)}</span>
             {filters.query && <span className="filter-summary-chip">"{filters.query}"</span>}
             {filters.category !== "All" && <span className="filter-summary-chip">{filters.category.split(" / ")[0]}</span>}
             {filters.strength !== "All" && <span className="filter-summary-chip">{filters.strength}</span>}
             {filters.exactDate && <span className="filter-summary-chip exact">{formatVisibleDate(filters.exactDate)}</span>}
-            {activeCount > 0 && (
-              <button className="filter-clear-all" type="button" onClick={() => onChange({ ...filters, query: "", category: "All", strength: "All", workMode: "All", location: "", role: "", dateRange: "48h", exactDate: "" })}>
-                Clear all
-              </button>
-            )}
+            {activeCount > 0 && <button className="filter-clear-all" type="button" onClick={clearAll}>Clear all</button>}
           </div>
         )}
       </div>
 
-      {/* Expanded filter panel */}
-      {open && (
-        <div className="filter-panel">
+      {/* Desktop: always visible. Mobile: visible when toggled open */}
+      <div className={`filter-panel ${mobileOpen ? "mobile-open" : ""}`}>
           <div className="filter-row">
             <div className="search-wrap">
               <SearchIcon />
@@ -198,7 +195,6 @@ export function FilterBar({
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 }

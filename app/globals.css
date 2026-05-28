@@ -369,7 +369,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
   margin-bottom: 0;
 }
 .filter-toggle-row {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 10px;
   padding: 10px 0 0;
@@ -435,6 +435,12 @@ button, a, input, select, textarea { touch-action: manipulation; }
   flex-direction: column;
   gap: 8px;
   padding-top: 10px;
+}
+/* Mobile: hide toggle row on desktop, show on mobile */
+@media (max-width: 768px) {
+  .filter-toggle-row.mobile-only { display: flex; }
+  .filter-panel { display: none; }
+  .filter-panel.mobile-open { display: flex; }
 }
 .filter-row {
   display: flex;
