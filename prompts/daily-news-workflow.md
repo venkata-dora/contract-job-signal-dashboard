@@ -163,7 +163,6 @@ These are high-value forced-change signals. Always check for them.
 - Insurance company M&A (always involves Guidewire/Duck Creek migration)
 - Retailer acquisition (loyalty, e-commerce platform integration)
 - Bank acquiring a fintech (core/digital banking integration)
-- Government contractor acquisition (security clearance systems, ERP)
 - TSA exit news: any company stating it will stand up standalone IT systems
 
 ### Cyber / Compliance
@@ -186,7 +185,6 @@ These are high-value forced-change signals. Always check for them.
 - Cloud migration deal with named hyperscaler and SI partner
 - Mainframe modernization announcement (COBOL to cloud)
 - EHR implementation or migration (Epic, Oracle Health, Cerner)
-- Federal FISMA, FedRAMP, CMMC compliance programs at named agencies
 
 ### Near-miss signals — DO capture these
 These look minor but are real job signals:
@@ -210,6 +208,7 @@ These look minor but are real job signals:
 - Any signal where you cannot provide a real, working URL — do NOT guess or construct URLs from patterns. Open the actual article in the browser, copy the exact URL from the address bar, and use only that. A guessed URL that returns 404 is worse than no link.
 - International-only events with no U.S. software job market impact
 - Repeat of a signal already in the dashboard (check for duplicates before adding)
+- **Federal / U.S. government signals — do not add.** This includes: federal agencies (CISA, OCC, FDIC, FTC, HHS, DoD, DHS, etc.) as the primary actor, federal contractors (Leidos, SAIC, Booz Allen, Palantir federal, etc.), FISMA/FedRAMP/CMMC/DISA compliance programs at named agencies, and any signal where the hiring company is a government body or the work requires a security clearance. The dashboard targets private-sector contract software jobs only. Exception: regulators are allowed as the SOURCE of enforcement actions against private companies (e.g. OCC issues consent order against a bank — add the bank, not OCC).
 
 ---
 

@@ -18,23 +18,29 @@ export const seedSignals: JobSignal[] = [
     sector: "Cybersecurity / Software supply chain",
     companiesMentioned: [
       {
-        name: "CISA",
-        sector: "U.S. federal cybersecurity agency",
-        relationship: "Source / award issuer",
-        description: "Cybersecurity and Infrastructure Security Agency — U.S. government body that mandates federal patching via KEV catalog"
+        name: "GitHub",
+        sector: "Developer platform",
+        relationship: "Customer / buyer",
+        description: "Developer platform — downstream breach victim of the TanStack supply chain attack; credentials stolen via compromised Nx developer account"
+      },
+      {
+        name: "Grafana Labs",
+        sector: "Observability / monitoring platform",
+        relationship: "Customer / buyer",
+        description: "Observability platform — downstream breach victim traced back to the TanStack/Nx Console supply chain compromise"
       }
     ],
-    summary: "CISA added three CVEs to its KEV catalog on May 27 covering coordinated supply chain attacks: TanStack npm packages (84 malicious versions published May 11, GitHub and Grafana Labs downstream victims), Nx Console VS Code extension (compromised May 18, credential stealer), and DAEMON Tools Lite (official installer trojanized April–May 2026). Federal agencies must remediate by June 17.",
-    likelyJobLocations: ["Washington, DC", "Northern Virginia", "New York, NY", "San Francisco Bay Area, CA", "Austin, TX", "Chicago, IL", "Seattle, WA", "Remote USA security delivery"],
+    summary: "Three developer toolchain supply chain attacks were confirmed in May 2026: TanStack npm packages (84 malicious versions, May 11 — GitHub and Grafana Labs were downstream victims), Nx Console VS Code extension (compromised May 18, credential stealer targeting developer workstations), and DAEMON Tools Lite official Windows installer (trojanized April–May 2026). Any enterprise engineering team using React, TanStack, or Nx must audit its build pipeline and rotate credentials now.",
+    likelyJobLocations: ["New York, NY", "San Francisco Bay Area, CA", "Austin, TX", "Chicago, IL", "Seattle, WA", "Boston, MA", "Atlanta, GA", "Remote USA security delivery"],
     workMode: "Remote / Hybrid",
-    whyTheseLocations: "Developer toolchain supply chain attacks hit every enterprise with active JavaScript/React/Nx build pipelines. Federal agencies (DC/NoVa) face mandatory June 17 deadline. Large enterprise security teams everywhere must audit and remediate.",
-    whyThisMayCreateContractSoftwareJobs: "Three simultaneous developer toolchain compromises create immediate contract demand: software composition analysis (SCA) audits across npm dependency trees, CI/CD pipeline security hardening, developer workstation forensics, credential rotation at scale (GitHub tokens, cloud keys, API secrets), YARA-based threat hunting, and security engineering to harden build/deploy pipelines against future supply chain attacks.",
+    whyTheseLocations: "Developer toolchain supply chain attacks hit every enterprise with active JavaScript/React/Nx build pipelines. Large tech, fintech, healthcare, and enterprise software companies with active React/Node.js engineering shops are directly affected.",
+    whyThisMayCreateContractSoftwareJobs: "Three simultaneous developer toolchain compromises drive immediate contract demand: software composition analysis (SCA) audits across npm dependency trees, CI/CD pipeline security hardening, developer workstation forensics, credential rotation at scale (GitHub tokens, cloud keys, API secrets), YARA-based threat hunting, and security engineering to harden build/deploy pipelines against future supply chain attacks.",
     likelySoftwareRoles: ["DevSecOps Engineer", "Software Composition Analysis (SCA) Engineer", "CI/CD Security Engineer", "Incident Response Engineer", "Threat Hunter", "Security Automation Engineer", "Cloud Security Engineer", "AppSec Engineer", "Backend Security Engineer"],
-    bestSearchKeywords: ["supply chain attack remediation contractor", "SCA software composition analysis engineer", "CI/CD pipeline security hardening", "npm dependency audit engineer", "DevSecOps supply chain contractor", "CISA KEV remediation engineer", "developer toolchain security engineer", "credential rotation automation engineer"],
-    actionPlan: "Target enterprise security teams, federal contractors (June 17 FCEB deadline), and large engineering orgs using React/TanStack/Nx. Pitch SCA audit, CI/CD hardening, and developer workstation incident response. Look for CISA compliance roles at federal SIs (Leidos, SAIC, Booz Allen).",
-    confidenceNote: "High — three active CISA KEV additions in 24h, covering mainstream developer tooling (TanStack, Nx Console are used by virtually every React/Angular enterprise shop). Federal mandate creates non-discretionary remediation spend.",
-    watchFor: ["Enterprise SCA audit RFPs", "Federal agency CI/CD hardening contracts", "GitHub/GitLab supply chain security roles", "npm/PyPI dependency security posture work", "Follow-on KEV additions targeting JavaScript ecosystem"],
-    rawNotes: "CISA added CVE-2026-8398 (DAEMON Tools Lite RCE), CVE-2026-45321 (TanStack prototype pollution), CVE-2026-48027 (Nx Console command injection) on May 27 2026. TanStack attack attributed to threat group TeamPCP — first documented malicious npm package with valid SLSA provenance. GitHub and Grafana Labs were downstream breach victims. Federal remediation deadline June 17. U.S. impact: any enterprise or federal agency using React/TanStack/Nx in build pipelines is directly affected.",
+    bestSearchKeywords: ["supply chain attack remediation contractor", "SCA software composition analysis engineer", "CI/CD pipeline security hardening", "npm dependency audit engineer", "DevSecOps supply chain contractor", "developer toolchain security engineer", "credential rotation automation engineer", "TanStack Nx Console security remediation"],
+    actionPlan: "Target enterprise security and engineering teams at large React/Node.js shops — banks, fintechs, SaaS companies, healthcare IT. Pitch SCA audit, CI/CD hardening, and developer workstation incident response. Look for DevSecOps and AppSec contract roles at companies that use GitHub Actions.",
+    confidenceNote: "High — three confirmed supply chain attacks against mainstream developer tooling (TanStack and Nx Console are used by virtually every React/Angular enterprise shop). GitHub and Grafana Labs confirmed as breach victims. Immediate remediation spend is non-discretionary.",
+    watchFor: ["Enterprise SCA audit RFPs", "CI/CD pipeline security hardening roles", "GitHub/GitLab supply chain security postings", "npm/PyPI dependency security posture work", "Follow-on KEV additions targeting JavaScript ecosystem"],
+    rawNotes: "CISA added CVE-2026-8398 (DAEMON Tools Lite RCE), CVE-2026-45321 (TanStack prototype pollution), CVE-2026-48027 (Nx Console command injection) on May 27 2026. TanStack attack attributed to threat group TeamPCP — first documented malicious npm package with valid SLSA provenance. GitHub and Grafana Labs confirmed as downstream breach victims. U.S. impact: any enterprise using React/TanStack/Nx in build pipelines is directly affected.",
     createdAt: now28,
     updatedAt: now28
   },
@@ -1253,28 +1259,6 @@ export const seedSignals: JobSignal[] = [
     bestSearchKeywords: ["supply chain platform modernization contractor", "logistics API integration developer", "warehouse systems data engineer contract", "TMS modernization software engineer", "EDI API replacement contractor"],
     actionPlan: "Search logistics, TMS, WMS, routing, EDI/API, and data platform roles.",
     confidenceNote: "Medium because logistics platform work is integration-heavy but company timing varies.",
-    createdAt: now,
-    updatedAt: now
-  },
-  {
-    id: "seed-federal-ai-cyber",
-    rank: 12,
-    companyEvent: "Federal AI and cyber modernization program",
-    eventType: "Government AI / Cyber Modernization",
-    category: "Cyber / Compliance / Regulatory",
-    signalStrength: "High",
-    eventDate: "2025-11-20",
-    resourceLink: "https://example.com/federal-ai-cyber",
-    sourceName: "Sample award notice",
-    sector: "Federal technology",
-    likelyJobLocations: ["Washington DC", "Northern Virginia", "Maryland", "Huntsville, AL", "San Antonio, TX", "Colorado Springs, CO", "Tampa, FL", "St. Louis, MO"],
-    workMode: "Hybrid / On-site",
-    whyTheseLocations: "Federal cyber and AI programs follow agency, integrator, clearance, and mission delivery centers.",
-    whyThisMayCreateContractSoftwareJobs: "AI/cyber modernization creates governance, secure software, data pipelines, IAM, audit, cloud, testing, and mission integration work.",
-    likelySoftwareRoles: ["Cybersecurity Software Engineer", "AI Engineer", "Python Developer", "Data Engineer", "IAM Engineer", "Cloud Security Engineer", "QA Automation/SDET", "Technical BA"],
-    bestSearchKeywords: ["federal AI cyber modernization contractor", "cleared Python AI engineer contract", "federal IAM hardening engineer", "AI governance developer federal contract", "cloud security software engineer contract"],
-    actionPlan: "Search prime integrators, agency award terms, clearance filters, AI governance, and cyber modernization roles.",
-    confidenceNote: "High because government modernization awards often map directly to contract staffing.",
     createdAt: now,
     updatedAt: now
   }
