@@ -5,46 +5,6 @@ const now28 = "2026-05-28T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
   {
-    id: "news-2026-05-28-cisa-kev-developer-supply-chain-attacks",
-    rank: 1,
-    companyEvent: "Supply chain attacks hit TanStack npm (84 packages), Nx Console VS Code extension, and DAEMON Tools Lite installer — GitHub and Grafana Labs confirmed breach victims",
-    eventType: "Software Supply Chain Attack",
-    category: "Cyber / Compliance / Regulatory",
-    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
-    signalStrength: "High",
-    eventDate: "2026-05-28",
-    resourceLink: "https://windowsnews.ai/article/cisa-kev-may-27-2026-supply-chain-attacks-via-daemon-tools-tanstack-nx-console.420155",
-    sourceName: "CISA / Windows Forum",
-    sector: "Cybersecurity / Software supply chain",
-    companiesMentioned: [
-      {
-        name: "GitHub",
-        sector: "Developer platform",
-        relationship: "Customer / buyer",
-        description: "Developer platform — downstream breach victim of the TanStack supply chain attack; credentials stolen via compromised Nx developer account"
-      },
-      {
-        name: "Grafana Labs",
-        sector: "Observability / monitoring platform",
-        relationship: "Customer / buyer",
-        description: "Observability platform — downstream breach victim traced back to the TanStack/Nx Console supply chain compromise"
-      }
-    ],
-    summary: "Three developer toolchain supply chain attacks were confirmed in May 2026: TanStack npm packages (84 malicious versions, May 11 — GitHub and Grafana Labs were downstream victims), Nx Console VS Code extension (compromised May 18, credential stealer targeting developer workstations), and DAEMON Tools Lite official Windows installer (trojanized April–May 2026). Any enterprise engineering team using React, TanStack, or Nx must audit its build pipeline and rotate credentials now.",
-    likelyJobLocations: ["New York, NY", "San Francisco Bay Area, CA", "Austin, TX", "Chicago, IL", "Seattle, WA", "Boston, MA", "Atlanta, GA", "Remote USA security delivery"],
-    workMode: "Remote / Hybrid",
-    whyTheseLocations: "Developer toolchain supply chain attacks hit every enterprise with active JavaScript/React/Nx build pipelines. Large tech, fintech, healthcare, and enterprise software companies with active React/Node.js engineering shops are directly affected.",
-    whyThisMayCreateContractSoftwareJobs: "Three simultaneous developer toolchain compromises drive immediate contract demand: software composition analysis (SCA) audits across npm dependency trees, CI/CD pipeline security hardening, developer workstation forensics, credential rotation at scale (GitHub tokens, cloud keys, API secrets), YARA-based threat hunting, and security engineering to harden build/deploy pipelines against future supply chain attacks.",
-    likelySoftwareRoles: ["DevSecOps Engineer", "Software Composition Analysis (SCA) Engineer", "CI/CD Security Engineer", "Incident Response Engineer", "Threat Hunter", "Security Automation Engineer", "Cloud Security Engineer", "AppSec Engineer", "Backend Security Engineer"],
-    bestSearchKeywords: ["supply chain attack remediation contractor", "SCA software composition analysis engineer", "CI/CD pipeline security hardening", "npm dependency audit engineer", "DevSecOps supply chain contractor", "developer toolchain security engineer", "credential rotation automation engineer", "TanStack Nx Console security remediation"],
-    actionPlan: "Target enterprise security and engineering teams at large React/Node.js shops — banks, fintechs, SaaS companies, healthcare IT. Pitch SCA audit, CI/CD hardening, and developer workstation incident response. Look for DevSecOps and AppSec contract roles at companies that use GitHub Actions.",
-    confidenceNote: "High — three confirmed supply chain attacks against mainstream developer tooling (TanStack and Nx Console are used by virtually every React/Angular enterprise shop). GitHub and Grafana Labs confirmed as breach victims. Immediate remediation spend is non-discretionary.",
-    watchFor: ["Enterprise SCA audit RFPs", "CI/CD pipeline security hardening roles", "GitHub/GitLab supply chain security postings", "npm/PyPI dependency security posture work", "Follow-on KEV additions targeting JavaScript ecosystem"],
-    rawNotes: "CISA added CVE-2026-8398 (DAEMON Tools Lite RCE), CVE-2026-45321 (TanStack prototype pollution), CVE-2026-48027 (Nx Console command injection) on May 27 2026. TanStack attack attributed to threat group TeamPCP — first documented malicious npm package with valid SLSA provenance. GitHub and Grafana Labs confirmed as downstream breach victims. U.S. impact: any enterprise using React/TanStack/Nx in build pipelines is directly affected.",
-    createdAt: now28,
-    updatedAt: now28
-  },
-  {
     id: "news-2026-05-28-huntington-cadence-bank-system-conversion",
     rank: 2,
     companyEvent: "Huntington Bank acquires Cadence Bank: June 22 full system cutover approaching — core banking, digital banking, and ACH migration underway now",

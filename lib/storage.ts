@@ -38,7 +38,13 @@ function mergeNewSeedSignals(stored: JobSignal[]) {
   return newSeeds.length ? [...newSeeds, ...stored] : stored;
 }
 
+const PURGED_SIGNAL_IDS = new Set([
+  "news-2026-05-28-cisa-kev-developer-supply-chain-attacks",
+  "seed-federal-ai-cyber",
+]);
+
 function reconcileSeedCorrections(stored: JobSignal[]) {
+  stored = stored.filter((signal) => !PURGED_SIGNAL_IDS.has(signal.id));
   const proofpointSeed = seedSignals.find((signal) => signal.id === "news-2026-05-27-proofpoint-active-exploits-protection");
   const trustlogixSeed = seedSignals.find((signal) => signal.id === "news-2026-05-27-trustlogix-trustai-agent-governance");
 
