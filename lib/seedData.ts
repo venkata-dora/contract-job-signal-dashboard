@@ -2,8 +2,160 @@ import type { JobSignal } from "./types";
 
 const now = "2026-05-27T12:00:00.000Z";
 const now28 = "2026-05-28T12:00:00.000Z";
+const now29 = "2026-05-29T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
+  {
+    id: "news-2026-05-29-carnival-corp-data-breach",
+    rank: 1,
+    companyEvent: "Carnival Corporation data breach: 5.9M customers' PII exposed via social engineering — breach notifications sent, forensic remediation underway",
+    eventType: "Cyber Incident / Data Breach Remediation",
+    category: "Cyber / Compliance / Regulatory",
+    signalStrength: "High",
+    eventDate: "2026-05-29",
+    resourceLink: "https://www.bleepingcomputer.com/news/security/carnival-cruise-confirms-data-breach-affecting-nearly-6-million-people/",
+    sourceName: "BleepingComputer",
+    sector: "Hospitality / Consumer travel",
+    companiesMentioned: [
+      {
+        name: "Carnival Corporation",
+        sector: "Consumer travel and hospitality",
+        relationship: "Primary target",
+        description: "Miami-based cruise and travel operator; attacker used social engineering to compromise an employee account in April 2026, exposing PII of 5,995,277 customers including names, email addresses, dates of birth, gender, geographic locations, loyalty data, and government-issued IDs"
+      }
+    ],
+    summary: "Carnival Corporation confirmed a data breach affecting nearly 6 million people. An attacker used social engineering on April 14, 2026 to gain employee account access, then copied personal data before being blocked on April 22. Exposed data includes names, email addresses, dates of birth, genders, geographic locations, loyalty program details, and government-issued identification numbers. ShinyHunters claimed responsibility. Carnival sent formal breach notifications dated May 27, 2026 and is offering 24-month credit monitoring through TransUnion.",
+    likelyJobLocations: ["Miami, FL", "Doral, FL", "Fort Lauderdale, FL", "Seattle, WA", "New York, NY", "Atlanta, GA", "Remote USA cyber vendor delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Carnival Corporation is headquartered in Miami/Doral, FL. Incident response, data privacy remediation, IAM hardening, breach notification, and forensics work follows Carnival's tech operations plus remote cyber-vendor delivery teams.",
+    whyThisMayCreateContractSoftwareJobs: "A 6M-record breach with government IDs creates demand for incident response forensics, IAM hardening (social engineering controls, MFA enforcement, privileged access), DLP and data classification, breach notification system engineering, credit monitoring integration, privacy remediation workflows, insider threat detection, SIEM/SOAR tuning, and post-breach compliance evidence.",
+    likelySoftwareRoles: [
+      "Incident Response Engineer",
+      "IAM / Identity Security Engineer",
+      "DLP Engineer",
+      "Data Privacy Engineer",
+      "Security Automation Engineer",
+      "SIEM / SOAR Engineer",
+      "Breach Notification Systems Developer",
+      "AppSec Engineer",
+      "Cloud Security Engineer",
+      "QA Automation/SDET",
+      "Technical Business Analyst"
+    ],
+    bestSearchKeywords: [
+      "Carnival Corporation cybersecurity contractor",
+      "data breach incident response engineer contract",
+      "IAM hardening social engineering remediation",
+      "DLP data privacy engineer hospitality",
+      "breach notification system developer contract",
+      "SIEM SOAR tuning contractor travel industry",
+      "MFA privileged access remediation contract"
+    ],
+    actionPlan: "Target Carnival Corporation IT security and privacy teams directly. Also target incident-response consulting firms (CrowdStrike, Mandiant, Kroll, Stroz Friedberg) that typically staff breach remediation. Search IAM hardening, DLP, breach notification, data privacy engineering, and SIEM/SOAR roles in Miami-area and remote.",
+    confidenceNote: "High. Named company, confirmed 5.9M-person breach, formal breach notifications sent May 27, third-party forensics engaged. Government-ID exposure elevates remediation urgency and scope.",
+    watchFor: [
+      "Carnival incident response vendor postings",
+      "IAM and MFA hardening roles at Carnival",
+      "Data privacy and DLP contract openings",
+      "SIEM/SOAR tuning and insider-threat detection roles",
+      "Regulatory follow-on: FTC or state AG data-security enforcement"
+    ],
+    rawNotes: "BleepingComputer confirmed May 28, 2026. Social engineering attack April 14; access blocked April 22. Breach notifications dated May 27. ShinyHunters claimed 8.7M records + terabytes of internal data. Carnival official count: 5,995,277 people. Government-issued ID numbers in exposed data. U.S. impact: Carnival Corporation & plc HQ Miami, FL; breach affects U.S. customers and U.S. loyalty programs.",
+    createdAt: now29,
+    updatedAt: now29
+  },
+  {
+    id: "news-2026-05-28-cb-financial-shadow-ai-8k",
+    rank: 1,
+    companyEvent: "CB Financial / Community Bank shadow-AI incident becomes SEC Item 1.05 disclosure case study for bank AI governance",
+    eventType: "Shadow AI Cyber Incident / AI Governance Remediation",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms", "Banking / Payments / Fintech"],
+    signalStrength: "High",
+    eventDate: "2026-05-28",
+    resourceLink: "https://www.wsgr.com/en/insights/shadow-ai-triggers-first-sec-form-8-k-for-unauthorized-ai-use-what-financial-institutions-and-public-companies-need-to-know.html",
+    sourceName: "Wilson Sonsini",
+    sector: "Banking / AI governance / Cybersecurity",
+    companiesMentioned: [
+      {
+        name: "CB Financial Services",
+        sector: "Bank holding company",
+        relationship: "Primary target",
+        description: "Pennsylvania-based public bank holding company whose Community Bank subsidiary disclosed a material cybersecurity incident tied to unauthorized AI use"
+      },
+      {
+        name: "Community Bank",
+        sector: "Regional banking",
+        relationship: "Primary target",
+        description: "CB Financial subsidiary that detected unauthorized use of an AI-based application to process non-public customer information"
+      },
+      {
+        name: "Wilson Sonsini",
+        sector: "Technology and regulatory law",
+        relationship: "Source / award issuer",
+        description: "Law firm that published the May 28 analysis connecting the bank incident to SEC cyber disclosure, AI governance, GLBA, DLP, and incident-response controls"
+      }
+    ],
+    summary: "Wilson Sonsini published a May 28 analysis of CB Financial's Community Bank incident, where unauthorized AI use exposed sensitive customer information and led to an Item 1.05 Form 8-K disclosure. The analysis highlights AI acceptable-use policy, data classification, DLP, approved AI vendor lists, incident response, materiality assessment, and AI-vendor risk management.",
+    likelyJobLocations: ["Pittsburgh, PA", "Washington, PA", "Philadelphia, PA", "New York, NY", "Columbus, OH", "Washington, DC", "Northern Virginia", "Remote USA AI governance delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Community Bank is Pennsylvania-based; bank cybersecurity, SEC disclosure, GLBA, AI governance, privacy, and DLP remediation work also concentrates around Pennsylvania, New York, Washington DC/Northern Virginia, and remote regulated-industry delivery teams.",
+    whyThisMayCreateContractSoftwareJobs: "Shadow-AI remediation creates demand for AI asset inventory, acceptable-use controls, DLP rules for customer PII, proxy/CASB monitoring, data classification, approved vendor workflows, incident response playbooks, audit trails, SEC materiality workflows, GLBA Safeguards evidence, and employee training systems.",
+    likelySoftwareRoles: ["AI Governance Analyst", "Cybersecurity GRC Analyst", "DLP Engineer", "Data Privacy Engineer", "Security Automation Engineer", "IAM / Access Controls Engineer", "Incident Response Analyst", "Bank Compliance Systems Analyst", "Technical Program Manager"],
+    bestSearchKeywords: ["CB Financial shadow AI contractor", "Community Bank unauthorized AI remediation", "AI governance banking contract", "DLP engineer customer PII bank", "GLBA safeguards AI governance", "SEC Item 1.05 cyber disclosure remediation", "AI acceptable use policy technical controls"],
+    actionPlan: "Search CB Financial, Community Bank, shadow AI, AI governance, DLP, GLBA, SEC Item 1.05, cybersecurity incident response, and bank privacy remediation roles. Also target consulting firms building AI governance controls for regulated financial institutions.",
+    confidenceNote: "High for job-signal relevance: the May 28 analysis maps directly to concrete controls and remediation programs, even though the original 8-K was filed earlier in May.",
+    watchFor: ["AI governance program roles at regional banks", "DLP and CASB contract work", "GLBA Safeguards remediation", "SEC cyber materiality workflow projects", "AI vendor inventory and policy tooling"],
+    rawNotes: "Wilson Sonsini article published May 28, 2026. Original facts: Community Bank detected unauthorized AI use on May 5, CB determined materiality on May 7, and the 8-K was filed May 11. Included because the May 28 article is a fresh material update for AI governance implementation.",
+    createdAt: now29,
+    updatedAt: now29
+  },
+  {
+    id: "news-2026-05-28-cisa-kev-developer-supply-chain",
+    rank: 2,
+    companyEvent: "CISA KEV catalog version 2026.05.28 flags developer supply-chain compromises in Nx Console and TanStack packages",
+    eventType: "Known Exploited Vulnerability / Developer Supply Chain Remediation",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-05-28",
+    resourceLink: "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    sourceName: "CISA KEV Catalog",
+    sector: "Cybersecurity / Software supply chain",
+    companiesMentioned: [
+      {
+        name: "Cybersecurity and Infrastructure Security Agency",
+        sector: "U.S. federal cybersecurity agency",
+        relationship: "Source / award issuer",
+        description: "U.S. agency maintaining the Known Exploited Vulnerabilities catalog used by federal agencies and private-sector security teams for urgent remediation prioritization"
+      },
+      {
+        name: "Nx",
+        sector: "Developer tooling",
+        relationship: "Primary target",
+        description: "Developer tooling ecosystem whose Nx Console extension was listed by CISA for embedded malicious code and credential harvesting risk"
+      },
+      {
+        name: "TanStack",
+        sector: "Open-source web development tooling",
+        relationship: "Primary target",
+        description: "Popular JavaScript/TypeScript application framework ecosystem listed by CISA after malicious versions were published to npm under a trusted identity"
+      }
+    ],
+    summary: "CISA's KEV catalog version 2026.05.28 lists recent developer supply-chain compromises, including CVE-2026-48027 for Nx Console and CVE-2026-45321 for TanStack. Both items have June 10, 2026 remediation due dates and known ransomware campaign use marked in the catalog.",
+    likelyJobLocations: ["Washington, DC", "Northern Virginia", "San Francisco Bay Area, CA", "Seattle, WA", "Austin, TX", "New York, NY", "Denver, CO", "Remote USA AppSec delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "KEV-driven remediation creates work in federal cyber hubs, SaaS engineering centers, AppSec teams, DevSecOps consultancies, and remote incident-response delivery teams.",
+    whyThisMayCreateContractSoftwareJobs: "Developer supply-chain KEVs force SBOM review, npm/package-lock scanning, IDE extension audits, credential rotation, secrets detection, CI/CD pipeline hardening, endpoint forensics, SCA tooling updates, developer workstation remediation, and exception tracking for federal and enterprise compliance teams.",
+    likelySoftwareRoles: ["Application Security Engineer", "DevSecOps Engineer", "Software Supply Chain Security Engineer", "SCA Tooling Engineer", "Incident Response Engineer", "Cloud Security Engineer", "Security Automation Developer", "Platform Engineer", "Technical Program Manager"],
+    bestSearchKeywords: ["CISA KEV Nx Console remediation contractor", "TanStack npm supply chain security engineer", "software supply chain incident response contract", "SBOM SCA remediation engineer", "developer workstation credential rotation", "DevSecOps package lock scanning", "CISA KEV AppSec contractor"],
+    actionPlan: "Search CISA KEV, Nx Console, TanStack, npm supply chain, SBOM, SCA, DevSecOps, package-lock audit, credential rotation, and developer workstation remediation roles. Prioritize federal contractors and SaaS companies with JavaScript/TypeScript stacks.",
+    confidenceNote: "High because KEV additions create concrete federal deadlines and private-sector patch/remediation urgency; this is active exploitation, not ordinary vulnerability chatter.",
+    watchFor: ["Federal KEV remediation surge", "AppSec SCA backlog roles", "Developer workstation forensics work", "Credential rotation automation", "CI/CD supply-chain hardening contracts"],
+    rawNotes: "CISA KEV feed catalogVersion 2026.05.28, dateReleased 2026-05-28T16:27:12.9227Z. Listed vulnerabilities include CVE-2026-48027 Nx Console and CVE-2026-45321 TanStack, both dateAdded 2026-05-27 with dueDate 2026-06-10 and known ransomware campaign use marked Known.",
+    createdAt: now29,
+    updatedAt: now29
+  },
   {
     id: "news-2026-05-28-huntington-cadence-bank-system-conversion",
     rank: 2,
@@ -498,55 +650,66 @@ export const seedSignals: JobSignal[] = [
   {
     id: "news-2026-05-27-occ-consent-order-community-federal-savings-bank",
     rank: 11,
-    companyEvent: "OCC Consent Order: Community Federal Savings Bank (Woodhaven, NY) — BSA/AML violations",
-    eventType: "Consent Order / AML Remediation",
+    companyEvent: "Community Federal Savings Bank OCC consent order: payment-processing growth outpaced BSA/AML controls",
+    eventType: "BSA/AML Consent Order / Payment Processing Remediation",
     category: "Banking / Payments / Fintech",
+    secondaryCategories: ["Cyber / Compliance / Regulatory"],
     signalStrength: "High",
-    eventDate: "2026-05-27",
-    resourceLink: "https://www.occ.gov/news-issuances/news-releases/2026/nr-occ-2026-40.html",
-    sourceName: "OCC May 2026 Enforcement Actions",
-    sector: "Community banking / BaaS / payments",
+    eventDate: "2026-05-28",
+    resourceLink: "https://www.fintechfutures.com/regulatory-actions/occ-issues-consent-order-to-community-federal-savings-bank",
+    sourceName: "FinTech Futures",
+    sector: "Community banking / payments compliance",
     companiesMentioned: [
       {
         name: "Community Federal Savings Bank",
-        sector: "Community banking and BaaS sponsor banking",
+        sector: "Banking and payments",
         relationship: "Primary target",
-        description: "Federally-chartered community bank in Woodhaven, NY, operating as a BaaS sponsor bank. Issued an OCC consent order in May 2026 for Bank Secrecy Act and anti-money laundering program deficiencies requiring technology remediation."
+        description: "Woodhaven, NY-based bank providing loans, bill payments, card services, ACH transfers, internet banking, merchant processing, and payment processing services"
+      },
+      {
+        name: "Office of the Comptroller of the Currency",
+        sector: "U.S. banking regulator",
+        relationship: "Source / award issuer",
+        description: "Federal regulator for national banks and federal savings associations; issued the public enforcement action requiring remediation"
       }
     ],
-    summary: "OCC issued a formal consent order against Community Federal Savings Bank (Woodhaven, NY) in May 2026 for BSA/AML program deficiencies. Bank must implement corrective action, including technology remediation for transaction monitoring, customer due diligence, and AML program systems.",
-    likelyJobLocations: ["New York, NY", "Remote USA AML/compliance delivery"],
-    workMode: "Remote / Hybrid",
-    whyTheseLocations: "Bank HQ in Woodhaven, NY metro. AML remediation projects typically use remote and hybrid compliance-tech contractors from major financial-tech delivery hubs.",
-    whyThisMayCreateContractSoftwareJobs: "Consent orders mandate written remediation plans with technology deliverables. BSA/AML remediation creates transaction monitoring system implementation, customer due diligence workflow engineering, AML rules-engine configuration, regulatory reporting automation, and QA testing work.",
+    summary: "FinTech Futures reported on May 28 that the OCC issued a consent order against Community Federal Savings Bank for BSA/AML deficiencies tied to payment-processing growth, wire and ACH volume, cross-border activity, suspicious activity monitoring, customer due diligence, and independent testing.",
+    likelyJobLocations: ["New York, NY", "Woodhaven, NY", "Jersey City, NJ", "Charlotte, NC", "Tampa, FL", "Dallas, TX", "Atlanta, GA", "Remote USA bank compliance delivery"],
+    workMode: "Hybrid / On-site",
+    whyTheseLocations: "CFSB is based in New York; AML, payments, ACH, fraud, compliance technology, and regulatory remediation delivery commonly cluster in New York/New Jersey, Charlotte, Tampa, Dallas, Atlanta, and remote bank-tech teams.",
+    whyThisMayCreateContractSoftwareJobs: "The order requires a compliance committee and written remediation plan, which typically creates work around AML transaction monitoring tuning, SAR workflow fixes, customer due diligence/KYC data quality, ACH and wire surveillance, case-management integration, model validation support, reporting dashboards, independent testing evidence, and regulator-ready documentation.",
     likelySoftwareRoles: [
-      "AML / BSA Systems Engineer",
-      "Transaction Monitoring Developer",
-      "RegTech Integration Engineer",
-      "Backend Developer (Python / Java)",
-      "Data Engineer",
-      "QA Automation/SDET",
-      "Compliance Systems Analyst",
-      "Business Systems Analyst"
+      "AML Systems Analyst",
+      "BSA/AML Data Analyst",
+      "Transaction Monitoring Engineer",
+      "Payments Data Engineer",
+      "Fraud Systems Analyst",
+      "SQL Developer",
+      "GRC Workflow Administrator",
+      "Regulatory Remediation PM",
+      "QA Analyst (bank compliance)"
     ],
     bestSearchKeywords: [
-      "AML transaction monitoring developer contract",
-      "BSA compliance technology engineer",
-      "RegTech AML systems contractor",
-      "bank consent order remediation developer",
-      "KYC CDD workflow engineer contract",
-      "AML rules engine configuration contractor"
+      "Community Federal Savings Bank AML contractor",
+      "CFSB consent order remediation",
+      "BSA AML transaction monitoring contract",
+      "ACH wire suspicious activity monitoring engineer",
+      "customer due diligence data analyst banking",
+      "SAR workflow SQL contractor",
+      "OCC consent order remediation PM"
     ],
-    actionPlan: "Search OCC enforcement portal monthly. Target RegTech vendors (NICE Actimize, FICO, Quantexa, ComplyAdvantage), compliance consultancies, and bank technology staffing firms. BaaS-bank consent orders usually create 6-18 month remediation programs.",
-    confidenceNote: "High. OCC public consent order, named bank, BSA/AML remediation required. Consent order = mandatory technology compliance work.",
+    actionPlan: "Target CFSB, New York bank compliance vendors, AML platform teams, and payments-risk consultancies. Use searches around CFSB, OCC consent order, BSA/AML, payment processing, wire, ACH, SAR, customer due diligence, and independent testing.",
+    confidenceNote: "High because the May 28 article is current and cites a formal OCC consent order with concrete remediation obligations and payments-control gaps.",
     watchFor: [
-      "Follow-on technology remediation RFPs from Community Federal Savings Bank",
-      "AML/BSA vendor selection announcements",
-      "OCC progress examination outcomes (typically 12-18 months after consent order)"
+      "CFSB AML remediation postings",
+      "Transaction monitoring tuning work",
+      "ACH and wire surveillance roles",
+      "KYC/CDD data cleanup projects",
+      "GRC evidence and independent testing support"
     ],
-    rawNotes: "OCC consent order issued May 15, 2026. Community Federal Savings Bank, Woodhaven, NY. BSA/AML program deficiencies. BaaS sponsor bank — AML remediation at BaaS banks creates fintech-integration and compliance-tech contractor work.",
+    rawNotes: "FinTech Futures article published May 28, 2026. OCC official release was May 21, 2026. U.S. impact is direct: New York bank, U.S. federal regulator, payments and AML remediation.",
     createdAt: now,
-    updatedAt: now
+    updatedAt: now29
   },
   {
     id: "news-2026-05-27-cfpb-synapse-financial-baas-enforcement",
