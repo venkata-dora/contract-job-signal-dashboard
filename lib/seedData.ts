@@ -3,8 +3,141 @@ import type { JobSignal } from "./types";
 const now = "2026-05-27T12:00:00.000Z";
 const now28 = "2026-05-28T12:00:00.000Z";
 const now29 = "2026-05-29T12:00:00.000Z";
+const nowJune2 = "2026-06-02T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
+  {
+    id: "news-2026-06-02-costar-zonda-acquisition",
+    rank: 1,
+    companyEvent: "CoStar Group acquires Zonda: $800M homebuilding data, software, and marketplace integration across CoStar, Homes.com, and Matterport",
+    eventType: "M&A / Data Platform and Marketplace Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-06-02",
+    resourceLink: "https://investors.costargroup.com/news-releases/news-release-details/costar-group-acquire-zonda-leader-new-home-data-analytics-and",
+    sourceName: "CoStar Group / Business Wire",
+    sector: "Real estate technology / Homebuilding software",
+    companiesMentioned: [
+      {
+        name: "CoStar Group",
+        sector: "Real estate data, analytics, marketplaces, and 3D digital twin technology",
+        relationship: "Acquirer",
+        description: "Arlington, Virginia-based real estate technology company acquiring Zonda to expand into homebuilding data, workflow software, and new-home marketplaces"
+      },
+      {
+        name: "Zonda",
+        sector: "Homebuilding data, analytics, software, and residential marketplaces",
+        relationship: "Acquired company",
+        description: "Provider of lot-level homebuilding data, builder workflow tools, construction forecasting, community marketing, NewHomeSource, and Livabl serving more than 3,000 homebuilding ecosystem customers"
+      },
+      {
+        name: "Matterport",
+        sector: "Spatial data and digital twin technology",
+        relationship: "Partner / vendor",
+        description: "CoStar-owned spatial data platform expected to be paired with Zonda's Envision visualization and digital merchandising capabilities"
+      }
+    ],
+    summary: "CoStar Group announced a definitive agreement to acquire Zonda for $800 million in cash. Zonda brings homebuilding data, builder workflow software, construction forecasting, community marketing, and new-home marketplaces including NewHomeSource and Livabl. CoStar expects cross-sell across commercial, residential, multifamily, lending, analytics, and Matterport digital visualization.",
+    likelyJobLocations: ["Arlington, VA", "Washington, DC", "Richmond, VA", "Los Angeles, CA", "Newport Beach, CA", "Orange County, CA", "New York, NY", "Atlanta, GA", "Austin, TX", "Remote USA proptech delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "CoStar is headquartered in Arlington, VA with major U.S. technology and marketplace operations. Zonda's residential real estate and homebuilding ecosystem work is concentrated around U.S. housing, builder, lending, and marketplace hubs, with integration work likely distributed across product, data, cloud, and vendor teams.",
+    whyThisMayCreateContractSoftwareJobs: "The acquisition creates near-term integration work across B2B SaaS, marketplace listings, proprietary lot-level datasets, subscriptions, CRM/lead systems, builder workflows, Matterport visualization, identity/access, billing, reporting, data warehouses, API integrations, and post-close platform rationalization.",
+    likelySoftwareRoles: ["Data Engineer", "Backend Engineer", "API Integration Developer", "Full-stack Developer", "Marketplace Platform Engineer", "Salesforce / CRM Developer", "Cloud Data Platform Engineer", "Data Migration Engineer", "QA Automation/SDET", "Technical Business Analyst", "M&A Integration PM"],
+    bestSearchKeywords: ["CoStar Zonda acquisition integration contractor", "homebuilding data platform engineer contract", "Zonda NewHomeSource data migration", "Matterport Zonda integration developer", "proptech marketplace software engineer contract", "CoStar API integration contractor", "real estate data analytics engineer contract"],
+    actionPlan: "Search CoStar, Zonda, NewHomeSource, Livabl, Matterport, homebuilder analytics, real estate marketplace, data migration, and M&A integration postings. Prioritize CoStar product/data roles and integration partners supporting marketplace, CRM, and analytics consolidation.",
+    confidenceNote: "High. Public $800M definitive agreement with explicit software, proprietary data, workflow, marketplace, cross-sell, and Matterport integration language.",
+    watchFor: ["CoStar post-close integration roles", "Zonda data warehouse migration projects", "NewHomeSource and Homes.com marketplace integration", "Matterport/Zonda digital merchandising work", "CRM, subscription billing, and customer identity consolidation"],
+    rawNotes: "Announcement published May 29, 2026. Added in the June 2 catch-up run. CoStar says Zonda serves 3,000+ customers and provides end-to-end homebuilding software/data across land acquisition, development planning, forecasting, community marketing, workflow management, and marketplaces. Expected close: second half of 2026, subject to customary conditions.",
+    createdAt: nowJune2,
+    updatedAt: nowJune2
+  },
+  {
+    id: "news-2026-06-02-iac-auto-finance-ransomware-breach",
+    rank: 1,
+    companyEvent: "Industrial Acceptance Corporation ransomware breach: 79,216 people notified after SSNs and driver's license numbers exposed",
+    eventType: "Ransomware / Finance Data Breach Remediation",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["Banking / Payments / Fintech"],
+    signalStrength: "High",
+    eventDate: "2026-06-02",
+    resourceLink: "https://www.comparitech.com/news/auto-lender-iac-warns-79000-people-of-data-breach-that-leaked-ssns/",
+    sourceName: "Comparitech",
+    sector: "Consumer finance / Auto lending",
+    companiesMentioned: [
+      {
+        name: "Industrial Acceptance Corporation",
+        sector: "Consumer finance and subprime auto lending",
+        relationship: "Primary target",
+        description: "New Haven, Connecticut-based auto finance company serving New England-area dealers and consumers; notified 79,216 people after a ransomware event exposed names, Social Security numbers, and driver's license numbers"
+      },
+      {
+        name: "INC Ransom",
+        sector: "Ransomware-as-a-service threat actor",
+        relationship: "Source / award issuer",
+        description: "Ransomware group identified in the breach notice as claiming responsibility for the IAC incident"
+      }
+    ],
+    summary: "Industrial Acceptance Corporation confirmed it notified 79,216 people of a ransomware-related data breach. The compromised data includes names, Social Security numbers, and driver's license numbers. IAC's notice says it became aware of unauthorized network activity on February 24, 2025, took systems offline, later learned files were taken, completed review on May 11, 2026, and mailed notices on May 28, 2026.",
+    likelyJobLocations: ["New Haven, CT", "Hartford, CT", "Boston, MA", "Providence, RI", "New York, NY", "New Jersey", "Philadelphia, PA", "Remote USA cyber vendor delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "IAC is based in New Haven and serves New England auto dealers. Finance-sector breach response work also concentrates around Northeast financial services, legal/privacy teams, and remote incident-response and managed-security vendors.",
+    whyThisMayCreateContractSoftwareJobs: "A finance-sector ransomware breach involving SSNs and driver's license numbers creates remediation work across endpoint hardening, backup/restore validation, IAM/MFA rollout, network segmentation, file exfiltration review, DLP, breach notification systems, credit monitoring integrations, logging/SIEM tuning, vulnerability management, and audit evidence for state AG and consumer-finance compliance.",
+    likelySoftwareRoles: ["Incident Response Engineer", "Security Engineer", "IAM Engineer", "DLP Engineer", "SIEM / SOAR Engineer", "Data Privacy Engineer", "Endpoint Security Engineer", "Vulnerability Management Engineer", "Breach Notification Systems Developer", "QA Automation/SDET", "Technical Business Analyst"],
+    bestSearchKeywords: ["Industrial Acceptance Corporation ransomware contractor", "auto finance data breach remediation", "consumer finance IAM engineer contract", "SSN driver's license breach DLP engineer", "ransomware incident response Connecticut", "finance breach notification systems developer", "Cyberscout TransUnion integration contractor"],
+    actionPlan: "Search IAC, Industrial Acceptance Corporation, auto finance breach, ransomware remediation, identity monitoring integration, IAM, DLP, SIEM, endpoint hardening, and Connecticut finance-sector cyber contract roles. Also monitor breach-response law firms and IR vendors supporting state AG notice work.",
+    confidenceNote: "High. Confirmed notification count, finance-sector PII exposure, ransomware attribution in the notice, and formal consumer notification in the catch-up window.",
+    watchFor: ["IAC security remediation vendors", "State AG follow-up filings", "Consumer finance breach litigation remediation", "IAM and endpoint hardening postings", "DLP and SIEM tuning contract roles"],
+    rawNotes: "Comparitech updated May 29, 2026. IAC notice timeline: unauthorized activity discovered February 24, 2025; systems taken offline; files later determined exfiltrated around March 4, 2025; file review completed May 11, 2026; consumer notices mailed May 28, 2026. Data included names, SSNs, and driver's license numbers. Added in June 2 catch-up run.",
+    createdAt: nowJune2,
+    updatedAt: nowJune2
+  },
+  {
+    id: "news-2026-06-02-kev-palo-alto-oracle-remediation",
+    rank: 2,
+    companyEvent: "CISA KEV June 1 update: Palo Alto PAN-OS GlobalProtect and Oracle WebLogic active-exploitation remediation deadline hits enterprise security teams",
+    eventType: "Known Exploited Vulnerability / Enterprise Patch Remediation",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-06-02",
+    resourceLink: "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+    sourceName: "CISA KEV Catalog",
+    sector: "Cybersecurity / Enterprise infrastructure",
+    companiesMentioned: [
+      {
+        name: "Palo Alto Networks",
+        sector: "Network security and firewall platforms",
+        relationship: "Primary target",
+        description: "Vendor of PAN-OS and GlobalProtect products affected by CVE-2026-0257, an authentication bypass vulnerability with limited exploit attempts reported against unpatched devices"
+      },
+      {
+        name: "Oracle",
+        sector: "Enterprise software and middleware",
+        relationship: "Primary target",
+        description: "Vendor of Oracle WebLogic Server affected by CVE-2024-21182, added to the KEV catalog on June 1, 2026 with a June 4 remediation due date"
+      },
+      {
+        name: "Cybersecurity and Infrastructure Security Agency",
+        sector: "U.S. federal cybersecurity agency",
+        relationship: "Source / award issuer",
+        description: "Maintains the Known Exploited Vulnerabilities catalog used by federal agencies and private-sector security teams for urgent patch prioritization"
+      }
+    ],
+    summary: "CISA's KEV catalog version 2026.06.01 added Oracle WebLogic Server CVE-2024-21182 and lists Palo Alto Networks PAN-OS CVE-2026-0257 from May 29. Palo Alto separately marks the PAN-OS issue as high severity, highest urgency, and attacked, with limited exploitation attempts against unpatched devices. These entries force urgent patch, mitigation, firewall/VPN review, and exception tracking across enterprises.",
+    likelyJobLocations: ["Santa Clara, CA", "Austin, TX", "Dallas, TX", "Phoenix, AZ", "Chicago, IL", "New York, NY", "Atlanta, GA", "Washington, DC", "Northern Virginia", "Remote USA security delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Palo Alto Networks is based in Santa Clara, and Oracle/WebLogic and PAN-OS remediation touches enterprise infrastructure teams across major U.S. security, cloud, banking, healthcare, retail, telecom, and federal-adjacent delivery hubs.",
+    whyThisMayCreateContractSoftwareJobs: "KEV additions create immediate demand for PAN-OS and WebLogic inventory, patch orchestration, emergency change management, vulnerability scanning, firewall/VPN validation, WAF and network mitigations, SIEM detection rules, exploit hunting, outage-safe maintenance windows, CMDB updates, exception reporting, and compliance evidence.",
+    likelySoftwareRoles: ["Vulnerability Management Engineer", "Network Security Engineer", "Palo Alto Firewall Engineer", "Oracle WebLogic Administrator", "DevSecOps Engineer", "Cloud Security Engineer", "SIEM Detection Engineer", "Security Automation Developer", "Technical Program Manager", "QA / Release Validation Engineer"],
+    bestSearchKeywords: ["CISA KEV PAN-OS CVE-2026-0257 contractor", "Palo Alto GlobalProtect authentication bypass remediation", "Oracle WebLogic CVE-2024-21182 patch engineer", "KEV vulnerability management contract", "enterprise patch remediation engineer", "PAN-OS firewall engineer contract", "WebLogic security patch contractor"],
+    actionPlan: "Search CISA KEV, PAN-OS, GlobalProtect, CVE-2026-0257, Oracle WebLogic, CVE-2024-21182, vulnerability management, firewall engineer, and emergency patch remediation roles. Prioritize enterprises with exposed VPN, middleware, regulated data, or strict KEV compliance workflows.",
+    confidenceNote: "High. KEV catalog entries create concrete remediation deadlines and Palo Alto reports exploit attempts against unpatched devices.",
+    watchFor: ["Emergency PAN-OS upgrade contracts", "WebLogic patch and middleware admin roles", "Vulnerability management backlog postings", "SIEM exploit detection tuning", "CMDB and compliance exception tracking projects"],
+    rawNotes: "CISA KEV catalogVersion 2026.06.01 released June 1, 2026. Oracle WebLogic CVE-2024-21182 dateAdded June 1, dueDate June 4. Palo Alto PAN-OS CVE-2026-0257 dateAdded May 29, dueDate June 1. Palo Alto advisory timeline says exploitation status was updated May 29 and describes limited exploit attempts on unpatched PAN-OS devices without mitigations.",
+    createdAt: nowJune2,
+    updatedAt: nowJune2
+  },
   {
     id: "news-2026-05-29-carnival-corp-data-breach",
     rank: 1,
