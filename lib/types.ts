@@ -21,6 +21,7 @@ export type JobSignal = {
     name: string;
     description: string;
     sector: string;
+    headquarters?: string;
     relationship?: "Primary target" | "Partner / vendor" | "Source / award issuer" | "Customer / buyer" | "Acquirer" | "Acquired company";
   }[];
   eventType: string;

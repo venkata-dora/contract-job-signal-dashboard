@@ -49,6 +49,25 @@ const knownCompanies: CompanyIntel[] = [
   { name: "VAST Data", sector: "AI data platform", description: "enterprise data storage and AI data-platform company" }
 ];
 
+function inferCompanyNameFromHeadline(headline: string) {
+  const normalized = headline.replace(/\s+/g, " ").trim();
+  const [beforeColon] = normalized.split(/\s*:\s+/, 1);
+  const candidate = beforeColon
+    .split(/\s+(?:announces|launches|acquires|acquire|acquiring|to acquire|buys|sells|completes|closes|reports|unveils|signs|partners|partnership|expands|opens|showcases|recognized|files|sues|vs\.?|with|for|on)\b/i)[0]
+    .split(/\s+\+\s+|\s+\/\s+|\s+and\s+/i)[0]
+    .replace(/\s+\([^)]*\)\s*$/g, "")
+    .trim();
+
+  if (candidate && candidate.length <= 70 && candidate.split(/\s+/).length <= 6) return candidate;
+
+  return normalized
+    .split(/\s*[:—-]\s*|\s+\+\s+|\s+\/\s+/)[0]
+    .split(/\s+/)
+    .slice(0, 4)
+    .join(" ")
+    .trim();
+}
+
 export function getCompaniesMentioned(signal: JobSignal): CompanyIntel[] {
   if (signal.companiesMentioned?.length) return signal.companiesMentioned;
 
@@ -76,10 +95,7 @@ export function getCompaniesMentioned(signal: JobSignal): CompanyIntel[] {
     }));
   if (matches.length > 0) return matches;
 
-  const fallbackName = signal.companyEvent
-    .split(/\s+(announces|launches|acquires|acquiring|recognized|reports|unveils|signs|partnership|for|with)\s+/i)[0]
-    .replace(/\s+\+\s+$/, "")
-    .trim();
+  const fallbackName = inferCompanyNameFromHeadline(signal.companyEvent);
 
   return [{
     name: fallbackName || signal.companyEvent,

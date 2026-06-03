@@ -47,6 +47,7 @@ function reconcileSeedCorrections(stored: JobSignal[]) {
   stored = stored.filter((signal) => !PURGED_SIGNAL_IDS.has(signal.id));
   const proofpointSeed = seedSignals.find((signal) => signal.id === "news-2026-05-27-proofpoint-active-exploits-protection");
   const trustlogixSeed = seedSignals.find((signal) => signal.id === "news-2026-05-27-trustlogix-trustai-agent-governance");
+  const nextpowerSeed = seedSignals.find((signal) => signal.id === "news-2026-06-02-nextpower-prevalon-bess-ai-data-centers");
 
   return stored.map((signal) => {
     if (signal.id === proofpointSeed?.id) {
@@ -68,6 +69,17 @@ function reconcileSeedCorrections(stored: JobSignal[]) {
       return {
         ...signal,
         companiesMentioned: trustlogixSeed.companiesMentioned
+      };
+    }
+
+    if (signal.id === nextpowerSeed?.id) {
+      const hasHeadquarters = signal.companiesMentioned?.every((company) => company.headquarters);
+      if (hasHeadquarters) return signal;
+      return {
+        ...signal,
+        companiesMentioned: nextpowerSeed.companiesMentioned,
+        whyTheseLocations: nextpowerSeed.whyTheseLocations,
+        updatedAt: nextpowerSeed.updatedAt
       };
     }
 

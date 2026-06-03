@@ -242,6 +242,7 @@ These look minor but are real job signals:
 - confidenceNote
 - companiesMentioned:
   - Only list companies that are direct actors (announcing company, acquirer, acquiree, partner, regulator).
+  - Always include each company's headquarters as `headquarters: "City, ST"` or `headquarters: "City, Country"` when it can be verified from the source, company site, filing, or reliable company profile.
   - Use each company's TRUE sector (what the company IS, not its role in this deal). Apple is consumer technology, not a bank, even when the news is about Apple Card.
   - Do NOT list commonly used platform tools as separate companies. They are infrastructure, not news actors:
     Snowflake, Databricks, Microsoft Fabric, OneLake, SAP, Salesforce, ServiceNow, Workday, Oracle, AWS, Azure, GCP, Kubernetes, MuleSoft, Kafka, Spark, Terraform, GitHub, Jira, Confluence, Power BI, Tableau, Looker, dbt, Airflow.

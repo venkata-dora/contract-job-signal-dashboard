@@ -285,9 +285,13 @@ export const seedSignals: JobSignal[] = [
     resourceLink: "https://www.businesswire.com/news/home/20260528147848/en/Nextpower-Announces-Entry-into-Battery-Energy-Storage-BESS-and-AI-Data-Center-Markets-with-Definitive-Agreement-to-Acquire-Prevalon-Energy-Increases-Fiscal-Year-2027-Outlook",
     sourceName: "Business Wire",
     sector: "Energy storage / AI data center infrastructure",
+    companiesMentioned: [
+      { name: "Nextpower", sector: "Energy technology / solar and power infrastructure", relationship: "Acquirer", headquarters: "Fremont, CA", description: "Fremont, CA-based energy technology company expanding from solar tracking into BESS, controls, and AI data-center power infrastructure" },
+      { name: "Prevalon Energy", sector: "Battery energy storage systems and energy management software", relationship: "Acquired company", headquarters: "Heathrow, FL", description: "Heathrow, FL-based BESS and energy-management software company being acquired for storage, grid, industrial power, and AI data-center deployments" }
+    ],
     likelyJobLocations: ["Houston, TX", "Austin, TX", "Dallas, TX", "Phoenix, AZ", "San Francisco Bay Area, CA", "Remote USA energy-tech delivery"],
     workMode: "Hybrid / On-site",
-    whyTheseLocations: "BESS, data-center power, and grid integration work follows Texas energy hubs, AI data-center markets, and remote industrial software teams.",
+    whyTheseLocations: "Nextpower is headquartered in Fremont, CA and Prevalon Energy is headquartered in Heathrow, FL. BESS, data-center power, and grid integration work also follows Texas energy hubs, AI data-center markets, and remote industrial software teams.",
     whyThisMayCreateContractSoftwareJobs: "The acquisition creates work in energy management software, BESS telemetry, controls, grid integration, data-center power systems, OT/cloud monitoring, predictive maintenance, cybersecurity, dashboards, and customer deployment tooling.",
     likelySoftwareRoles: ["Energy Platform Engineer", "IoT / Telemetry Engineer", "Cloud Software Engineer", "OT Security Engineer", "Data Engineer", "Controls Integration Engineer", "QA Automation/SDET", "Technical Program Manager"],
     bestSearchKeywords: ["Nextpower Prevalon acquisition contractor", "BESS energy management software engineer", "AI data center power platform developer", "battery storage telemetry engineer", "OT cloud monitoring contractor"],

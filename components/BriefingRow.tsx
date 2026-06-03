@@ -27,7 +27,7 @@ function escapeRegex(value: string) {
 function buildHighlightTerms(companyNames: string[]): string[] {
   const terms = new Set<string>();
   for (const name of companyNames) {
-    if (!name) continue;
+    if (!name || name.length > 80 || /:/.test(name)) continue;
     terms.add(name);
     // Also match first word if it's a meaningful standalone name (5+ chars)
     const firstWord = name.split(/[\s/]/)[0];
@@ -39,14 +39,33 @@ function buildHighlightTerms(companyNames: string[]): string[] {
 }
 
 function highlightCompanies(text: string, companyNames: string[]) {
-  const names = companyNames.filter(Boolean);
+  const names = companyNames.filter((name) => name && name.trim().toLowerCase() !== text.trim().toLowerCase());
   if (names.length === 0) return text;
 
   const terms = buildHighlightTerms(names);
+  if (terms.length === 0) return text;
+
   const pattern = new RegExp(`(${terms.map(t => `\\b${escapeRegex(t)}\\b`).join("|")})`, "gi");
   return text.split(pattern).map((part, index) => {
     const isCompany = terms.some((name) => name.toLowerCase() === part.toLowerCase());
     return isCompany ? <mark key={`${part}-${index}`} className="company-highlight">{part}</mark> : part;
+  });
+}
+
+function companyHeadquarters(company: { headquarters?: string; description?: string }) {
+  if (company.headquarters) return company.headquarters;
+  const description = company.description ?? "";
+  const match = description.match(/\b([A-Z][A-Za-z. ]+?(?:,\s*[A-Z]{2})?)-based\b/);
+  return match?.[1]?.trim();
+}
+
+function uniqueLocations(locations: string[]) {
+  const seen = new Set<string>();
+  return locations.filter((location) => {
+    const key = location.toLowerCase();
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
   });
 }
 
@@ -139,7 +158,10 @@ export function BriefingRow({
       groups: groupSimilarCompanies(getCompaniesLikeCompany(company, signal).slice(0, similarLimit))
     }))
     .filter(({ groups }) => groups.length > 0);
-  const locations = getUsJobLocations(signal);
+  const headquartersLocations = storyCompanies
+    .map((company) => companyHeadquarters(company))
+    .filter((location): location is string => Boolean(location));
+  const locations = uniqueLocations([...headquartersLocations, ...getUsJobLocations(signal)]);
 
   return (
     <article className="brief" style={{ borderLeftColor: cat?.accent ?? "#1A7F37" }}>
@@ -217,6 +239,7 @@ export function BriefingRow({
                     <strong>{company.name}</strong>
                     <span>{company.sector}</span>
                     <small>{company.relationship}</small>
+                    {companyHeadquarters(company) && <em>HQ: {companyHeadquarters(company)}</em>}
                     {company.description && <p>{company.description}</p>}
                   </div>
                 ))}
@@ -261,7 +284,7 @@ export function BriefingRow({
             <h4>Likely locations</h4>
             <div className="location-chips">
               {locations.map((location, i) => (
-                <span key={`${signal.id}-location-${i}`} className="location-chip">
+                <span key={`${signal.id}-location-${i}`} className={`location-chip ${headquartersLocations.includes(location) ? "location-chip-hq" : ""}`}>
                   <PinIcon />
                   {location}
                 </span>
