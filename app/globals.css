@@ -868,7 +868,7 @@ button, a, input, select, textarea { touch-action: manipulation; }
   gap: 1px;
 }
 .similar-group-list strong {
-  color: var(--ink);
+  color: #B3261E;
   font-size: 12.5px;
   line-height: 1.2;
 }
