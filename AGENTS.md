@@ -74,6 +74,7 @@ Use only:
 
 Daily news workflow:
 - When the user explicitly asks for a daily run, Codex may research current news in the browser/web, then add the real news items and source links into the local dashboard data.
+- Always add newly researched daily-run items at the top of `lib/seedData.ts`, regardless of category. Do not place new items lower in the file just because they belong to an existing category block.
 - Default to news from the past 24 hours only. Do not add older stories unless the user asks for a broader catch-up or the older story has a new material update published in the past 24 hours.
 - Add only news with a clear U.S. impact. Skip international-only stories and do not list outside-USA job locations.
 - For every signal, include company names separately with a plain-English explanation of what each company does and its sector.

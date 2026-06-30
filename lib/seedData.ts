@@ -6,8 +6,51 @@ const now29 = "2026-05-29T12:00:00.000Z";
 const nowJune2 = "2026-06-02T12:00:00.000Z";
 const nowJune5 = "2026-06-05T12:00:00.000Z";
 const nowJune8 = "2026-06-08T12:00:00.000Z";
+const nowJune29 = "2026-06-29T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
+  {
+    id: "news-2026-06-29-rocket-lab-iridium-acquisition",
+    rank: 1,
+    companyEvent: "Rocket Lab at Iridium acquisition: $8.0B deal will combine launch, satellite manufacturing, spectrum, and global communications services",
+    companiesMentioned: [
+      {
+        name: "Rocket Lab",
+        sector: "Space launch, spacecraft, and satellite systems",
+        headquarters: "Long Beach, CA",
+        relationship: "Acquirer",
+        description: "American space company providing launch services, spacecraft, payloads, and satellite components"
+      },
+      {
+        name: "Iridium Communications",
+        sector: "Satellite communications and positioning services",
+        headquarters: "McLean, VA",
+        relationship: "Acquired company",
+        description: "Operator of a global mobile satellite network serving voice, data, IoT, navigation, and safety-critical communications"
+      }
+    ],
+    eventType: "M&A / Satellite and Telecommunications Platform Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-06-29",
+    resourceLink: "https://www.sec.gov/Archives/edgar/data/1418819/000110465926078482/tm2619278d1_ex99-1.htm",
+    sourceName: "SEC EDGAR / Rocket Lab and Iridium",
+    sector: "Space systems / satellite communications / telecommunications",
+    summary: "Rocket Lab and Iridium entered into a definitive acquisition agreement on June 28, 2026, and announced it on June 29. Rocket Lab will acquire Iridium for approximately $8.0 billion. The transaction is expected to close in mid-2027, subject to shareholder and regulatory approvals.",
+    likelyJobLocations: ["Long Beach, CA", "McLean, VA", "Washington, DC", "Denver, CO", "Seattle, WA", "Remote USA commercial space"],
+    workMode: "Hybrid / On-site",
+    whyTheseLocations: "Rocket Lab identified Long Beach and Iridium identified McLean as their headquarters in the announcement. Southern California, Northern Virginia, Washington, Denver, and Seattle are major U.S. hubs for commercial space, satellite communications, telecom software, and integration vendors.",
+    whyThisMayCreateContractSoftwareJobs: "Combining a launch and spacecraft manufacturer with a 2.55-million-subscriber satellite network and more than 500 partners can require identity and customer-data integration, billing and subscription migration, network operations tooling, telemetry pipelines, IoT and direct-to-device APIs, partner portals, ERP consolidation, cybersecurity controls, data governance, observability, and extensive regression testing.",
+    likelySoftwareRoles: ["Integration Architect", "Satellite Network Software Engineer", "Backend / API Engineer", "IoT Platform Engineer", "Data Engineer", "Cloud Platform Engineer", "Cybersecurity Engineer", "ERP Integration Developer", "SRE / Observability Engineer", "QA Automation/SDET", "Technical Program Manager"],
+    bestSearchKeywords: ["Rocket Lab Iridium integration contractor", "Iridium satellite network software engineer", "Rocket Lab M&A systems integration", "satellite IoT API developer contract", "telecom subscriber billing migration", "Iridium NTN Direct engineer"],
+    actionPlan: "Track Rocket Lab, Iridium, their commercial technology partners, and space/telecom integration vendors for pre-close architecture, integration planning, satellite network, IoT, billing, identity, data-platform, cybersecurity, ERP, and test-automation roles. Prioritize Long Beach and McLean postings while monitoring remote U.S. delivery teams.",
+    confidenceNote: "High. A June 29 joint announcement and SEC filing confirm the signed $8.0B agreement, the companies' U.S. headquarters, the mid-2027 target, and the planned combination of launch, spacecraft, spectrum, satellite network, subscriber, and partner capabilities.",
+    watchFor: ["Form S-4 integration disclosures", "Integration management office hiring", "Subscriber and partner platform consolidation", "Iridium next-generation constellation work", "Billing, identity, ERP, and network operations projects", "Regulatory approval milestones"],
+    rawNotes: "Collected June 29, 2026. The merger agreement was signed June 28 and announced June 29 in an SEC-filed joint release. The release describes an approximately $8.0B transaction, 2.55M active Iridium subscribers, a 500-plus partner ecosystem, and a mid-2027 expected close. U.S. impact is direct because both are American companies headquartered in Long Beach, California and McLean, Virginia.",
+    createdAt: nowJune29,
+    updatedAt: nowJune29
+  },
   {
     id: "news-2026-06-08-dentaquest-shinyhunters-breach",
     rank: 1,
