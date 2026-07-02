@@ -11,6 +11,41 @@ const nowJuly2 = "2026-07-02T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
   {
+    id: "news-2026-07-02-microsoft-sharepoint-kev",
+    rank: 1,
+    companyEvent: "Microsoft SharePoint Server at active-exploitation alert: CVE-2026-45659 remote code execution added to CISA KEV",
+    companiesMentioned: [
+      {
+        name: "Microsoft",
+        sector: "Enterprise software / cloud computing / cybersecurity",
+        headquarters: "Redmond, WA",
+        relationship: "Primary target",
+        description: "U.S. technology company whose on-premises SharePoint Server collaboration software is affected by the actively exploited vulnerability"
+      }
+    ],
+    eventType: "AppSec / Actively Exploited Enterprise Platform Vulnerability",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-07-02",
+    resourceLink: "https://www.securityweek.com/cisa-warns-of-actively-exploited-microsoft-sharepoint-vulnerability/",
+    sourceName: "SecurityWeek",
+    sector: "Enterprise collaboration / document management / cybersecurity",
+    summary: "CISA added Microsoft SharePoint Server vulnerability CVE-2026-45659 to its Known Exploited Vulnerabilities catalog on July 1, 2026 after confirming active exploitation. Microsoft patched the 8.8-severity remote code execution flaw in late May, and organizations running affected on-premises SharePoint editions are being urged to apply the fixes immediately.",
+    likelyJobLocations: ["Redmond, WA", "Seattle, WA", "Washington, DC", "New York, NY", "Chicago, IL", "Dallas, TX", "Remote USA enterprise security"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Microsoft is headquartered in Redmond, while SharePoint Server remediation affects private enterprises and managed-service customers nationwide. Security engineering and Microsoft-platform consulting work is concentrated in major U.S. enterprise and vendor-delivery hubs.",
+    whyThisMayCreateContractSoftwareJobs: "Active exploitation of a widely deployed on-premises collaboration platform drives emergency asset discovery, patch orchestration, compromise assessment, log review, web-shell hunting, identity and privilege review, server hardening, regression testing, and possible migration from legacy SharePoint environments.",
+    likelySoftwareRoles: ["Vulnerability Management Engineer", "Microsoft SharePoint Engineer", "Incident Response Engineer", "Security Automation Engineer", "PowerShell Developer", "IAM Engineer", "SIEM / SOAR Engineer", "Cloud Security Engineer", "QA Automation/SDET", "Migration Technical Lead"],
+    bestSearchKeywords: ["CVE-2026-45659 remediation contractor", "SharePoint Server RCE patch engineer", "SharePoint incident response consultant", "Microsoft SharePoint vulnerability management", "SharePoint on-prem migration security contract"],
+    actionPlan: "Search Microsoft partners, MSSPs, SharePoint consultancies, and large enterprise infrastructure teams for emergency SharePoint patching, threat hunting, incident response, server hardening, identity review, and on-premises modernization work.",
+    confidenceNote: "High. A July 2 SecurityWeek report confirms CISA's July 1 KEV addition, active exploitation, affected SharePoint Server editions, the Microsoft patch, and the remote-code-execution impact.",
+    watchFor: ["Microsoft advisory revisions", "Observed attack indicators", "Emergency SharePoint patch campaigns", "Compromise-assessment engagements", "On-premises SharePoint migration projects"],
+    rawNotes: "Collected July 2, 2026. CISA added CVE-2026-45659 to KEV on July 1, and SecurityWeek reported the alert July 2. CISA is only the source; the job signal is private-sector remediation across U.S. organizations using Microsoft SharePoint Server.",
+    createdAt: nowJuly2,
+    updatedAt: nowJuly2
+  },
+  {
     id: "news-2026-07-02-akamai-layerx-acquisition",
     rank: 1,
     companyEvent: "Akamai completes LayerX acquisition: secure enterprise browser and AI usage controls will join Akamai Zero Trust",
