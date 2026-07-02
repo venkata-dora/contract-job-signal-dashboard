@@ -7,8 +7,225 @@ const nowJune2 = "2026-06-02T12:00:00.000Z";
 const nowJune5 = "2026-06-05T12:00:00.000Z";
 const nowJune8 = "2026-06-08T12:00:00.000Z";
 const nowJune29 = "2026-06-29T12:00:00.000Z";
+const nowJuly2 = "2026-07-02T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
+  {
+    id: "news-2026-07-02-akamai-layerx-acquisition",
+    rank: 1,
+    companyEvent: "Akamai completes LayerX acquisition: secure enterprise browser and AI usage controls will join Akamai Zero Trust",
+    companiesMentioned: [
+      {
+        name: "Akamai Technologies",
+        sector: "Cybersecurity / cloud computing / content delivery",
+        headquarters: "Cambridge, MA",
+        relationship: "Acquirer",
+        description: "U.S. cybersecurity and distributed cloud company that provides application, network, and workforce protection"
+      },
+      {
+        name: "LayerX",
+        sector: "Enterprise browser security / AI usage governance",
+        headquarters: "Tel Aviv, Israel",
+        relationship: "Acquired company",
+        description: "Browser-security software company that controls how employees use web content, SaaS applications, file uploads, prompts, and generative AI"
+      }
+    ],
+    eventType: "M&A / Zero Trust and Enterprise Browser Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["Cyber / Compliance / Regulatory", "AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-07-02",
+    resourceLink: "https://www.globenewswire.com/news-release/2026/07/02/3321349/0/en/akamai-completes-acquisition-of-secure-enterprise-browser-provider-layerx.html",
+    sourceName: "GlobeNewswire / Akamai Technologies",
+    sector: "Cybersecurity / Zero Trust / enterprise browser security",
+    summary: "Akamai completed its approximately $205 million acquisition of LayerX on July 2, 2026. Akamai will combine LayerX browser controls and AI-usage visibility with its segmentation, ZTNA, DNS security, and distributed network capabilities.",
+    likelyJobLocations: ["Cambridge, MA", "Boston, MA", "New York, NY", "San Francisco Bay Area, CA", "Remote USA cybersecurity"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Akamai is headquartered in Cambridge, and its U.S. security product, platform, customer engineering, and integration work is concentrated in Boston-area and major technology hubs with distributed delivery teams.",
+    whyThisMayCreateContractSoftwareJobs: "The completed acquisition creates immediate product and corporate integration work across browser telemetry, policy engines, prompt and upload controls, Zero Trust identity, ZTNA, DNS security, customer tenancy, data pipelines, licensing, support tooling, and regression testing.",
+    likelySoftwareRoles: ["Security Platform Engineer", "Browser Security Engineer", "Zero Trust Engineer", "Backend / API Engineer", "Data Engineer", "IAM Engineer", "Cloud Platform Engineer", "QA Automation/SDET", "M&A Integration Technical Program Manager"],
+    bestSearchKeywords: ["Akamai LayerX integration contractor", "enterprise browser security engineer Akamai", "Akamai Zero Trust AI governance", "LayerX browser telemetry developer", "Akamai ZTNA integration jobs"],
+    actionPlan: "Track Akamai security-platform, Zero Trust, browser security, AI governance, data integration, customer migration, and product QA postings. Also monitor Akamai partners and enterprise-security implementation firms for LayerX rollout work.",
+    confidenceNote: "High. Akamai's July 2 release confirms the acquisition closed, the approximately $205M price, the specific LayerX controls being acquired, and the planned combination with Akamai's Zero Trust portfolio.",
+    watchFor: ["LayerX product packaging changes", "Akamai customer migration guidance", "Browser and Zero Trust connector work", "AI usage governance implementation roles", "Post-close platform consolidation"],
+    rawNotes: "Collected July 2, 2026. Akamai announced the completed acquisition on July 2. U.S. impact is direct because Akamai is headquartered in Cambridge, Massachusetts and will integrate LayerX into a security platform used by U.S. enterprises.",
+    createdAt: nowJuly2,
+    updatedAt: nowJuly2
+  },
+  {
+    id: "news-2026-07-02-zoom-common-room-acquisition",
+    rank: 1,
+    companyEvent: "Zoom to acquire Common Room: buyer intelligence and AI revenue agents will join Zoom Revenue Accelerator",
+    companiesMentioned: [
+      {
+        name: "Zoom Communications",
+        sector: "Enterprise communications / collaboration software",
+        headquarters: "San Jose, CA",
+        relationship: "Acquirer",
+        description: "U.S. enterprise software company providing meetings, phone, contact-center, collaboration, and AI-assisted work products"
+      },
+      {
+        name: "Common Room",
+        sector: "Go-to-market intelligence / enterprise AI software",
+        headquarters: "Seattle, WA",
+        relationship: "Acquired company",
+        description: "AI-native revenue intelligence company that unifies customer and buyer signals and activates them through sales agents"
+      }
+    ],
+    eventType: "M&A / AI Revenue Platform and Customer Data Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-07-02",
+    resourceLink: "https://www.globenewswire.com/news-release/2026/07/02/3321315/0/en/Zoom-to-Acquire-Common-Room-Bringing-Buyer-Intelligence-to-its-AI-Revenue-Platform.html",
+    sourceName: "GlobeNewswire / Zoom Communications",
+    sector: "Enterprise collaboration / revenue intelligence / AI agents",
+    summary: "Zoom entered into a definitive agreement to acquire Common Room on July 2, 2026. The transaction is expected to close in the coming weeks, after which Zoom plans to connect Common Room's buyer graph and AI agents with Zoom Revenue Accelerator.",
+    likelyJobLocations: ["San Jose, CA", "Seattle, WA", "San Francisco Bay Area, CA", "Denver, CO", "New York, NY", "Remote USA enterprise SaaS"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Zoom is headquartered in San Jose and Common Room is based in Seattle. Product integration, customer-data, AI, sales-platform, and enterprise implementation work is also common in Zoom's distributed U.S. engineering and go-to-market hubs.",
+    whyThisMayCreateContractSoftwareJobs: "Combining conversation intelligence with CRM, product-usage, marketing, enrichment, engagement, identity-resolution, and AI-agent data creates substantial API, data-model, privacy, workflow, UI, observability, customer migration, and test-automation work.",
+    likelySoftwareRoles: ["Backend / API Engineer", "Customer Data Platform Engineer", "AI Agent Engineer", "Data Engineer", "Identity Resolution Engineer", "CRM Integration Developer", "Privacy Engineer", "QA Automation/SDET", "M&A Integration Technical Program Manager"],
+    bestSearchKeywords: ["Zoom Common Room integration contractor", "Zoom Revenue Accelerator engineer", "Common Room buyer intelligence developer", "GTM data integration contract", "Zoom AI revenue agents jobs"],
+    actionPlan: "Monitor Zoom and Common Room for pre-close integration planning and post-close roles involving Revenue Accelerator, CRM/CDP connectors, identity resolution, AI agents, privacy, data quality, customer migration, and QA.",
+    confidenceNote: "High. Zoom's July 2 release confirms a signed acquisition agreement, identifies the products and data sources to be combined, and gives an expected closing window of the coming weeks.",
+    watchFor: ["Transaction closing announcement", "Common Room connector consolidation", "Revenue Accelerator integration roadmap", "Customer migration notices", "AI agent governance and data-quality roles"],
+    rawNotes: "Collected July 2, 2026. The definitive agreement was announced July 2. U.S. impact is direct because both companies are U.S.-based and their enterprise SaaS customers and integration teams include the U.S. market.",
+    createdAt: nowJuly2,
+    updatedAt: nowJuly2
+  },
+  {
+    id: "news-2026-07-02-ahn-heritage-valley-affiliation",
+    rank: 1,
+    companyEvent: "Allegheny Health Network completes Heritage Valley affiliation: two hospitals and 43 outpatient sites will integrate, including a new Epic EHR rollout",
+    companiesMentioned: [
+      {
+        name: "Allegheny Health Network",
+        sector: "Hospital and healthcare delivery network",
+        headquarters: "Pittsburgh, PA",
+        relationship: "Acquirer",
+        description: "Western Pennsylvania integrated health network operating hospitals, physician groups, outpatient facilities, and research programs"
+      },
+      {
+        name: "Heritage Valley Health System",
+        sector: "Hospital and healthcare delivery system",
+        headquarters: "Beaver, PA",
+        relationship: "Acquired company",
+        description: "Community health system with two hospitals, physician offices, and outpatient facilities in western Pennsylvania"
+      },
+      {
+        name: "Highmark Health",
+        sector: "Integrated healthcare delivery and health insurance",
+        headquarters: "Pittsburgh, PA",
+        relationship: "Partner / vendor",
+        description: "Parent healthcare enterprise of Allegheny Health Network and co-sponsor of the affiliation's clinical and IT investment program"
+      }
+    ],
+    eventType: "Healthcare Affiliation / Epic EHR and Clinical Systems Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-07-02",
+    resourceLink: "https://www.prnewswire.com/news-releases/heritage-valley-health-system-enters-new-era-as-part-of-allegheny-health-network-302815526.html",
+    sourceName: "PR Newswire / Allegheny Health Network",
+    sector: "Healthcare delivery / hospital systems / electronic health records",
+    summary: "Allegheny Health Network and Heritage Valley finalized their affiliation on July 1, 2026. Integration now covers two hospitals, 36 physician offices, seven outpatient facilities, roughly 3,000 employees, and an announced Epic EHR installation across all Heritage Valley inpatient and outpatient sites.",
+    likelyJobLocations: ["Pittsburgh, PA", "Beaver, PA", "Sewickley, PA", "Remote USA healthcare IT"],
+    workMode: "Hybrid / On-site",
+    whyTheseLocations: "The facilities and operational integration are centered in Pittsburgh, Beaver, Sewickley, and western Pennsylvania. EHR cutover, clinical workflow, device integration, and at-the-elbow support require substantial local presence, with some remote vendor delivery.",
+    whyThisMayCreateContractSoftwareJobs: "A two-hospital Epic rollout plus health-system integration requires patient and provider master-data migration, interfaces, clinical workflow build, revenue-cycle conversion, identity and access changes, imaging and laboratory connectivity, cybersecurity, reporting, testing, training, and cutover support.",
+    likelySoftwareRoles: ["Epic Application Analyst", "Epic Interface Engineer", "Healthcare Data Migration Engineer", "HL7 / FHIR Integration Developer", "Revenue Cycle Systems Analyst", "IAM Engineer", "Clinical Informatics Analyst", "QA / EHR Test Lead", "Cutover Manager", "Healthcare IT Program Manager"],
+    bestSearchKeywords: ["Heritage Valley Epic implementation contractor", "AHN Epic analyst Beaver Pennsylvania", "Heritage Valley EHR migration", "Allegheny Health Network HL7 FHIR contract", "hospital affiliation IT integration Pittsburgh"],
+    actionPlan: "Prioritize AHN, Heritage Valley, Highmark Health, Epic consulting firms, and western Pennsylvania healthcare staffing vendors. Search for Epic build, interface, conversion, revenue-cycle, clinical workflow, identity, testing, training, and cutover roles.",
+    confidenceNote: "High. The July 1 official release confirms regulatory approval, completed affiliation, facility and workforce scale, a $285M investment commitment, and an explicit Epic installation across all Heritage Valley sites.",
+    watchFor: ["Epic implementation timeline", "Implementation partner selection", "EHR data-conversion roles", "Interface and device integration work", "Go-live and command-center staffing"],
+    rawNotes: "Collected July 2, 2026. AHN published the completion announcement July 1. U.S. impact is direct and concentrated in western Pennsylvania; the release specifically commits to IT infrastructure improvements and an Epic EHR rollout.",
+    createdAt: nowJuly2,
+    updatedAt: nowJuly2
+  },
+  {
+    id: "news-2026-07-02-verkada-nvidia-physical-ai",
+    rank: 1,
+    companyEvent: "Verkada partners with NVIDIA: physical AI models and multi-model search agents will scale across 2.4M connected devices",
+    companiesMentioned: [
+      {
+        name: "Verkada",
+        sector: "Cloud-managed physical security / video analytics",
+        headquarters: "San Mateo, CA",
+        relationship: "Primary target",
+        description: "U.S. physical-security technology company providing cloud-managed cameras, access control, sensors, alarms, workplace tools, and intercoms"
+      },
+      {
+        name: "NVIDIA",
+        sector: "Semiconductors / accelerated computing / AI platforms",
+        headquarters: "Santa Clara, CA",
+        relationship: "Partner / vendor",
+        description: "U.S. accelerated-computing company providing processors, AI models, software, and infrastructure for training and inference"
+      }
+    ],
+    eventType: "Enterprise AI / Physical Security Platform Expansion",
+    category: "AI / Cloud / Enterprise Platforms",
+    secondaryCategories: ["Cyber / Compliance / Regulatory"],
+    signalStrength: "High",
+    eventDate: "2026-07-02",
+    resourceLink: "https://www.prnewswire.com/news-releases/verkada-accelerates-physical-ai-with-nvidia-302815190.html",
+    sourceName: "PR Newswire / Verkada",
+    sector: "Physical security / computer vision / enterprise AI",
+    summary: "Verkada announced a technical collaboration and investment from NVIDIA on July 1, 2026. Verkada is using NVIDIA models and accelerated computing to improve video search, multimodal embeddings, vector retrieval, synthetic training data, and a multi-model search-agent architecture across more than 2.4 million devices.",
+    likelyJobLocations: ["San Mateo, CA", "Santa Clara, CA", "San Francisco Bay Area, CA", "Austin, TX", "Remote USA physical security"],
+    workMode: "Hybrid / On-site",
+    whyTheseLocations: "Both companies are headquartered in Silicon Valley, where their AI, computer-vision, platform, and hardware-software engineering teams are concentrated. Customer deployments also create distributed U.S. integration work.",
+    whyThisMayCreateContractSoftwareJobs: "Scaling physical AI over millions of devices creates work in model training and evaluation, multimodal search, vector pipelines, edge inference, device telemetry, cloud APIs, synthetic data, privacy controls, customer integrations, fleet observability, and automated testing.",
+    likelySoftwareRoles: ["Computer Vision Engineer", "Machine Learning Engineer", "AI Evaluation Engineer", "Edge / Embedded Software Engineer", "Backend / API Engineer", "Vector Search Engineer", "Data Engineer", "MLOps Engineer", "Privacy Engineer", "QA Automation/SDET"],
+    bestSearchKeywords: ["Verkada NVIDIA physical AI engineer", "Verkada computer vision contractor", "multimodal video search engineer", "physical security edge AI jobs", "NVIDIA Cosmos Verkada implementation"],
+    actionPlan: "Track Verkada and its U.S. deployment partners for computer vision, multimodal search, MLOps, edge inference, device platform, privacy, customer integration, and test-engineering roles tied to the expanded physical-AI stack.",
+    confidenceNote: "High. Verkada's July 1 release names a technical partner, production scale, concrete model and retrieval technologies, measured search improvement, and an active search-agent architecture.",
+    watchFor: ["New physical-AI product releases", "Customer deployment case studies", "Edge inference and MLOps hiring", "Video privacy and governance work", "NVIDIA investment follow-on expansion"],
+    rawNotes: "Collected July 2, 2026. Verkada announced the collaboration July 1. U.S. impact is direct because both partners are California-headquartered and Verkada serves U.S. schools, hospitals, retailers, manufacturers, and Fortune 500 companies.",
+    createdAt: nowJuly2,
+    updatedAt: nowJuly2
+  },
+  {
+    id: "news-2026-07-02-alloyed-supervity-agentic-operations",
+    rank: 1,
+    companyEvent: "Alloyed partners with Supervity: managed agentic AI operations for finance, procurement, HR, IT, and customer workflows",
+    companiesMentioned: [
+      {
+        name: "Alloyed",
+        sector: "Managed business services / enterprise operations",
+        headquarters: "Marlton, NJ",
+        relationship: "Partner / vendor",
+        description: "U.S. managed-services provider that operates and optimizes enterprise business workflows for clients"
+      },
+      {
+        name: "Supervity",
+        sector: "Agentic AI / enterprise automation software",
+        headquarters: "Reston, VA",
+        relationship: "Partner / vendor",
+        description: "Enterprise software company providing governed AI employees and command centers for operational workflows"
+      }
+    ],
+    eventType: "Strategic Partnership / Managed Agentic AI Implementation",
+    category: "AI / Cloud / Enterprise Platforms",
+    signalStrength: "Medium",
+    eventDate: "2026-07-02",
+    resourceLink: "https://www.prnewswire.com/news-releases/alloyed-and-supervity-partner-to-deliver-people--ai-solutions-for-enterprise-operations-302815995.html",
+    sourceName: "PR Newswire / Alloyed",
+    sector: "Enterprise managed services / agentic AI automation",
+    summary: "Alloyed and Supervity announced a strategic partnership on July 1, 2026. Alloyed will manage enterprise workflows while Supervity's governed AI employees automate work across finance, procurement, HR, IT, customer operations, and shared services.",
+    likelyJobLocations: ["Marlton, NJ", "Philadelphia, PA", "Reston, VA", "Washington, DC", "New York, NY", "Remote USA enterprise delivery"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "The partners' U.S. bases are in Marlton and Reston, with likely implementation demand in nearby Philadelphia, Washington, New York, and distributed client-delivery teams.",
+    whyThisMayCreateContractSoftwareJobs: "Managed AI workflow deployments require process discovery, application connectors, orchestration, human-approval controls, identity and permissions, data mapping, governance, observability, exception handling, model evaluation, and production support across multiple enterprise functions.",
+    likelySoftwareRoles: ["AI Automation Engineer", "Integration Developer", "Business Process Analyst", "AI Governance Engineer", "Backend / API Engineer", "IAM Engineer", "Data Engineer", "QA Automation Engineer", "Implementation Consultant", "Technical Program Manager"],
+    bestSearchKeywords: ["Alloyed Supervity implementation contractor", "Supervity AI Employees engineer", "agentic workflow automation consultant", "enterprise AI command center developer", "finance procurement HR AI automation jobs"],
+    actionPlan: "Monitor Alloyed, Supervity, and their client-delivery partners for workflow discovery, connector development, AI governance, implementation, process automation, QA, and managed-operations roles. Prioritize postings naming finance, procurement, HR, IT, or customer operations.",
+    confidenceNote: "Medium. The July 1 announcement identifies a delivery model and concrete enterprise workflows, but it does not yet name a customer or implementation volume.",
+    watchFor: ["Named enterprise customers", "Implementation-team expansion", "New application connectors", "AI governance and command-center projects", "Managed service delivery hiring"],
+    rawNotes: "Collected July 2, 2026. The partnership was announced July 1. U.S. impact is direct because both companies have U.S. headquarters and the offering targets enterprise implementation and managed operations.",
+    createdAt: nowJuly2,
+    updatedAt: nowJuly2
+  },
   {
     id: "news-2026-06-29-rocket-lab-iridium-acquisition",
     rank: 1,
