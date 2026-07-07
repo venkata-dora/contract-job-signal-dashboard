@@ -8,8 +8,300 @@ const nowJune5 = "2026-06-05T12:00:00.000Z";
 const nowJune8 = "2026-06-08T12:00:00.000Z";
 const nowJune29 = "2026-06-29T12:00:00.000Z";
 const nowJuly2 = "2026-07-02T12:00:00.000Z";
+const nowJuly7 = "2026-07-07T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
+  {
+    id: "news-2026-07-07-river-financial-cyber-update",
+    rank: 1,
+    companyEvent: "River Financial Corporation at SEC cyber update: bank reports potentially impacted data in ongoing ransomware investigation",
+    companiesMentioned: [
+      {
+        name: "River Financial Corporation",
+        sector: "Regional banking / financial services",
+        headquarters: "Prattville, AL",
+        relationship: "Primary target",
+        description: "Alabama bank holding company for River Bank & Trust, a regional bank serving consumer and business customers"
+      }
+    ],
+    eventType: "SEC Cyber Disclosure / 8-K Material Incident",
+    category: "Cyber / Compliance / Regulatory",
+    secondaryCategories: ["Banking / Payments / Fintech"],
+    signalStrength: "High",
+    eventDate: "2026-07-07",
+    resourceLink: "https://www.sec.gov/Archives/edgar/data/1641601/000119312526295704/ck0001641601-20260619.htm",
+    sourceName: "SEC EDGAR",
+    sector: "Regional banking / cybersecurity remediation",
+    summary: "River Financial filed an amended Form 8-K on July 6, 2026. The bank said its investigation has progressed, certain data may have been impacted, and it is still determining whether personally identifiable information was affected.",
+    likelyJobLocations: ["Prattville, AL", "Montgomery, AL", "Birmingham, AL", "Atlanta, GA", "Remote USA banking security"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "River is headquartered in Prattville, Alabama, with incident-response, legal, bank-technology, and managed-security work likely split between Alabama operations and U.S. remote vendor teams.",
+    whyThisMayCreateContractSoftwareJobs: "A material bank cyber incident can trigger forensic data review, SIEM/log analysis, account-impact analysis, PII discovery, customer notification workflows, IAM review, endpoint/server hardening, backup validation, and regulatory evidence preparation.",
+    likelySoftwareRoles: ["Incident Response Engineer", "Security Data Analyst", "SIEM Engineer", "IAM Engineer", "Data Privacy Engineer", "Banking Systems Analyst", "Forensic Analyst", "GRC Analyst", "QA Automation/SDET"],
+    bestSearchKeywords: ["River Financial cybersecurity contractor", "River Bank Trust incident response", "bank ransomware remediation engineer", "SEC Item 1.05 cyber disclosure jobs", "bank PII data discovery contractor"],
+    actionPlan: "Monitor River Financial, River Bank & Trust, Alabama banking vendors, MSSPs, privacy/compliance firms, and incident-response consultancies for remediation, data-discovery, notification, IAM, and GRC support roles.",
+    confidenceNote: "High. The July 6 SEC 8-K/A states that data may have been impacted and that River is still assessing scope, PII exposure, and business impact.",
+    watchFor: ["Further SEC amendment", "Customer notification filings", "Forensic vendor activity", "PII scope determination", "Bank security remediation roles"],
+    rawNotes: "Collected July 7, 2026. The fresh material update was filed July 6. Original event date was June 19, but the July 6 amendment adds new investigation detail. U.S. impact is direct because River is an Alabama regional bank.",
+    createdAt: nowJuly7,
+    updatedAt: nowJuly7
+  },
+  {
+    id: "news-2026-07-07-cognizant-google-gemini-enterprise",
+    rank: 1,
+    companyEvent: "Cognizant and Google Cloud expand partnership: Gemini Enterprise engineers and reusable agents will scale client AI deployments",
+    companiesMentioned: [
+      {
+        name: "Cognizant",
+        sector: "IT services / digital engineering / AI implementation",
+        headquarters: "Teaneck, NJ",
+        relationship: "Partner / vendor",
+        description: "U.S.-headquartered technology services company building and deploying enterprise AI, cloud, and software solutions for clients"
+      },
+      {
+        name: "Google Cloud",
+        sector: "Cloud computing / enterprise AI platforms",
+        headquarters: "Sunnyvale, CA",
+        relationship: "Partner / vendor",
+        description: "Google's cloud and AI platform business providing Gemini Enterprise, AI agents, data services, and cloud infrastructure"
+      }
+    ],
+    eventType: "Enterprise AI Rollout / Gemini Agent Implementation",
+    category: "AI / Cloud / Enterprise Platforms",
+    signalStrength: "High",
+    eventDate: "2026-07-07",
+    resourceLink: "https://www.prnewswire.com/news-releases/cognizant-expands-partnership-with-google-cloud-to-accelerate-enterprise-ai-adoption-with-gemini-enterprise-and-google-workspace-302819111.html",
+    sourceName: "PR Newswire / Cognizant Technology Solutions",
+    sector: "Enterprise AI / cloud consulting / systems integration",
+    summary: "Cognizant expanded its Google Cloud partnership on July 7, 2026. The companies are pairing Cognizant Frontier Certified Engineers, reusable agents, Gemini Enterprise, Gemini Enterprise for Customer Experience, and Gemini Enterprise Agent Platform for client production deployments.",
+    likelyJobLocations: ["Teaneck, NJ", "New York, NY", "Sunnyvale, CA", "San Francisco Bay Area, CA", "Dallas, TX", "Chicago, IL", "Remote USA enterprise AI"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Cognizant is headquartered in New Jersey and Google Cloud has major California and distributed U.S. cloud teams. Client implementations will land across U.S. enterprise hubs in financial services, healthcare, retail, communications, and media.",
+    whyThisMayCreateContractSoftwareJobs: "Production Gemini deployments create work in workflow discovery, agent design, RAG and data integration, Google Workspace rollout, contact-center modernization, model evaluation, privacy/security controls, API integration, observability, and automated testing.",
+    likelySoftwareRoles: ["AI Agent Engineer", "Google Cloud Engineer", "RAG / LLM Engineer", "Data Engineer", "MLOps Engineer", "Contact Center Integration Developer", "Workflow Automation Engineer", "AI Governance Analyst", "QA Automation/SDET"],
+    bestSearchKeywords: ["Cognizant Gemini Enterprise contractor", "Google Cloud Gemini agent engineer", "Cognizant Frontier Certified Engineer jobs", "Gemini Enterprise implementation consultant", "AI agent production deployment contract"],
+    actionPlan: "Search Cognizant, Google Cloud partners, and client-facing SI roles for Gemini Enterprise, agentic employee platforms, contact-center AI, workflow audits, AI evaluation, and production deployment contracts.",
+    confidenceNote: "High. The July 7 release names the delivery model, client-environment deployments, Google Cloud products, internal rollout, and production use cases.",
+    watchFor: ["Client case studies", "Gemini Enterprise implementation roles", "Agent Foundry hiring", "Google Cloud AI partner postings", "AI governance workstreams"],
+    rawNotes: "Collected July 7, 2026. The release was published July 7. U.S. impact is direct because Cognizant is U.S.-headquartered and the go-to-market focus includes U.S. enterprise sectors.",
+    createdAt: nowJuly7,
+    updatedAt: nowJuly7
+  },
+  {
+    id: "news-2026-07-07-ssc-tokenized-cash-settlement",
+    rank: 1,
+    companyEvent: "SS&C expands tokenized investment roadmap: digital cash settlement planned for funds using stablecoins and tokenized deposits",
+    companiesMentioned: [
+      {
+        name: "SS&C Technologies",
+        sector: "Financial services software / fund administration technology",
+        headquarters: "Windsor, CT",
+        relationship: "Primary target",
+        description: "U.S. software and services provider for financial services and healthcare organizations"
+      },
+      {
+        name: "Calastone",
+        sector: "Investment-fund network / fund transaction infrastructure",
+        headquarters: "London, UK",
+        relationship: "Acquired company",
+        description: "Fund transaction network acquired by SS&C in 2025 and used in the tokenized-fund infrastructure roadmap"
+      }
+    ],
+    eventType: "Stablecoin / Tokenized Deposit Platform",
+    category: "Banking / Payments / Fintech",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-07-07",
+    resourceLink: "https://www.businesswire.com/news/home/20260707147677/en/SSC-Expands-Tokenized-Investment-Capabilities-with-Digital-Cash-Settlement",
+    sourceName: "Business Wire / SS&C Technologies",
+    sector: "Financial technology / digital assets / investment operations",
+    summary: "SS&C announced on July 7, 2026 that it plans to support digital cash settlement for tokenized investment transactions. The roadmap includes regulated digital cash, stablecoins, tokenized commercial bank deposits, and future atomic settlement across the SS&C and Calastone ecosystem.",
+    likelyJobLocations: ["Windsor, CT", "New York, NY", "Boston, MA", "Dallas, TX", "Remote USA fintech"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "SS&C is headquartered in Connecticut and serves asset managers, fund administrators, banks, and healthcare organizations through U.S. financial technology hubs and distributed delivery teams.",
+    whyThisMayCreateContractSoftwareJobs: "Tokenized settlement requires payment and ledger integration, fund-accounting changes, custody and compliance controls, API connectivity, reconciliation, cross-border transaction workflows, risk monitoring, security review, and extensive test automation.",
+    likelySoftwareRoles: ["Fintech Backend Engineer", "Payments Integration Developer", "Blockchain / Tokenization Engineer", "Fund Accounting Systems Analyst", "Data Engineer", "API Engineer", "Compliance Technology Analyst", "QA Automation/SDET"],
+    bestSearchKeywords: ["SS&C tokenized settlement engineer", "Calastone tokenized fund integration", "stablecoin settlement fintech contractor", "tokenized deposit platform developer", "atomic settlement software jobs"],
+    actionPlan: "Monitor SS&C, Calastone, fund-admin technology vendors, digital-asset compliance firms, and investment operations consultancies for tokenized fund issuance, settlement, reconciliation, custody, and API integration roles.",
+    confidenceNote: "High. The July 7 Business Wire release gives concrete settlement capabilities, tokenized-fund context, the Calastone acquisition link, and planned development milestones.",
+    watchFor: ["Implementation timeline", "Eligible fund rollout", "Bank deposit-token partners", "Stablecoin settlement pilots", "Reconciliation and custody integrations"],
+    rawNotes: "Collected July 7, 2026. The release was published July 7. U.S. impact is direct because SS&C is headquartered in Windsor, Connecticut and serves U.S. financial-services clients.",
+    createdAt: nowJuly7,
+    updatedAt: nowJuly7
+  },
+  {
+    id: "news-2026-07-07-bluevine-international-owner-onboarding",
+    rank: 1,
+    companyEvent: "Bluevine launches digital onboarding for foreign-resident owners of U.S. businesses: Wise Platform powers cross-border banking access",
+    companiesMentioned: [
+      {
+        name: "Bluevine",
+        sector: "Small-business banking platform / fintech",
+        headquarters: "Jersey City, NJ",
+        relationship: "Primary target",
+        description: "U.S. fintech company providing business checking, payments, lending, accounts payable, cards, and financial operating software for small businesses"
+      },
+      {
+        name: "Wise Platform",
+        sector: "Cross-border payments infrastructure",
+        headquarters: "London, UK",
+        relationship: "Partner / vendor",
+        description: "Payments infrastructure platform used to power international money movement and account access"
+      },
+      {
+        name: "Coastal Community Bank",
+        sector: "Banking / fintech sponsor banking",
+        headquarters: "Everett, WA",
+        relationship: "Partner / vendor",
+        description: "FDIC-insured bank providing banking services behind Bluevine business accounts"
+      }
+    ],
+    eventType: "Digital Banking Onboarding / Cross-Border Payments Integration",
+    category: "Banking / Payments / Fintech",
+    signalStrength: "High",
+    eventDate: "2026-07-07",
+    resourceLink: "https://www.prnewswire.com/news-releases/bluevine-breaks-geographic-barriers-for-us-small-businesses-launches-digital-onboarding-for-international-owners-302813145.html",
+    sourceName: "PR Newswire / Bluevine",
+    sector: "Fintech / small-business banking / cross-border payments",
+    summary: "Bluevine announced on July 6, 2026 that foreign-resident owners of U.S. businesses can open and manage U.S. business accounts digitally. The expansion uses Wise Platform for cross-border payments and a technology-driven Customer Identification Program for remote onboarding.",
+    likelyJobLocations: ["Jersey City, NJ", "New York, NY", "Seattle, WA", "San Francisco Bay Area, CA", "Remote USA fintech"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Bluevine is headquartered in Jersey City, Coastal Community Bank is based near Seattle, and fintech engineering, risk, payments, and compliance delivery often spans New York, Seattle, Bay Area, and remote U.S. teams.",
+    whyThisMayCreateContractSoftwareJobs: "International owner onboarding creates work in KYC/CIP automation, sanctions screening, beneficial-owner verification, Wise payment APIs, ACH/bill-pay workflows, account-risk models, fraud monitoring, data sharing, compliance reporting, and regression testing.",
+    likelySoftwareRoles: ["Fintech Backend Engineer", "KYC / AML Integration Developer", "Payments API Engineer", "Fraud Risk Engineer", "Compliance Systems Analyst", "Data Engineer", "QA Automation/SDET", "Product Analyst"],
+    bestSearchKeywords: ["Bluevine Wise Platform integration", "Bluevine KYC onboarding engineer", "foreign resident US business account fintech", "CIP automation contractor", "cross border payments API jobs"],
+    actionPlan: "Track Bluevine, Coastal Community Bank, Wise Platform partners, sponsor-bank vendors, and fintech compliance consultancies for KYC, CIP, sanctions, cross-border payments, ACH, bill-pay, and fraud-risk implementation work.",
+    confidenceNote: "High. The July 6 release names the new customer segment, Wise Platform, CIP automation, FDIC banking partner, and specific U.S. business-account workflows.",
+    watchFor: ["Expanded country coverage", "KYC vendor changes", "Wise Platform rollout roles", "Sponsor-bank compliance updates", "Fraud and sanctions monitoring hires"],
+    rawNotes: "Collected July 7, 2026. The article was published July 6. U.S. impact is direct because the service targets U.S. businesses and a U.S. fintech/bank partnership.",
+    createdAt: nowJuly7,
+    updatedAt: nowJuly7
+  },
+  {
+    id: "news-2026-07-07-avid-tech-med-acquisition",
+    rank: 1,
+    companyEvent: "Avid Health at Home completes Tech Medical acquisition: technology-enabled home-care platform expands in Kentucky and Ohio",
+    companiesMentioned: [
+      {
+        name: "Avid Health at Home",
+        sector: "Home health care services / technology-enabled care delivery",
+        headquarters: "Chicago, IL",
+        relationship: "Acquirer",
+        description: "Multi-state home-care provider using technology to support caregiver communications, workflow automation, and care operations"
+      },
+      {
+        name: "Tech Medical Home Care Services",
+        sector: "Home health care services",
+        headquarters: "Flatwoods, KY",
+        relationship: "Acquired company",
+        description: "Home-care provider serving eastern Kentucky and parts of southern Ohio"
+      },
+      {
+        name: "Havencrest Capital Management",
+        sector: "Healthcare private equity",
+        headquarters: "Dallas, TX",
+        relationship: "Partner / vendor",
+        description: "Healthcare-focused private equity firm backing Avid Health at Home's acquisition platform"
+      }
+    ],
+    eventType: "Healthcare Acquisition / Care Platform Integration",
+    category: "M&A / Divestiture / Carve-out",
+    secondaryCategories: ["AI / Cloud / Enterprise Platforms"],
+    signalStrength: "High",
+    eventDate: "2026-07-07",
+    resourceLink: "https://www.prnewswire.com/news-releases/avid-health-at-home-completes-8th-acquisition-featured-as-leading-technology-enabled-home-care-services-platform-302818883.html",
+    sourceName: "PR Newswire / Havencrest Capital Management",
+    sector: "Home healthcare / private equity platform integration",
+    summary: "Havencrest announced on July 7, 2026 that portfolio company Avid Health at Home completed its eighth tuck-in acquisition, buying Tech Medical Home Care Services. The release highlights Avid's AI-driven workflow automation and tech-stack integration capabilities.",
+    likelyJobLocations: ["Chicago, IL", "Dallas, TX", "Flatwoods, KY", "Wheelersburg, OH", "Columbus, OH", "Remote USA healthcare IT"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Avid is listed as Chicago-headquartered, Havencrest is Dallas-based, and Tech Medical operates in Kentucky and Ohio. Care operations, data conversion, and field support are likely regional, with vendor and platform work remote.",
+    whyThisMayCreateContractSoftwareJobs: "A tuck-in acquisition of a care provider into a technology-first platform creates work in patient/caregiver data migration, scheduling and EVV integration, billing and claims workflows, CRM/referral data, identity access, mobile caregiver apps, analytics, compliance reporting, and QA.",
+    likelySoftwareRoles: ["Healthcare Data Migration Engineer", "Integration Developer", "Home Health Systems Analyst", "ETL Developer", "Workflow Automation Engineer", "QA Automation/SDET", "Technical Business Analyst", "Healthcare IT Project Manager"],
+    bestSearchKeywords: ["Avid Health at Home Tech Medical integration", "home care platform data migration contractor", "AlayaCare integration engineer", "EVV scheduling home health systems analyst", "healthcare tuck-in acquisition IT jobs"],
+    actionPlan: "Watch Avid, Havencrest, AlayaCare ecosystem partners, home-health software vendors, and regional healthcare staffing firms for data migration, billing, scheduling, EVV, caregiver mobile, analytics, and integration roles.",
+    confidenceNote: "High. The July 7 release confirms the acquisition, identifies the care platform, states the Midwest expansion, and names AI-driven workflow automation and tech-stack integration as platform capabilities.",
+    watchFor: ["Tech Med rebranding", "Care platform migration", "EVV and billing integration", "AlayaCare ecosystem roles", "Additional Avid tuck-in acquisitions"],
+    rawNotes: "Collected July 7, 2026. The release was published July 7. U.S. impact is direct because the acquired operations are in Kentucky and Ohio and the acquirer/sponsor are U.S.-based.",
+    createdAt: nowJuly7,
+    updatedAt: nowJuly7
+  },
+  {
+    id: "news-2026-07-07-authid-synercomm-identity",
+    rank: 1,
+    companyEvent: "authID and SynerComm form partnership: biometric identity verification will be delivered into regulated enterprise Zero Trust programs",
+    companiesMentioned: [
+      {
+        name: "authID",
+        sector: "Biometric identity verification / authentication software",
+        headquarters: "Denver, CO",
+        relationship: "Primary target",
+        description: "U.S. identity software company providing biometric verification, passwordless authentication, account recovery, and fraud-prevention capabilities"
+      },
+      {
+        name: "SynerComm",
+        sector: "Cybersecurity value-added reseller / Zero Trust solutions",
+        headquarters: "Brookfield, WI",
+        relationship: "Partner / vendor",
+        description: "Cybersecurity solutions provider delivering threat, identity-management, infrastructure, and Zero Trust services to enterprise customers"
+      }
+    ],
+    eventType: "IAM Hardening / Biometric Identity Rollout",
+    category: "Cyber / Compliance / Regulatory",
+    signalStrength: "Medium",
+    eventDate: "2026-07-07",
+    resourceLink: "https://www.globenewswire.com/news-release/2026/07/07/3323103/0/en/authID-Announces-Strategic-Partnership-with-SynerComm-to-Expand-Biometric-Identity-Security-Across-Highly-Regulated-Enterprises.html",
+    sourceName: "GlobeNewswire / authID",
+    sector: "Identity security / Zero Trust / fraud prevention",
+    summary: "authID announced on July 7, 2026 that SynerComm will resell authID biometric identity verification and authentication services to enterprise customers. The partnership targets workforce access, help-desk operations, secure system access, fraud reduction, and Zero Trust programs.",
+    likelyJobLocations: ["Denver, CO", "Brookfield, WI", "Milwaukee, WI", "Chicago, IL", "Remote USA cybersecurity"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "authID is headquartered in Denver and SynerComm's corporate headquarters are in Brookfield near Milwaukee. Customer identity deployments can be delivered by regional cybersecurity teams and remote U.S. implementation engineers.",
+    whyThisMayCreateContractSoftwareJobs: "Enterprise biometric identity rollout drives integrations with IAM/SSO, help-desk verification, privileged access, device binding, fraud workflows, audit logging, privacy controls, mobile/web SDKs, and Zero Trust policy enforcement.",
+    likelySoftwareRoles: ["IAM Engineer", "Identity Integration Developer", "Zero Trust Architect", "Security Engineer", "Mobile SDK Developer", "API Engineer", "Privacy Engineer", "QA Automation/SDET"],
+    bestSearchKeywords: ["authID SynerComm integration", "biometric identity verification contractor", "Zero Trust IAM rollout engineer", "passwordless authentication implementation", "help desk identity verification jobs"],
+    actionPlan: "Monitor authID, SynerComm, identity-security partners, and regulated enterprise implementation teams for biometric onboarding, SSO/IAM, help-desk verification, fraud controls, and Zero Trust integration work.",
+    confidenceNote: "Medium. The July 7 release confirms the channel partnership and target use cases, but customer rollout timing and named enterprise adopters were not disclosed.",
+    watchFor: ["Named regulated-enterprise customers", "authID implementation partners", "IAM connector releases", "Help-desk verification rollouts", "Zero Trust deployment roles"],
+    rawNotes: "Collected July 7, 2026. The release was published July 7. U.S. impact is direct because both primary companies have U.S. headquarters and the stated target market is regulated enterprise customers.",
+    createdAt: nowJuly7,
+    updatedAt: nowJuly7
+  },
+  {
+    id: "news-2026-07-07-innovatix-openparser-agentic",
+    rank: 1,
+    companyEvent: "Innovatix launches agentic OpenParser AI release: document agents, SharePoint/Drive/database connectors, and private-cloud deployment",
+    companiesMentioned: [
+      {
+        name: "Innovatix Technology Partners",
+        sector: "Software development / AI automation services",
+        headquarters: "Bedminster, NJ",
+        relationship: "Primary target",
+        description: "U.S. software design and development company behind OpenParser AI, focused on AI, automation, and digital transformation"
+      }
+    ],
+    eventType: "AI Agent Workflow Automation",
+    category: "AI / Cloud / Enterprise Platforms",
+    secondaryCategories: ["Cyber / Compliance / Regulatory"],
+    signalStrength: "Medium",
+    eventDate: "2026-07-07",
+    resourceLink: "https://www.businesswire.com/news/home/20260707881076/en/OpenParser-AI-Goes-Agentic-Innovatix-Unveils-a-New-Era-of-Document-Intelligence-That-Doesnt-Just-Answer-It-Acts",
+    sourceName: "Business Wire / Innovatix Technology Partners",
+    sector: "Enterprise AI / document intelligence / workflow automation",
+    summary: "Innovatix announced a major OpenParser AI release on July 7, 2026. The platform now includes more than 20 prebuilt AI agents, connectors for Google Drive, Microsoft SharePoint, websites, and databases, bring-your-own LLM support, and SaaS or on-premise/private-cloud deployment.",
+    likelyJobLocations: ["Bedminster, NJ", "New York, NY", "Philadelphia, PA", "Boston, MA", "Remote USA enterprise AI"],
+    workMode: "Remote / Hybrid",
+    whyTheseLocations: "Innovatix is headquartered in Bedminster, New Jersey, and enterprise document-AI implementation work is likely to cluster around Northeast business hubs plus remote delivery for regulated customers.",
+    whyThisMayCreateContractSoftwareJobs: "Agentic document workflow adoption creates implementation work around SharePoint/Drive/database connectors, document ingestion, access control, SSO, audit trails, private-cloud deployment, BYO LLM integration, prompt/evaluation workflows, and QA.",
+    likelySoftwareRoles: ["AI Agent Engineer", "Document AI Engineer", "Integration Developer", "SharePoint Developer", "Data Engineer", "Cloud Engineer", "Security Engineer", "QA Automation/SDET", "AI Evaluation Engineer"],
+    bestSearchKeywords: ["OpenParser AI implementation contractor", "Innovatix agentic document intelligence", "SharePoint AI connector engineer", "BYO LLM enterprise platform jobs", "document workflow automation developer"],
+    actionPlan: "Watch Innovatix, OpenParser AI partners, SharePoint consultancies, legaltech vendors, and regulated-industry AI implementation firms for connector, private-cloud, identity, audit, and document-workflow automation roles.",
+    confidenceNote: "Medium. The July 7 release gives concrete platform capabilities and immediate availability, but it is a product launch without named enterprise customer migrations.",
+    watchFor: ["Customer deployment announcements", "Private-cloud implementation work", "SharePoint connector roles", "Regulated-industry AI pilots", "Security/audit integration hiring"],
+    rawNotes: "Collected July 7, 2026. The release was published July 7. U.S. impact is direct because Innovatix is headquartered in New Jersey and targets regulated enterprise deployments.",
+    createdAt: nowJuly7,
+    updatedAt: nowJuly7
+  },
   {
     id: "news-2026-07-02-microsoft-sharepoint-kev",
     rank: 1,
