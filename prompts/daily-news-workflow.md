@@ -1,10 +1,10 @@
 # Daily News Workflow
 
-Use this workflow when the user asks Codex to run the category prompts and update the dashboard with current news.
+Use this editorial reference for requested runs and approved external daily automation. Follow `daily-run.md` for operational scope, validation, GitHub, and reporting.
 
 ## Purpose
 
-Find real business/news events that may create contract software jobs, then immediately add or update those signals in the local dashboard.
+Find real business/news events that may create contract software jobs, then propose verified signals through a validated pull request.
 
 ## Recency window
 
@@ -120,7 +120,7 @@ Run these searches to find today's signals. Adapt company names when specific ev
 - "unauthorized access" OR "customer data exposure" disclosure
 - "consent order" OR "enforcement action" regulatory body today
 - "AppSec" OR "vulnerability management" OR "exploit" cybersecurity product launch
-- CISA KEV update today — new exploited vulnerability = immediate signal
+- CISA KEV update today — investigate named private-company impact; an advisory alone is not a company-specific signal
 - HHS OCR HIPAA breach today
 - "supply chain attack" OR "dependency attack" OR "software supply chain"
 - "credential exposure" OR "secret rotation" OR "leaked token"
@@ -167,7 +167,7 @@ These are high-value forced-change signals. Always check for them.
 
 ### Cyber / Compliance
 - Any SEC 8-K Item 1.05 disclosure (mandatory since Dec 2023) — very high signal
-- CISA KEV additions — companies using the named software must patch
+- CISA KEV additions — require supporting evidence of named private-company impact before adding a signal
 - Ransomware at any company with named systems affected
 - HHS OCR breach settlement with corrective action plan
 - FTC consent order with data security requirements

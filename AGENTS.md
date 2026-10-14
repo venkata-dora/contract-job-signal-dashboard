@@ -35,7 +35,7 @@ Forced-change signals include events that force:
 - healthcare FHIR / 21st Century Cures compliance
 - insurance Guidewire / Duck Creek platform implementation
 - mainframe modernization
-- federal FISMA / FedRAMP / CMMC compliance program
+- private-company compliance remediation with verified software impact
 - BaaS / sponsor-bank transition or exit
 - hospital / health system merger (always has large IT integration work)
 - PE-backed buyout of a software or services company (always has integration work)
@@ -62,8 +62,8 @@ Do not add:
 - Tavily
 - RSS integrations
 - backend services
-- scheduling
-- cron jobs
+- scheduling inside the client application
+- cron jobs inside the client application
 - databases
 
 Use only:
@@ -73,12 +73,15 @@ Use only:
 - browser localStorage
 
 Daily news workflow:
-- When the user explicitly asks for a daily run, Codex may research current news in the browser/web, then add the real news items and source links into the local dashboard data.
+- For an explicitly requested run or the approved external daily automation, Codex may research current news in the browser/web, then add the real news items and source links into the local dashboard data.
 - Always add newly researched daily-run items at the top of `lib/seedData.ts`, regardless of category. Do not place new items lower in the file just because they belong to an existing category block.
 - Default to news from the past 24 hours only. Do not add older stories unless the user asks for a broader catch-up or the older story has a new material update published in the past 24 hours.
 - Add only news with a clear U.S. impact. Skip international-only stories and do not list outside-USA job locations.
 - For every signal, include company names separately with a plain-English explanation of what each company does and its sector.
-- Do not add automatic fetching, APIs, schedulers, cron jobs, or backend services.
+- Do not add automatic fetching, APIs, schedulers, cron jobs, or backend services to the client app. External Codex research/scheduling and GitHub Actions validation/deployment are approved.
+- Routine runs follow `prompts/daily-run.md` and may change only `lib/seedData.ts`. Category prompts are reference guidance, not authorization to rebuild modules.
+- Target U.S. private-sector work only: exclude government hiring, federal contracting opportunities, and clearance-required work. Regulators may be sources for enforcement against private companies. General advisories/KEV entries require supporting evidence of a named private company impact before becoming company-specific signals.
+- Software demand, roles, and locations inferred from events must be labeled as inferences, never confirmed vacancies.
 - The UI should prioritize major news, article/source link, category, likely job locations, why jobs may appear, likely roles, action plan, and confidence note.
 - Search strings are secondary and should not dominate the dashboard.
 
