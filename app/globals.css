@@ -1647,3 +1647,6 @@ a.calendar-cell:hover, a.calendar-cell:focus-visible { outline: 2px solid #145c2
   .archive-layout.calendar-collapsed { grid-template-columns: minmax(0, 1fr); }
   .archive-high { padding: 0 18px; }
 }
+
+.brief-tools .news-star.selected { color: #986b00; border-color: #d5b86a; background: #fff8df; }
+.news-important-label { color: #825d00; font-size: 12px; font-weight: 700; margin: 10px 0; }
