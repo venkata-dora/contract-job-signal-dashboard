@@ -4,6 +4,8 @@ Implement Category 3: Cyber / Compliance / Regulatory for the local no-API contr
 
 For daily research, use this file only as category reference. `daily-run.md` governs scope: do not implement the historical module-building instructions below or change application code. U.S. private-sector signals only; exclude government hiring, federal contracting, and clearance-required work. Regulator releases may support private-company enforcement signals; general advisories need company-specific supporting evidence.
 
+Include the cross-category company pass in `c2c-company-research.md`; read the watchlist and distinguish verified C2C terms from inferred software demand.
+
 Hard constraints:
 - Do not use external APIs.
 - Do not add scheduling inside the client app. Approved external daily automation follows `daily-run.md`.
