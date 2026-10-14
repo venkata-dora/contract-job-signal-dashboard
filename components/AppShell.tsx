@@ -109,6 +109,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             <span>Dashboard</span>
             <span className="count">{counts.total ?? 0}</span>
           </Link>
+          <Link href="/news" className={pathname === "/news" ? "active" : ""}>
+            <span className="nav-ic" aria-hidden="true">▤</span>
+            <span>All news</span>
+            <span className="count">{counts.allTotal ?? 0}</span>
+          </Link>
           <Link href="/add-signal" className={pathname === "/add-signal" ? "active" : ""}>
             <span className="nav-ic">
               <svg width={15} height={15} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
