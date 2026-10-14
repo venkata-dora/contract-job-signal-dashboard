@@ -12,6 +12,106 @@ const nowJuly7 = "2026-07-07T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
   {
+    "id": "news-2026-10-14-polygon-coinme-completion",
+    "rank": 1,
+    "companyEvent": "Polygon completes Coinme acquisition: regulated U.S. payments join Open Money Stack",
+    "companiesMentioned": [
+      {
+        "name": "Polygon Labs",
+        "sector": "Blockchain payments infrastructure",
+        "relationship": "Acquirer",
+        "description": "Builds blockchain and payment infrastructure"
+      },
+      {
+        "name": "Coinme",
+        "sector": "Digital asset payments",
+        "relationship": "Acquired company",
+        "description": "Provides regulated U.S. digital asset money movement"
+      }
+    ],
+    "eventType": "Acquisition completion / payments integration",
+    "category": "Banking / Payments / Fintech",
+    "secondaryCategories": [
+      "M&A / Divestiture / Carve-out"
+    ],
+    "signalStrength": "High",
+    "eventDate": "2026-10-14",
+    "resourceLink": "https://polygon.technology/blog/polygon-open-money-stack-us-regulated-payments-platform",
+    "sourceName": "Polygon Labs",
+    "sector": "Payments infrastructure",
+    "summary": "Polygon announced completion of its Coinme acquisition and customer adoption of Open Money Stack. The combined platform connects regulated U.S. access with wallets and settlement infrastructure.",
+    "likelyJobLocations": [
+      "Remote USA payments teams"
+    ],
+    "workMode": "Remote / Hybrid",
+    "whyTheseLocations": "Inference: U.S. delivery is plausible given the acquired U.S. payments business; specific hiring locations are unconfirmed.",
+    "whyThisMayCreateContractSoftwareJobs": "Inferred work could include payment API integration, reconciliation, compliance workflows, migration testing, and observability.",
+    "likelySoftwareRoles": [
+      "Payments Integration Engineer",
+      "QA Automation Engineer",
+      "Data Engineer"
+    ],
+    "bestSearchKeywords": [
+      "Polygon Coinme integration contract",
+      "Open Money Stack payments engineer"
+    ],
+    "actionPlan": "Monitor the named companies and implementation partners for relevant contract postings; verify scope and location before applying.",
+    "confidenceNote": "Source supports the event. Software demand, roles, work mode, and locations are inferences; no confirmed vacancies were verified.",
+    "rawNotes": "Collected October 14, 2026 at 11:39:33 EDT. Research window: October 13 11:39:33 EDT to October 14 11:39:33 EDT. Company page dated October 14, 2026; no publication clock/timezone was displayed. U.S. impact: regulated payments coverage across 48 states. Completion is a fresh development, rather than the earlier acquisition announcement.",
+    "createdAt": "2026-10-14T15:39:33.000Z",
+    "updatedAt": "2026-10-14T15:39:33.000Z"
+  },
+  {
+    "id": "news-2026-10-14-lumana-convergint-ai-integration",
+    "rank": 1,
+    "companyEvent": "Lumana and Convergint partner to deploy hybrid-cloud AI video security for enterprises",
+    "companiesMentioned": [
+      {
+        "name": "Lumana",
+        "sector": "AI video security software",
+        "description": "Provides AI analysis and monitoring for security cameras",
+        "relationship": "Partner / vendor"
+      },
+      {
+        "name": "Convergint",
+        "sector": "Security systems integration services",
+        "description": "Designs, integrates, and services security systems",
+        "headquarters": "Hoffman Estates, IL",
+        "relationship": "Partner / vendor"
+      }
+    ],
+    "eventType": "Enterprise AI integration partnership",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "secondaryCategories": [],
+    "signalStrength": "Medium",
+    "eventDate": "2026-10-14",
+    "resourceLink": "https://www.lumana.ai/blog/lumana-and-convergint-partner-to-bring-ai-video-security-to-enterprise-and-public-sector-customers",
+    "sourceName": "Lumana",
+    "sector": "Enterprise AI / hybrid-cloud video analytics",
+    "summary": "Lumana announced a partnership enabling Convergint Technology Centers to deploy and service its AI video platform on existing camera infrastructure.",
+    "likelyJobLocations": [
+      "Hoffman Estates, IL",
+      "Remote USA enterprise integration"
+    ],
+    "workMode": "Remote / Hybrid",
+    "whyTheseLocations": "Inference: Convergint headquarters and U.S. enterprise delivery are plausible work hubs; actual project staffing is unconfirmed.",
+    "whyThisMayCreateContractSoftwareJobs": "Inferred private-enterprise work could include edge/cloud integration, data access controls, monitoring configuration, performance testing, and deployment automation.",
+    "likelySoftwareRoles": [
+      "Cloud Integration Engineer",
+      "QA Engineer",
+      "Security Engineer"
+    ],
+    "bestSearchKeywords": [
+      "Lumana Convergint enterprise integration contract",
+      "hybrid cloud video analytics engineer"
+    ],
+    "actionPlan": "Monitor the named companies and implementation partners for relevant contract postings; verify scope and location before applying.",
+    "confidenceNote": "Source supports the event. Software demand, roles, work mode, and locations are inferences; no confirmed vacancies were verified.",
+    "rawNotes": "Collected October 14, 2026 at 11:39:33 EDT. Research window: October 13 11:39:33 EDT to October 14 11:39:33 EDT. Company page published October 14, 2026; only a date was displayed. Release identifies California/Illinois companies and enterprise deployments. This signal covers private-enterprise work only; public-sector projects and clearance-required work are excluded.",
+    "createdAt": "2026-10-14T15:39:33.000Z",
+    "updatedAt": "2026-10-14T15:39:33.000Z"
+  },
+  {
     id: "news-2026-07-07-river-financial-cyber-update",
     rank: 1,
     companyEvent: "River Financial Corporation at SEC cyber update: bank reports potentially impacted data in ongoing ransomware investigation",
