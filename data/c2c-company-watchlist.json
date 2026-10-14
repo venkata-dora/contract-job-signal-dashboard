@@ -1,0 +1,10 @@
+{
+  "description": "C2C research watchlist, not an exhaustive or guaranteed eligibility list. Initial candidates come from existing lib/companyIntel.ts; no C2C policy has yet been verified.",
+  "companies": [
+    { "id": "accenture", "name": "Accenture", "aliases": [], "kind": "systems-integrator", "c2cStatus": "unverified", "evidence": [], "notes": "Existing dashboard company reference; investigate U.S. private-sector delivery and vendor channels." },
+    { "id": "cognizant", "name": "Cognizant", "aliases": [], "kind": "systems-integrator", "c2cStatus": "unverified", "evidence": [], "notes": "Existing dashboard company reference; not a confirmed C2C employer." },
+    { "id": "mphasis", "name": "Mphasis", "aliases": [], "kind": "systems-integrator", "c2cStatus": "unverified", "evidence": [], "notes": "Existing dashboard company reference; not a confirmed C2C employer." },
+    { "id": "persistent-systems", "name": "Persistent Systems", "aliases": [], "kind": "systems-integrator", "c2cStatus": "unverified", "evidence": [], "notes": "Existing dashboard company reference; not a confirmed C2C employer." },
+    { "id": "fincons", "name": "Fincons", "aliases": ["Fincons Group"], "kind": "systems-integrator", "c2cStatus": "unverified", "evidence": [], "notes": "Existing dashboard company reference; not a confirmed C2C employer." }
+  ]
+}

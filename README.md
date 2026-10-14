@@ -71,3 +71,7 @@ Dashboard and category views can export local data to CSV, Markdown, or JSON.
 ## Limitations
 
 The client remains UI-only with local persistence. Research and scheduling run outside the application. There are no APIs, live news fetching, backend services, databases, schedulers, cron jobs, or external classification calls.
+
+## C2C company targeting
+
+The daily workflow also checks the [company watchlist](data/c2c-company-watchlist.json) using [C2C research instructions](prompts/c2c-company-research.md). The starter list contains five existing dashboard IT-services references, all explicitly unverified for C2C. It is not an exhaustive company list or a guarantee of eligibility. Daily runs can maintain source-backed, role/channel-specific eligibility evidence and add relevant news to the existing categories. The watchlist is repository research data; it is not yet a separate website directory/filter.

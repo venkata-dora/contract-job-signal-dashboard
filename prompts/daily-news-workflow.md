@@ -2,6 +2,8 @@
 
 Use this editorial reference for requested runs and approved external daily automation. Follow `daily-run.md` for operational scope, validation, GitHub, and reporting.
 
+Also read `c2c-company-research.md` and `../data/c2c-company-watchlist.json` for the daily company-targeted pass and evidence-based C2C status maintenance.
+
 ## Purpose
 
 Find real business/news events that may create contract software jobs, then propose verified signals through a validated pull request.

@@ -79,7 +79,7 @@ Daily news workflow:
 - Add only news with a clear U.S. impact. Skip international-only stories and do not list outside-USA job locations.
 - For every signal, include company names separately with a plain-English explanation of what each company does and its sector.
 - Do not add automatic fetching, APIs, schedulers, cron jobs, or backend services to the client app. External Codex research/scheduling and GitHub Actions validation/deployment are approved.
-- Routine runs follow `prompts/daily-run.md` and may change only `lib/seedData.ts`. Category prompts are reference guidance, not authorization to rebuild modules.
+- Routine runs follow `prompts/daily-run.md` and may change only `lib/seedData.ts` and `data/c2c-company-watchlist.json`. Read `prompts/c2c-company-research.md` and check all watchlisted companies daily; C2C eligibility requires scoped source evidence, never assumptions from contractor use. Category prompts are reference guidance, not authorization to rebuild modules.
 - Target U.S. private-sector work only: exclude government hiring, federal contracting opportunities, and clearance-required work. Regulators may be sources for enforcement against private companies. General advisories/KEV entries require supporting evidence of a named private company impact before becoming company-specific signals.
 - Software demand, roles, and locations inferred from events must be labeled as inferences, never confirmed vacancies.
 - The UI should prioritize major news, article/source link, category, likely job locations, why jobs may appear, likely roles, action plan, and confidence note.
