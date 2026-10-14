@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import { categories, dateRanges, workModes, type DateRange, type SignalCategory, type SignalFilters, type SignalStrength, type WorkMode } from "@/lib/types";
 
 const SearchIcon = () => (
@@ -84,7 +84,8 @@ export function FilterBar({
   onChange: (f: SignalFilters) => void;
   lockCategory?: boolean;
 }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const panelId = useId();
   const upd = <K extends keyof SignalFilters>(k: K, v: SignalFilters[K]) => onChange({ ...filters, [k]: v });
   const today = todayISO();
   const isAtToday = filters.exactDate ? filters.exactDate >= today : true;
@@ -98,15 +99,15 @@ export function FilterBar({
 
   return (
     <div className="filter-bar">
-      {/* Mobile-only toggle row */}
-      <div className="filter-toggle-row mobile-only">
-        <button className="filter-toggle-btn" type="button" onClick={() => setMobileOpen(!mobileOpen)}>
+      {/* The full panel starts collapsed on every screen size. */}
+      <div className="filter-toggle-row">
+        <button className="filter-toggle-btn" type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setIsOpen(!isOpen)}>
           <FilterIcon />
           Filters
           {activeCount > 0 && <span className="filter-active-badge">{activeCount}</span>}
-          <ExpandChevron open={mobileOpen} />
+          <ExpandChevron open={isOpen} />
         </button>
-        {!mobileOpen && (
+        {!isOpen && (
           <div className="filter-summary">
             <span className="filter-summary-chip">{dateRangeLabel(filters.dateRange)}</span>
             {filters.query && <span className="filter-summary-chip">"{filters.query}"</span>}
@@ -118,8 +119,8 @@ export function FilterBar({
         )}
       </div>
 
-      {/* Desktop: always visible. Mobile: visible when toggled open */}
-      <div className={`filter-panel ${mobileOpen ? "mobile-open" : ""}`}>
+      {/* Keep controls mounted so collapsing preserves their values. */}
+      <div id={panelId} className="filter-panel" hidden={!isOpen}>
           <div className="filter-row">
             <div className="search-wrap">
               <SearchIcon />
