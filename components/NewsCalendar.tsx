@@ -1,6 +1,6 @@
 import type { JobSignal } from "@/lib/types";
 
-export function NewsCalendar({ signals }: { signals: JobSignal[] }) {
+export function NewsCalendar({ signals, open, onToggle }: { signals: JobSignal[]; open: boolean; onToggle: () => void }) {
   const byDate = new Map<string, { count: number; high: number; level: number }>();
   signals.forEach((signal) => {
     const day = byDate.get(signal.eventDate) ?? { count: 0, high: 0, level: 0 };
@@ -17,7 +17,10 @@ export function NewsCalendar({ signals }: { signals: JobSignal[] }) {
   for (const date = new Date(start); date <= end; date.setUTCMonth(date.getUTCMonth() + 1)) months.push(date.toISOString().slice(0, 7));
 
   return <aside className="news-calendar" aria-label="News priority calendar">
-    <h2>News activity</h2>
+    <button type="button" className="calendar-toggle" onClick={onToggle} aria-expanded={open} aria-controls="news-calendar-content" title={open ? "Collapse news activity" : "Expand news activity"}>
+      <span aria-hidden="true">{open ? "‹" : "›"}</span>{open && "News activity"}
+    </button>
+    <div id="news-calendar-content" hidden={!open}>
     <p>Choose a day to jump to its news.</p>
     <div className="calendar-legend"><span>Lower</span>{[0, 1, 2, 3].map((level) => <i key={level} className={`calendar-cell level-${level}`} />)}<span>High</span></div>
     <div className="calendar-months">
@@ -38,6 +41,7 @@ export function NewsCalendar({ signals }: { signals: JobSignal[] }) {
           </div>
         </section>;
       })}
+    </div>
     </div>
   </aside>;
 }
