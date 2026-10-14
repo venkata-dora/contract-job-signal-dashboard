@@ -2,9 +2,11 @@
 
 Implement Category 2: M&A / Divestiture / Carve-out for the local no-API contract-job-signal dashboard.
 
+For daily research, use this file only as category reference. `daily-run.md` governs scope: do not implement the historical module-building instructions below or change application code. U.S. private-sector signals only; exclude government hiring, federal contracting, and clearance-required work. Regulator releases may support private-company enforcement signals; general advisories need company-specific supporting evidence.
+
 Hard constraints:
 - Do not use external APIs.
-- Do not add scheduling.
+- Do not add scheduling inside the client app. Approved external daily automation follows `daily-run.md`.
 - Do not add backend services.
 - Use only TypeScript rule logic, seed data, manual input, and browser localStorage.
 - Preserve the existing app architecture.

@@ -6,7 +6,7 @@ The app focuses on forced-change signals: issuer transitions, card portfolio mig
 
 ## Daily News Workflow
 
-This app has no automatic news feed. When you ask Codex to run a daily update, Codex can research current news manually, then add real news items and source links into the local dashboard.
+This app has no automatic news feed. External Codex research can propose daily data updates through reviewed pull requests. See [daily-run instructions](prompts/daily-run.md) and [cloud setup and operations](docs/daily-automation.md). A repository workflow does not activate a Codex schedule.
 
 By default, daily updates should only include news, filings, disclosures, regulator releases, or company announcements from the past 24 hours. Older stories should be skipped unless you ask for a broader catch-up or there is a new material update.
 
@@ -30,17 +30,17 @@ Open http://localhost:3000.
 
 ## Publish to GitHub Pages
 
-The app is configured for static GitHub Pages deployment. Pushes to `main` or `master` run `.github/workflows/pages.yml`, build the app with `npm run build:pages`, and publish the generated `out` site.
+The app is configured for static GitHub Pages deployment. Pushes to the default branch `main` run `.github/workflows/pages.yml`, build the app with `npm run build:pages`, and publish the generated `out` site.
 
-Daily update flow:
+Daily updates use `daily-news/YYYY-MM-DD` pull requests into `main`; never auto-merge during rollout. PRs run install, typecheck, and Pages build without deployment. Manual deployment runs only from `main`.
+
+Local validation:
 
 ```bash
-# Codex researches the last 24 hours manually, then updates lib/seedData.ts
+# After researching and updating lib/seedData.ts
+npm ci
 npm run typecheck
-npm run build:pages
-git add .
-git commit -m "Update daily job signals"
-git push
+GITHUB_REPOSITORY=venkata-dora/contract-job-signal-dashboard npm run build:pages
 ```
 
 The app itself still has no automatic feeds, APIs, schedulers, backend, or database. Published updates come from committed local data changes.
@@ -70,4 +70,4 @@ Dashboard and category views can export local data to CSV, Markdown, or JSON.
 
 ## Limitations
 
-This is version 1: UI-only, local-only, and manual-input based. There are no APIs, live news fetching, backend services, databases, schedulers, cron jobs, or external classification calls.
+The client remains UI-only with local persistence. Research and scheduling run outside the application. There are no APIs, live news fetching, backend services, databases, schedulers, cron jobs, or external classification calls.
