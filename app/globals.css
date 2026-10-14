@@ -1590,3 +1590,17 @@ button, a, input, select, textarea { touch-action: manipulation; }
     gap: 12px;
   }
 }
+
+/* Complete news archive: dates remain beside their stories on wide screens. */
+.news-archive { max-width: 1440px; }
+.archive-jumps { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 32px; }
+.archive-jumps a { border: 1px solid var(--line); padding: 6px 10px; border-radius: 4px; font-family: var(--mono); font-size: 12px; }
+.archive-jumps a:hover { background: var(--bg); }
+.archive-day { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 24px; margin-bottom: 40px; scroll-margin-top: 24px; }
+.archive-date { align-self: start; position: sticky; top: 24px; border-top: 3px solid var(--accent); padding-top: 12px; }
+.archive-date h2 { font: 600 22px/1.3 var(--serif); margin: 0 0 8px; }
+.archive-date span { color: var(--mute); font-size: 13px; }
+@media (max-width: 900px) {
+  .archive-day { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .archive-date { position: static; }
+}
