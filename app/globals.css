@@ -1655,3 +1655,6 @@ a.calendar-cell:hover, a.calendar-cell:focus-visible { outline: 2px solid #145c2
 .archive-layout:not(.calendar-collapsed) .archive-day { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 .archive-layout:not(.calendar-collapsed) .archive-date { position: static; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; max-width: none; margin: 0; padding: 12px 16px; border: 1px solid var(--line); border-radius: 4px; }
 .archive-layout:not(.calendar-collapsed) .archive-date h2 { font-size: 22px; margin: 0; }
+
+.calendar-cell.selected { outline: 2px solid var(--ink); outline-offset: 2px; }
+.archive-date h2:focus { outline: none; }
