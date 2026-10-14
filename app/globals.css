@@ -1631,3 +1631,6 @@ a.calendar-cell:hover, a.calendar-cell:focus-visible { outline: 2px solid #145c2
 }
 
 .dashboard-feed .section-head { margin-top: 0; border-top: 0; padding-top: 20px; }
+
+/* Emphasize job locations and roles in each news story. */
+.location-chip, .role-chip { font-weight: 700; }
