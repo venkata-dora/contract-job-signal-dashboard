@@ -1,6 +1,20 @@
+"use client";
+
+import { useState } from "react";
 import type { JobSignal } from "@/lib/types";
 
 export function NewsCalendar({ signals, open, onToggle }: { signals: JobSignal[]; open: boolean; onToggle: () => void }) {
+  const [selectedDate, setSelectedDate] = useState("");
+  function jumpToDate(date: string) {
+    const target = document.getElementById(`date-${date}`);
+    if (!target) return;
+    setSelectedDate(date);
+    // Scroll the news document, leaving the independently scrollable calendar in place.
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 24, behavior: "auto" });
+    window.history.replaceState(null, "", `#date-${date}`);
+    const heading = document.getElementById(`heading-${date}`);
+    heading?.focus({ preventScroll: true });
+  }
   const byDate = new Map<string, { count: number; high: number; level: number }>();
   signals.forEach((signal) => {
     const day = byDate.get(signal.eventDate) ?? { count: 0, high: 0, level: 0 };
@@ -36,7 +50,7 @@ export function NewsCalendar({ signals, open, onToggle }: { signals: JobSignal[]
               const date = `${month}-${String(index + 1).padStart(2, "0")}`;
               const info = byDate.get(date);
               const label = `${date}: ${info?.count ?? 0} stories, ${info?.high ?? 0} high priority`;
-              return info ? <a key={date} href={`#date-${date}`} className={`calendar-cell level-${info.level}`} aria-label={label} title={label}><span>{index + 1}</span></a> : <span key={date} className="calendar-cell level-0" title={label} aria-label={label} />;
+              return info ? <a key={date} href={`#date-${date}`} className={`calendar-cell level-${info.level}${selectedDate === date ? " selected" : ""}`} onClick={(event) => { if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); jumpToDate(date); }} aria-current={selectedDate === date ? "date" : undefined} aria-label={label} title={label}><span>{index + 1}</span></a> : <span key={date} className="calendar-cell level-0" title={label} aria-label={label} />;
             })}
           </div>
         </section>;

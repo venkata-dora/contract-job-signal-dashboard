@@ -31,7 +31,7 @@ export default function NewsArchivePage() {
             const formatted = new Date(`${date}T00:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
             return <section key={date} id={`date-${date}`} className="archive-day" aria-labelledby={`heading-${date}`}>
               <header className="archive-date">
-                <h2 id={`heading-${date}`}><time dateTime={date}>{formatted}</time></h2>
+                <h2 id={`heading-${date}`} tabIndex={-1}><time dateTime={date}>{formatted}</time></h2>
                 <span>{stories.length} {stories.length === 1 ? "story" : "stories"}</span>
               </header>
               <div className="brief-list">
