@@ -1650,3 +1650,8 @@ a.calendar-cell:hover, a.calendar-cell:focus-visible { outline: 2px solid #145c2
 
 .brief-tools .news-star.selected { color: #986b00; border-color: #d5b86a; background: #fff8df; }
 .news-important-label { color: #825d00; font-size: 12px; font-weight: 700; margin: 10px 0; }
+
+/* Give stories the full column while the activity calendar is expanded. */
+.archive-layout:not(.calendar-collapsed) .archive-day { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.archive-layout:not(.calendar-collapsed) .archive-date { position: static; display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; max-width: none; margin: 0; padding: 12px 16px; border: 1px solid var(--line); border-radius: 4px; }
+.archive-layout:not(.calendar-collapsed) .archive-date h2 { font-size: 22px; margin: 0; }
