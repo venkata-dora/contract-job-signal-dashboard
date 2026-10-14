@@ -4,7 +4,7 @@
 
 Repository preparation supports external research and reviewed data PRs. GitHub Pages is configured with build type `workflow`, source `main`, at https://venkata-dora.github.io/contract-job-signal-dashboard/. The owner account was verified to have push/admin access during setup. This does not prove a future cloud task has the same credentials.
 
-No daily schedule was activated by this setup. The available desktop scheduling tool supports local execution, which requires the Mac and app to be running. It cannot satisfy unattended cloud execution. Official guidance: https://learn.chatgpt.com/docs/automations?surface=app . Cloud scheduling availability and repository execution permissions must be checked in your account; web tasks with connected tools are not automatically repository coding environments.
+The initial setup did not activate a schedule. The follow-up uses the signed-in ChatGPT web Scheduled interface; inspect its run history for current status. The available desktop scheduling tool supports local execution, which requires the Mac and app to be running. It cannot satisfy unattended cloud execution. Official guidance: https://learn.chatgpt.com/docs/automations?surface=app . Cloud scheduling availability and repository execution permissions must be checked in your account; web tasks with connected tools are not automatically repository coding environments.
 
 ## Remaining interface setup
 
@@ -16,7 +16,7 @@ No daily schedule was activated by this setup. The available desktop scheduling 
 
 Exact task prompt:
 
-> In venkata-dora/contract-job-signal-dashboard, fetch and start from the latest default branch. Read AGENTS.md and prompts/daily-run.md and execute that daily research workflow for the preceding 24 hours using America/New_York. Research all four categories with web search and opened source pages. Change only lib/seedData.ts, preserve existing IDs/data, and explicitly label inferred demand. Validate with npm ci, npm run typecheck, and GITHUB_REPOSITORY=venkata-dora/contract-job-signal-dashboard npm run build:pages. If qualifying verified news exists, safely create/update daily-news/YYYY-MM-DD and a PR titled “Daily news update YYYY-MM-DD” into the default branch. Never auto-merge or directly publish. Report sources, coverage, limitations, validation, and PR/check links. Report incomplete research separately from no qualifying news. Keep run results visible; notify for new PRs, failures, incomplete runs, or required action, and stay quiet for unchanged results.
+> In venkata-dora/contract-job-signal-dashboard, fetch and start from the latest default branch. Read AGENTS.md and prompts/daily-run.md and execute that daily research workflow for the preceding 24 hours using America/New_York. Research all four categories with web search and opened source pages. Change only lib/seedData.ts, preserve existing IDs/data, and explicitly label inferred demand. Validate with npm ci, npm run typecheck, and GITHUB_REPOSITORY=venkata-dora/contract-job-signal-dashboard npm run build:pages. If qualifying verified news exists, safely create/update daily-news/YYYY-MM-DD and a PR titled “Daily news update YYYY-MM-DD” into the default branch. Automatically squash-merge only data-only PRs whose exact current head passes GitHub Actions validation; do not bypass pending/failed checks or conflicts. Verify Pages deployment. Report sources, coverage, limitations, validation, and PR/check links. Report incomplete research separately from no qualifying news. Keep run results visible; notify for new PRs, failures, incomplete runs, or required action, and stay quiet for unchanged results.
 
 ## Review, publish, pause, retry
 
@@ -25,3 +25,7 @@ Review the source evidence, inferences, diff, and successful build check on each
 Pause in **Scheduled** by selecting the task and pausing it (or disable/delete it). Re-enable only after resolving failures. Retry using the same task prompt in the same repository cloud environment; retain that day's branch/PR and inspect it instead of force-pushing or duplicating. For validation failures, fix the intended data and rerun validation/checks before merging. For research failures, restore source access and rerun; do not interpret failure as an empty news day. GitHub Actions “Re-run failed jobs” retries validation/deployment only; it does not redo research.
 
 No branch protection was changed. To enforce review/checks, optionally configure a main ruleset requiring PR review and the workflow's `build` check after it has appeared. A failed check alone does not prevent an administrator from manually merging without such a rule.
+
+## Automatic publishing authorization
+
+The user subsequently requested unattended cloud updates. Routine data-only PRs may now be squash-merged after successful validation of their exact current head SHA. The cloud task may use GitHub connected tools to edit the data and rely on the PR Actions build for npm validation when no shell is available. App/workflow/policy changes remain outside routine run scope. A failed or incomplete run must be reported honestly and must not fabricate news.
