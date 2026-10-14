@@ -32,7 +32,7 @@ Open http://localhost:3000.
 
 The app is configured for static GitHub Pages deployment. Pushes to the default branch `main` run `.github/workflows/pages.yml`, build the app with `npm run build:pages`, and publish the generated `out` site.
 
-Daily updates use `daily-news/YYYY-MM-DD` pull requests into `main`; never auto-merge during rollout. PRs run install, typecheck, and Pages build without deployment. Manual deployment runs only from `main`.
+Daily updates use `daily-news/YYYY-MM-DD` pull requests into `main`; automatically merge data-only updates after successful validation of the exact PR head. PRs run install, typecheck, and Pages build without deployment. Manual deployment runs only from `main`.
 
 Local validation:
 
