@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Star } from "lucide-react";
 import { categoryConfig } from "@/lib/categoryStyles";
 import { getCompaniesLikeCompany, getCompaniesMentioned } from "@/lib/companyIntel";
 import { getUsJobLocations } from "@/lib/utils";
@@ -139,6 +140,31 @@ export function BriefingRow({
   onRemove?: (id: string) => void;
   defaultOpen?: boolean;
 }) {
+  const [important, setImportant] = useState(false);
+  const [starError, setStarError] = useState("");
+  const importantKey = `contract-signals.important.${signal.id}`;
+  useEffect(() => {
+    function refresh() {
+      try { setImportant(window.localStorage.getItem(importantKey) === "true"); } catch { /* Storage may be unavailable. */ }
+    }
+    refresh();
+    window.addEventListener("storage", refresh);
+    window.addEventListener("important-news-updated", refresh);
+    return () => {
+      window.removeEventListener("storage", refresh);
+      window.removeEventListener("important-news-updated", refresh);
+    };
+  }, [importantKey]);
+  function toggleImportant() {
+    const next = !important;
+    try {
+      if (next) window.localStorage.setItem(importantKey, "true");
+      else window.localStorage.removeItem(importantKey);
+      setImportant(next);
+      setStarError("");
+      window.dispatchEvent(new Event("important-news-updated"));
+    } catch { setStarError("Unable to save your star in this browser."); }
+  }
   const [detailOpen, setDetailOpen] = useState(defaultOpen);
   const [companiesOpen, setCompaniesOpen] = useState(false);
   const cat = categoryConfig[signal.category];
@@ -180,6 +206,9 @@ export function BriefingRow({
         </div>
 
         <div className="brief-tools">
+          <button type="button" className={important ? "news-star selected" : "news-star"} onClick={toggleImportant} aria-pressed={important} aria-label={important ? "Unmark as important" : "Mark as important"} title={important ? "Marked important — click to remove" : "Mark as important"}>
+            <Star size={17} fill={important ? "currentColor" : "none"} aria-hidden="true" />
+          </button>
           <button title={detailOpen ? "Collapse details" : "Expand details"} onClick={() => setDetailOpen(!detailOpen)} aria-label={detailOpen ? "Collapse details" : "Expand details"}>
             <ChevronIcon open={detailOpen} />
           </button>
@@ -200,6 +229,8 @@ export function BriefingRow({
           )}
         </div>
 
+        {important && <div className="news-important-label">★ Marked important</div>}
+        {starError && <p role="status">{starError}</p>}
         <h3 className="brief-title">{highlightCompanies(signal.companyEvent, highlightedCompanyNames)}</h3>
 
         <div className="brief-subline">
