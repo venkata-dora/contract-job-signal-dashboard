@@ -137,17 +137,14 @@ export function DashboardPage({ category, weekly = false }: { category?: SignalC
 
   return (
     <AppShell>
-      <div className="page">
-        <div className="page-head">
+      <div className={`page${!category && !weekly ? " dashboard-feed" : ""}`}>
+        {(category || weekly) && <div className="page-head">
           <div>
             <div className="kicker">{kicker}</div>
             <h1 className="page-title">{title}</h1>
             <p className="page-sub">{subtitle}</p>
           </div>
-          <div className="page-actions">
-            <Link href="/add-signal" className="btn primary"><PlusIcon /> Add signal</Link>
-          </div>
-        </div>
+        </div>}
 
         {!isReady ? (
           <div className="empty"><div className="empty-mark">⋯</div><h3>Loading…</h3></div>
