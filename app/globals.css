@@ -1634,3 +1634,11 @@ a.calendar-cell:hover, a.calendar-cell:focus-visible { outline: 2px solid #145c2
 
 /* Emphasize job locations and roles in each news story. */
 .location-chip, .role-chip { font-weight: 700; }
+
+.archive-title-row { display: flex; align-items: center; gap: 10px; }
+.archive-date-picker { position: relative; display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1px solid var(--line); border-radius: 4px; color: var(--accent); cursor: pointer; }
+.archive-date-picker:hover, .archive-date-picker:focus-within { border-color: var(--accent); background: #f0faf2; }
+.archive-date-picker input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.archive-date-picker input::-webkit-calendar-picker-indicator { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.archive-date-notice { margin: 6px 0; font-size: 12px; color: var(--mute); }
+.archive-date-notice:empty { display: none; }

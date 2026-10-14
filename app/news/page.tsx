@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import { CalendarDays } from "lucide-react";
 import { AppShell } from "@/components/AppShell";
 import { BriefingRow } from "@/components/BriefingRow";
 import { NewsCalendar } from "@/components/NewsCalendar";
@@ -7,6 +9,18 @@ import { useSignals } from "@/components/useSignals";
 
 export default function NewsArchivePage() {
   const { signals, isReady } = useSignals();
+  const [dateNotice, setDateNotice] = useState("");
+  function jumpToDate(date: string) {
+    if (!date) return;
+    const section = document.getElementById(`date-${date}`);
+    if (section) {
+      section.scrollIntoView({ block: "start" });
+      window.history.replaceState(null, "", `#date-${date}`);
+      setDateNotice("");
+    } else {
+      setDateNotice(`No saved news for ${date}.`);
+    }
+  }
   const dates = Array.from(new Set(signals.map((signal) => signal.eventDate))).sort((a, b) => b.localeCompare(a));
 
   return (
@@ -15,7 +29,14 @@ export default function NewsArchivePage() {
         <div className="page-head">
           <div>
             <div className="kicker">Complete history</div>
-            <h1 className="page-title">All news</h1>
+            <div className="archive-title-row">
+              <h1 className="page-title">All news</h1>
+              <label className="archive-date-picker" title="Jump to a news date">
+                <CalendarDays size={16} aria-hidden="true" />
+                <input type="date" aria-label="Jump to a news date" onChange={(event) => jumpToDate(event.target.value)} />
+              </label>
+            </div>
+            <p className="archive-date-notice" role="status">{dateNotice}</p>
             <p className="page-sub">Every saved story, grouped by event date. Newest dates first.</p>
           </div>
         </div>
