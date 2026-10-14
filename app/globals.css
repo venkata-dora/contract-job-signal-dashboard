@@ -1599,3 +1599,33 @@ button, a, input, select, textarea { touch-action: manipulation; }
   .archive-day { grid-template-columns: minmax(0, 1fr); gap: 16px; }
   .archive-date { position: static; }
 }
+
+.archive-layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 32px; margin-top: 24px; }
+.news-calendar { position: sticky; top: 24px; align-self: start; max-height: calc(100vh - 48px); overflow-y: auto; padding-right: 12px; }
+.news-calendar h2 { margin: 0; font-size: 16px; }
+.news-calendar p { font-size: 12px; color: var(--mute); }
+.calendar-legend { display: flex; align-items: center; gap: 4px; font-size: 11px; margin: 16px 0 24px; }
+.calendar-legend .calendar-cell { width: 14px; height: 14px; }
+.calendar-month { margin-bottom: 24px; }
+.calendar-month h3 { font-size: 13px; margin: 0 0 8px; }
+.calendar-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.calendar-weekday { text-align: center; font-size: 10px; color: var(--mute); }
+.calendar-cell { display: block; aspect-ratio: 1; border-radius: 3px; background: #ebedf0; }
+.calendar-cell.level-1 { background: #c6e8cf; color: #173c22; }
+.calendar-cell.level-2 { background: #73c686; color: #123b1e; }
+.calendar-cell.level-3 { background: #20a447; color: #fff; }
+.calendar-cell span { display: flex; height: 100%; align-items: center; justify-content: center; font-size: 10px; }
+a.calendar-cell:hover, a.calendar-cell:focus-visible { outline: 2px solid #145c2a; outline-offset: 2px; }
+.archive-stories { min-width: 0; }
+.archive-stories .archive-day { display: block; }
+.archive-stories .archive-date { position: static; margin-bottom: 16px; border-top: 1px solid var(--line); }
+.archive-stories .archive-date h2 { display: inline; font-size: 20px; margin-right: 12px; }
+.archive-high { background: #f0faf2; border-left: 3px solid #20a447; margin-bottom: 16px; }
+.archive-high .brief { background: transparent; }
+.archive-high-label { color: #116b2b; font-weight: 700; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; padding: 12px 20px 0; }
+@media (max-width: 1000px) {
+  .archive-layout { grid-template-columns: minmax(0, 1fr); }
+  .news-calendar { position: static; max-height: none; padding: 0; }
+  .calendar-months { display: flex; gap: 24px; overflow-x: auto; padding-bottom: 12px; }
+  .calendar-month { flex: 0 0 200px; margin-bottom: 0; }
+}
