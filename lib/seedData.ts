@@ -12,6 +12,279 @@ const nowJuly7 = "2026-07-07T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
   {
+    "id": "news-2026-10-15-rush-endeavor-health-merger",
+    "rank": 1,
+    "companyEvent": "Rush and Endeavor Health announce 12-hospital merger and integration plans",
+    "companiesMentioned": [
+      {
+        "name": "Rush University System for Health",
+        "description": "Chicago-area nonprofit academic healthcare system",
+        "sector": "Healthcare provider",
+        "relationship": "Primary target",
+        "headquarters": "Chicago, IL"
+      },
+      {
+        "name": "Endeavor Health",
+        "description": "Integrated nonprofit hospital and care-site operator in northeastern Illinois",
+        "sector": "Healthcare provider",
+        "relationship": "Partner / vendor",
+        "headquarters": "Evanston, IL"
+      }
+    ],
+    "eventType": "Hospital Merger / System Integration",
+    "category": "M&A / Divestiture / Carve-out",
+    "secondaryCategories": [
+      "AI / Cloud / Enterprise Platforms"
+    ],
+    "signalStrength": "High",
+    "eventDate": "2026-10-15",
+    "resourceLink": "https://www.rush.edu/news/rush-university-system-health-and-endeavor-health-announce-plans-merge",
+    "sourceName": "Rush University System for Health",
+    "sector": "Private nonprofit healthcare / hospitals",
+    "summary": "Rush and Endeavor announced a planned merger of 12 hospitals and over 400 care sites; proposed closing is early 2027 subject to regulatory approval.",
+    "likelyJobLocations": [
+      "Chicago, IL",
+      "Evanston, IL",
+      "Naperville, IL",
+      "Remote USA healthcare integration"
+    ],
+    "workMode": "Remote / Hybrid",
+    "whyTheseLocations": "Inference: Both systems operate in the Chicago region, and U.S. healthcare integration vendors may support projects; no job sites verified.",
+    "whyThisMayCreateContractSoftwareJobs": "Inferred hospital consolidation could entail patient-identity migration, HL7/FHIR and EHR interfaces, revenue-cycle data, IAM integration, application rationalization and end-to-end testing.",
+    "likelySoftwareRoles": [
+      "Healthcare Integration Engineer",
+      "HL7/FHIR Developer",
+      "Data Migration Engineer",
+      "IAM Engineer",
+      "QA Automation Engineer"
+    ],
+    "bestSearchKeywords": [
+      "Rush Endeavor hospital merger IT integration contract",
+      "Chicago FHIR EHR data migration developer"
+    ],
+    "actionPlan": "Watch Rush, Endeavor and documented vendors for technical integration plans; confirm requisition and employer route before contacting. C2C eligibility unverified; confirm with hiring vendor for this role.",
+    "confidenceNote": "The primary source verifies the business event, not hiring. Software demand, all roles and locations, work mode and C2C route are inferences. No confirmed vacancies.",
+    "rawNotes": "Research window 2026-10-14 08:03:23 EDT (12:03:23 UTC) to 2026-10-15 08:03:23 EDT (12:03:23 UTC). Collection date 2026-10-15 America/New_York. U.S. private-sector only. All roles/work/locations inferred, not verified vacancies. C2C eligibility unverified; confirm with hiring vendor for this role. Rush primary statement Oct 14 2026 (date only); CBS Chicago report published Oct 14 2026 at 11:26 CDT confirms announcement existed inside the time window. 12 hospitals, over 400 sites and early 2027 close stated by issuer.",
+    "createdAt": "2026-10-15T12:12:37.819Z",
+    "updatedAt": "2026-10-15T12:12:37.819Z"
+  },
+  {
+    "id": "news-2026-10-15-eqt-stockbridge-acquisition",
+    "rank": 1,
+    "companyEvent": "EQT agrees to acquire Stockbridge and combine real-estate investment platforms",
+    "companiesMentioned": [
+      {
+        "name": "EQT",
+        "description": "Global private-markets investment firm acquiring a U.S. real-estate manager",
+        "sector": "Private equity / real estate investment management",
+        "relationship": "Acquirer",
+        "headquarters": "Stockholm, Sweden"
+      },
+      {
+        "name": "Stockbridge",
+        "description": "Institutional real-estate investment manager with six U.S. offices",
+        "sector": "Real estate investment management",
+        "relationship": "Acquired company",
+        "headquarters": "San Francisco, CA"
+      }
+    ],
+    "eventType": "Acquisition / Investment Platform Integration",
+    "category": "M&A / Divestiture / Carve-out",
+    "secondaryCategories": [
+      "AI / Cloud / Enterprise Platforms"
+    ],
+    "signalStrength": "High",
+    "eventDate": "2026-10-15",
+    "resourceLink": "https://www.prnewswire.com/news-releases/eqt-to-acquire-stockbridge-accelerating-eqt-real-estates-evolution-into-a-thematically-diversified-platform-302909464.html",
+    "sourceName": "EQT / PR Newswire",
+    "sector": "Private-sector investment management",
+    "summary": "EQT signed a deal to acquire San Francisco-based Stockbridge, managing about $16.5B fee-generating AUM, with plans to make it part of EQT Real Estate.",
+    "likelyJobLocations": [
+      "San Francisco, CA",
+      "Remote USA investment-management integration"
+    ],
+    "workMode": "Remote / Hybrid",
+    "whyTheseLocations": "Inference: Stockbridge is based in San Francisco and has six U.S. offices; no project hiring locations announced.",
+    "whyThisMayCreateContractSoftwareJobs": "Possible post-acquisition work includes institutional-client data mapping, fund reporting harmonization, portfolio data pipelines, governance and analytics testing; all inferred.",
+    "likelySoftwareRoles": [
+      "Financial Data Engineer",
+      "Investment Systems Analyst",
+      "API Integration Developer",
+      "QA Automation Engineer"
+    ],
+    "bestSearchKeywords": [
+      "EQT Stockbridge post merger data integration contract",
+      "Stockbridge real estate fund reporting engineer"
+    ],
+    "actionPlan": "Follow EQT and Stockbridge for disclosed IT consolidation milestones and evidenced U.S. vendor channels. C2C eligibility unverified; confirm with hiring vendor for this role.",
+    "confidenceNote": "The primary source verifies the business event, not hiring. Software demand, all roles and locations, work mode and C2C route are inferences. No confirmed vacancies.",
+    "rawNotes": "Research window 2026-10-14 08:03:23 EDT (12:03:23 UTC) to 2026-10-15 08:03:23 EDT (12:03:23 UTC). Collection date 2026-10-15 America/New_York. U.S. private-sector only. All roles/work/locations inferred, not verified vacancies. C2C eligibility unverified; confirm with hiring vendor for this role. Original EQT release Oct 15 2026, 00:29 ET. $375M base deal, Stockbridge six U.S. offices and ~185 staff; no concrete technology hiring or migration commitment.",
+    "createdAt": "2026-10-15T12:12:37.819Z",
+    "updatedAt": "2026-10-15T12:12:37.819Z"
+  },
+  {
+    "id": "news-2026-10-15-city-first-alkami-mantl-account-opening",
+    "rank": 1,
+    "companyEvent": "City First Bank selects Alkami's MANTL for omnichannel deposit-account opening",
+    "companiesMentioned": [
+      {
+        "name": "City First Bank",
+        "description": "U.S. community development bank offering lending and deposit services",
+        "sector": "Community banking",
+        "relationship": "Customer / buyer",
+        "headquarters": "Washington, DC"
+      },
+      {
+        "name": "Alkami Technology",
+        "description": "U.S. digital banking and customer onboarding software provider",
+        "sector": "Banking software",
+        "relationship": "Partner / vendor",
+        "headquarters": "Plano, TX"
+      }
+    ],
+    "eventType": "Retail Banking Account-Opening Platform Implementation",
+    "category": "Banking / Payments / Fintech",
+    "secondaryCategories": [
+      "AI / Cloud / Enterprise Platforms"
+    ],
+    "signalStrength": "High",
+    "eventDate": "2026-10-15",
+    "resourceLink": "https://www.prnewswire.com/news-releases/city-first-bank-partners-with-mantl-to-advance-its-nationwide-growth-strategy-302907424.html",
+    "sourceName": "Alkami Technology / PR Newswire",
+    "sector": "Private-sector banking / financial software",
+    "summary": "Alkami announced City First's selected MANTL omnichannel onboarding to support digital/branch account opening, automated KYC/AML/BSA checks, funding and core booking.",
+    "likelyJobLocations": [
+      "Washington, DC",
+      "Los Angeles, CA",
+      "Plano, TX",
+      "Remote USA banking implementation"
+    ],
+    "workMode": "Remote / Hybrid",
+    "whyTheseLocations": "Inference: City First serves D.C./Los Angeles and Alkami is based in Plano; roles and staffing locations unverified.",
+    "whyThisMayCreateContractSoftwareJobs": "Named banking implementation may require onboarding workflow integration, core banking APIs, KYC/AML decisioning, funding and reconciliation logic, data migration and regression testing.",
+    "likelySoftwareRoles": [
+      "Java Backend Developer",
+      "Banking Integration Engineer",
+      "AML/KYC Systems Analyst",
+      "API QA Engineer"
+    ],
+    "bestSearchKeywords": [
+      "City First MANTL account opening integration contractor",
+      "Alkami core banking API engineer contract"
+    ],
+    "actionPlan": "Monitor City First and Alkami for disclosed vendor implementation roles and verify contract engagement. C2C eligibility unverified; confirm with hiring vendor for this role.",
+    "confidenceNote": "The primary source verifies the business event, not hiring. Software demand, all roles and locations, work mode and C2C route are inferences. No confirmed vacancies.",
+    "rawNotes": "Research window 2026-10-14 08:03:23 EDT (12:03:23 UTC) to 2026-10-15 08:03:23 EDT (12:03:23 UTC). Collection date 2026-10-15 America/New_York. U.S. private-sector only. All roles/work/locations inferred, not verified vacancies. C2C eligibility unverified; confirm with hiring vendor for this role. Primary Alkami release Oct 14 2026, 10:00 ET. Header mentions goes-live, detailed article refers to selection/implementation; do not invent a precise cutover date.",
+    "createdAt": "2026-10-15T12:12:37.819Z",
+    "updatedAt": "2026-10-15T12:12:37.819Z"
+  },
+  {
+    "id": "news-2026-10-15-acorns-frich-acquisition",
+    "rank": 2,
+    "companyEvent": "Acorns acquires Frich and its 1.6-million-member U.S. financial education community",
+    "companiesMentioned": [
+      {
+        "name": "Acorns",
+        "description": "Consumer investing and financial-wellness platform",
+        "sector": "Consumer fintech / wealth services",
+        "relationship": "Acquirer",
+        "headquarters": "Irvine, CA"
+      },
+      {
+        "name": "Frich",
+        "description": "Peer-led community for financial education among young adults",
+        "sector": "Consumer fintech education",
+        "relationship": "Acquired company"
+      }
+    ],
+    "eventType": "Acquisition / Consumer Platform Integration",
+    "category": "M&A / Divestiture / Carve-out",
+    "secondaryCategories": [
+      "Banking / Payments / Fintech"
+    ],
+    "signalStrength": "Medium",
+    "eventDate": "2026-10-15",
+    "resourceLink": "https://www.prnewswire.com/news-releases/acorns-acquires-frich-expanding-its-financial-education-community-302908117.html",
+    "sourceName": "Acorns / PR Newswire",
+    "sector": "U.S. consumer fintech",
+    "summary": "Acorns acquired Frich, its creator community and peer financial-education capabilities; Frich's cofounders joined Acorns.",
+    "likelyJobLocations": [
+      "Irvine, CA",
+      "Remote USA consumer fintech"
+    ],
+    "workMode": "Remote / Hybrid",
+    "whyTheseLocations": "Inference: Acorns issued the announcement from Irvine; integration hiring and work locations are unverified.",
+    "whyThisMayCreateContractSoftwareJobs": "Inferred possible work includes community identity consolidation, consent controls, content workflows, user data analytics and integration testing; no specific IT migration has been committed.",
+    "likelySoftwareRoles": [
+      "Full Stack Developer",
+      "Customer Data Engineer",
+      "Privacy Engineer",
+      "QA Automation Engineer"
+    ],
+    "bestSearchKeywords": [
+      "Acorns Frich platform integration contractor",
+      "Acorns fintech community migration developer"
+    ],
+    "actionPlan": "Monitor Acorns for an actual integration roadmap before assuming software-contract demand. C2C eligibility unverified; confirm with hiring vendor for this role.",
+    "confidenceNote": "The primary source verifies the business event, not hiring. Software demand, all roles and locations, work mode and C2C route are inferences. No confirmed vacancies.",
+    "rawNotes": "Research window 2026-10-14 08:03:23 EDT (12:03:23 UTC) to 2026-10-15 08:03:23 EDT (12:03:23 UTC). Collection date 2026-10-15 America/New_York. U.S. private-sector only. All roles/work/locations inferred, not verified vacancies. C2C eligibility unverified; confirm with hiring vendor for this role. Acorns original release Oct 14 2026, 09:00 ET. Frich has a 1.6-million-person community; no named system migration or technology project. Medium signal only.",
+    "createdAt": "2026-10-15T12:12:37.819Z",
+    "updatedAt": "2026-10-15T12:12:37.819Z"
+  },
+  {
+    "id": "news-2026-10-15-nav-creditsafe-credit-reporting-integration",
+    "rank": 2,
+    "companyEvent": "Nav integrates Creditsafe risk scores into its U.S. small-business credit dashboard",
+    "companiesMentioned": [
+      {
+        "name": "Nav Technologies",
+        "description": "Financial health and funding-readiness platform for U.S. small businesses",
+        "sector": "Small-business fintech",
+        "relationship": "Customer / buyer",
+        "headquarters": "San Mateo, CA"
+      },
+      {
+        "name": "Creditsafe",
+        "description": "Business credit reporting and commercial risk intelligence company",
+        "sector": "Business credit data",
+        "relationship": "Partner / vendor"
+      }
+    ],
+    "eventType": "Business Credit Bureau Data Integration",
+    "category": "Banking / Payments / Fintech",
+    "secondaryCategories": [
+      "AI / Cloud / Enterprise Platforms"
+    ],
+    "signalStrength": "Medium",
+    "eventDate": "2026-10-15",
+    "resourceLink": "https://www.prnewswire.com/news-releases/nav-now-covers-all-four-major-business-credit-bureaus-with-new-creditsafe-partnership-302907950.html",
+    "sourceName": "Nav Technologies / PR Newswire",
+    "sector": "Fintech / credit risk data",
+    "summary": "Nav made Creditsafe scores and reports available inside Nav accounts alongside other credit bureaus for U.S. small-business trade-credit readiness.",
+    "likelyJobLocations": [
+      "San Mateo, CA",
+      "Remote USA fintech integration"
+    ],
+    "workMode": "Remote / Hybrid",
+    "whyTheseLocations": "Inference: Nav is based in San Mateo; exact vendor or technical staffing sites are not given.",
+    "whyThisMayCreateContractSoftwareJobs": "Inferred maintenance could include bureau API connectivity, credit-score mapping, data freshness checks, vendor matching, access controls and QA testing.",
+    "likelySoftwareRoles": [
+      "API Integration Engineer",
+      "Backend Developer",
+      "Fintech Data Engineer",
+      "QA Automation Engineer"
+    ],
+    "bestSearchKeywords": [
+      "Nav Creditsafe bureau integration developer contract",
+      "business credit score reporting API engineer"
+    ],
+    "actionPlan": "Monitor Nav, Creditsafe and evidenced software partners for current data integration roles. C2C eligibility unverified; confirm with hiring vendor for this role.",
+    "confidenceNote": "The primary source verifies the business event, not hiring. Software demand, all roles and locations, work mode and C2C route are inferences. No confirmed vacancies.",
+    "rawNotes": "Research window 2026-10-14 08:03:23 EDT (12:03:23 UTC) to 2026-10-15 08:03:23 EDT (12:03:23 UTC). Collection date 2026-10-15 America/New_York. U.S. private-sector only. All roles/work/locations inferred, not verified vacancies. C2C eligibility unverified; confirm with hiring vendor for this role. Original Nav news release Oct 14 2026, 08:30 ET, after 08:03 ET window start. Actual bureau data integration is live; new hiring has not been confirmed.",
+    "createdAt": "2026-10-15T12:12:37.819Z",
+    "updatedAt": "2026-10-15T12:12:37.819Z"
+  },
+  {
     "id": "news-2026-10-14-polygon-coinme-completion",
     "rank": 1,
     "companyEvent": "Polygon completes Coinme acquisition: regulated U.S. payments join Open Money Stack",
