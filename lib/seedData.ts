@@ -12,6 +12,104 @@ const nowJuly7 = "2026-07-07T12:00:00.000Z";
 
 export const seedSignals: JobSignal[] = [
   {
+    "eventDate": "2026-11-02",
+    "rank": 1,
+    "signalStrength": "Medium",
+    "workMode": "Remote / Hybrid",
+    "createdAt": "2026-11-02T16:56:20.000Z",
+    "updatedAt": "2026-11-02T16:56:20.000Z",
+    "confidenceNote": "Primary announcement verifies the event, not vacancies. Software demand, roles, work mode and locations are inferences. C2C eligibility is unverified.",
+    "id": "news-2026-11-02-coreweave-crowdstrike-ai-security",
+    "companyEvent": "CoreWeave and CrowdStrike expand partnership to secure production AI workloads",
+    "companiesMentioned": [
+      {
+        "name": "CoreWeave",
+        "sector": "AI cloud infrastructure",
+        "description": "Provides cloud infrastructure for AI workloads",
+        "relationship": "Partner / vendor"
+      },
+      {
+        "name": "CrowdStrike",
+        "sector": "Cybersecurity software and managed security",
+        "description": "Provides the Falcon security platform and managed protection",
+        "relationship": "Partner / vendor"
+      }
+    ],
+    "eventType": "AI cloud security integration partnership",
+    "category": "Cyber / Compliance / Regulatory",
+    "secondaryCategories": [
+      "AI / Cloud / Enterprise Platforms"
+    ],
+    "resourceLink": "https://ir.crowdstrike.com/news-releases/news-release-details/coreweave-partners-crowdstrike-secure-mission-critical-ai/",
+    "sourceName": "CrowdStrike investor relations",
+    "sector": "AI cloud cybersecurity",
+    "summary": "The companies announced an expanded partnership. CoreWeave is bringing Falcon protection and managed security expertise to customers running production AI workloads.",
+    "likelyJobLocations": [
+      "Remote USA cloud-security teams"
+    ],
+    "whyTheseLocations": "Inference: U.S. delivery is plausible for these U.S.-based cloud and security businesses; project locations are unconfirmed.",
+    "whyThisMayCreateContractSoftwareJobs": "Inferred work includes security integration, telemetry pipelines, cloud hardening and detection validation.",
+    "likelySoftwareRoles": [
+      "Cloud Security Engineer",
+      "Security Integration Engineer",
+      "QA Automation Engineer"
+    ],
+    "bestSearchKeywords": [
+      "CoreWeave CrowdStrike security integration contract",
+      "Falcon AI cloud engineer"
+    ],
+    "actionPlan": "Monitor both companies and evidenced delivery vendors. Confirm actual openings and engagement terms. C2C eligibility unverified; confirm with the hiring vendor for this role.",
+    "rawNotes": "Research window: 2026-11-01T11:54:00-05:00 to 2026-11-02T11:54:00-05:00. Source opened November 2; publication date November 2, 2026, without clock/timezone. U.S. impact: U.S. cloud/security companies; release datelines include Austin, Texas and Livingston, New Jersey. No confirmed staffing channel or vacancies. Collected at 2026-11-02T11:56:20-05:00."
+  },
+  {
+    "eventDate": "2026-11-02",
+    "rank": 1,
+    "signalStrength": "Medium",
+    "workMode": "Remote / Hybrid",
+    "createdAt": "2026-11-02T16:56:20.000Z",
+    "updatedAt": "2026-11-02T16:56:20.000Z",
+    "confidenceNote": "Primary announcement verifies the event, not vacancies. Software demand, roles, work mode and locations are inferences. C2C eligibility is unverified.",
+    "id": "news-2026-11-02-lumen-microsoft-ai-networks",
+    "companyEvent": "Lumen and Microsoft expand enterprise AI-ready network collaboration",
+    "companiesMentioned": [
+      {
+        "name": "Lumen Technologies",
+        "sector": "Enterprise telecommunications and cloud networking",
+        "description": "Connects and manages enterprise networks",
+        "relationship": "Partner / vendor"
+      },
+      {
+        "name": "Microsoft",
+        "sector": "Enterprise software and cloud computing",
+        "description": "Provides Azure cloud and AI technology",
+        "relationship": "Partner / vendor"
+      }
+    ],
+    "eventType": "Enterprise cloud networking partnership",
+    "category": "AI / Cloud / Enterprise Platforms",
+    "secondaryCategories": [],
+    "resourceLink": "https://ir.lumen.com/news/news-details/2026/Lumen-and-Microsoft-Expand-Collaboration-to-Co-Sell-Enterprise-AI-Ready-Networks/default.aspx",
+    "sourceName": "Lumen investor relations",
+    "sector": "Enterprise cloud networking",
+    "summary": "Lumen and Microsoft announced expanded co-selling for enterprise AI-ready networks. Lumen plans to extend cloud networking and application connectivity capabilities through Azure.",
+    "likelyJobLocations": [
+      "Remote USA cloud-integration teams"
+    ],
+    "whyTheseLocations": "Inference: U.S. enterprise delivery is plausible for the companies' cloud collaboration; actual staffing locations are unconfirmed.",
+    "whyThisMayCreateContractSoftwareJobs": "Potential work includes network automation, application connectivity, identity integration, migration testing and observability.",
+    "likelySoftwareRoles": [
+      "Cloud Network Engineer",
+      "Platform Engineer",
+      "Integration Test Engineer"
+    ],
+    "bestSearchKeywords": [
+      "Lumen Azure network automation contract",
+      "Microsoft Lumen enterprise connectivity engineer"
+    ],
+    "actionPlan": "Monitor named companies and verified implementation channels. Treat the collaboration as a prospecting signal, not a job posting. C2C eligibility unverified; confirm with the hiring vendor for this role.",
+    "rawNotes": "Research window: 2026-11-01T11:54:00-05:00 to 2026-11-02T11:54:00-05:00. Source opened November 2; publication date November 2, 2026, without clock/timezone. U.S. impact: enterprise collaboration announced from Denver and Redmond, Washington by U.S. network/cloud providers. Future integration plans are not completed deployments. No confirmed staffing channel or vacancies. Collected at 2026-11-02T11:56:20-05:00."
+  },
+  {
     "id": "news-2026-10-14-polygon-coinme-completion",
     "rank": 1,
     "companyEvent": "Polygon completes Coinme acquisition: regulated U.S. payments join Open Money Stack",
